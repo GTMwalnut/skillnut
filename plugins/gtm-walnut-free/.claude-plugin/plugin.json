@@ -1,0 +1,11 @@
+{
+  "name": "gtm-walnut-free",
+  "version": "0.1.0",
+  "description": "A guide that points you to the right skill, plus three free skills to try the depth.",
+  "author": {
+    "name": "Prashant Mantri",
+    "url": "https://gtmwalnut.com"
+  },
+  "homepage": "https://skills.gtmwalnut.com",
+  "license": "Proprietary"
+}

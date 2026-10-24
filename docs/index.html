@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTM Walnut Skills</title>
+<meta name="description" content="Agent Skills for go-to-market, built from real client work. 4 free, 24 in paid packs.">
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --ink: #1c1a17; --muted: #6b665e; --line: #e6e1d8;
+  --accent: #7a4b1e; --accent-ink: #ffffff; --soft: #f3ede3; --code: #22201c; --code-ink: #f3ede3;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #161513; --surface: #1f1d1a; --ink: #f1ede6; --muted: #a9a297; --line: #34302b;
+          --accent: #d9a066; --accent-ink: #1c1a17; --soft: #26231f; --code: #0f0e0d; --code-ink: #f1ede6; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
+section { padding: 48px 0 8px; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem; margin: 0 0 6px; }
+h3 { margin: 0 0 6px; font-size: 1.08rem; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 46rem; }
+.sub { color: var(--muted); margin-bottom: 20px; }
+.hero { padding-top: 72px; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent);
+        text-decoration: none; font-weight: 600; font-size: .95rem; }
+.btn.solid { background: var(--accent); color: var(--accent-ink); }
+.btn.off { opacity: .55; cursor: default; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.card p { color: var(--muted); font-size: .95rem; }
+.meta { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.pack { display: flex; flex-direction: column; }
+.pack .for { font-size: .88rem; }
+.pack ul { padding-left: 18px; margin: 8px 0 0; font-size: .9rem; color: var(--muted); }
+.pack li { margin-bottom: 6px; }
+.pack li b { color: var(--ink); font-weight: 600; }
+details summary { cursor: pointer; font-weight: 600; font-size: .92rem; }
+.buy { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.price { font-weight: 700; }
+.bundle { background: var(--soft); }
+.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); counter-reset: s; }
+.steps div { border-top: 3px solid var(--accent); padding-top: 12px; }
+.steps div::before { counter-increment: s; content: "Step " counter(s); display: block; font-weight: 700; color: var(--accent); }
+pre { background: var(--code); color: var(--code-ink); padding: 16px; border-radius: 10px; overflow-x: auto; font-size: .9rem; margin: 0; }
+.copy { position: relative; }
+.copy button { position: absolute; top: 8px; right: 8px; background: transparent; color: var(--code-ink); border: 1px solid #ffffff44;
+               border-radius: 6px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: .8rem; }
+.faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq details p { margin: 8px 0 0; color: var(--muted); }
+footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 24px; color: var(--muted); font-size: .9rem; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="meta">GTM Walnut Skills</div>
+    <h1>Skills that run your GTM like an operator would</h1>
+    <p class="lede">Agent Skills for Claude and other AI agents, built from live client work: ICPs, lists, outreach, replies,
+    deliverability, CRM data, signals and automation. Each one walks you through the job step by step.</p>
+    <div class="btns"><a class="btn solid" href="#free">Install free</a><a class="btn" href="#packs">See the packs</a></div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div><p>Install the plugin in Claude Code, or upload the zip on Claude.ai.</p></div>
+      <div><p>Type the skill name, or just say what you need. The guide skill points you to the right one.</p></div>
+      <div><p>It asks a few questions, shows a plan, and does the work with you. You approve every step that sends or writes.</p></div>
+    </div>
+  </section>
+
+  <section id="free">
+    <h2>Free skills</h2>
+    <p class="sub">Four skills to try the depth. Install them in Claude Code:</p>
+    <div class="copy"><pre><code>/plugin marketplace add gtmwalnut/skills
+/plugin install gtm-walnut-free@gtmwalnut</code></pre><button type="button" data-copy>Copy</button></div>
+    <p class="sub" style="margin-top:12px">Any other agent: <code>npx skills add gtmwalnut/skills</code>. Claude.ai or Claude Desktop: <a href="gtm-walnut-free.zip">download the zip</a>, then Customize, Skills, Upload a skill.</p>
+    <div class="grid"><article class="card"><h3>gtm-walnut-start</h3><p>Asks what you are working on and points you to the right skill (this guide).</p></article><article class="card"><h3>icp-builder</h3><p>Builds the ICP from calls, CRM wins and interviews, ending in a targeting spec.</p></article><article class="card"><h3>cold-call-openers</h3><p>Nine word-for-word openers by prep level, delivery rules, a two-week A/B test.</p></article><article class="card"><h3>linkedin-post-generator</h3><p>Writes, rewrites and diagnoses LinkedIn posts.</p></article></div>
+  </section>
+
+  <section id="packs">
+    <h2>Paid packs</h2>
+    <p class="sub">Pay once. 24 skills in 6 packs, delivered through a private GitHub repo and as zips.</p>
+    <div class="grid">
+      <article class="card pack">
+        <div class="meta">Paid pack · 6 skills · pay once</div>
+        <h3>Outbound Execution</h3>
+        <p class="blurb">Everything between a finished list and a booked meeting: pre-send checks, copy, campaign upload, replies.</p>
+        <p class="for">For: Teams running cold email and LinkedIn every week</p>
+        <details><summary>What's inside</summary><ul><li><b>campaign-send-checklist</b>: Last pass on a list before a send: suppression, prior outreach, fit, polish.</li><li><b>crm-overlap-check</b>: Removes anyone in a live deal, active conversation or the CRM before launch.</li><li><b>copywriting-messaging</b>: Research, write and polish cold email and LinkedIn copy.</li><li><b>email-and-linkedin-sequencer-lead-upload</b>: Builds campaigns and loads leads into email and LinkedIn sequencers.</li><li><b>ai-responder</b>: Drafts replies to every response, with a human approving each send.</li><li><b>campaign-reply-insights</b>: Analyses replies to learn which lists, angles and copy work.</li></ul></details>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+      <article class="card pack">
+        <div class="meta">Paid pack · 5 skills · pay once</div>
+        <h3>Lists &amp; Data</h3>
+        <p class="blurb">Build the market, target it tightly, filter out non-buyers and keep the CRM clean.</p>
+        <p class="for">For: RevOps and list builders</p>
+        <details><summary>What's inside</summary><ul><li><b>tam-list-builder</b>: Builds the total addressable market, including local and niche markets.</li><li><b>outbound-targeting</b>: A tight, in-motion, campaign-ready list instead of a broad one.</li><li><b>icp-fit-filter</b>: Strips agencies, competitors and non-buyers out of a list.</li><li><b>crm-data-health</b>: Audits and repairs CRM data, writing only with sign-off.</li><li><b>crm-outreach-sync-and-manual-upload</b>: Syncs email and LinkedIn activity from sequencers into the CRM.</li></ul></details>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+      <article class="card pack">
+        <div class="meta">Paid pack · 5 skills · pay once</div>
+        <h3>Signals &amp; Events</h3>
+        <p class="blurb">Find the accounts that are ready now, from buying signals, developer intent and conference stages.</p>
+        <p class="for">For: Signal-led and event-led outbound</p>
+        <details><summary>What's inside</summary><ul><li><b>buying-signals-playbook</b>: Works out which events mean an account is ready to buy.</li><li><b>reo-to-email-bison-and-heyreach</b>: Turns developer-intent signals into outreach end to end.</li><li><b>conference-speaker-outreach</b>: Turns conference speaker lists into a personalised outbound programme.</li><li><b>lead-attribution-analysis</b>: Shows which sequence of touches leads to a first meeting.</li><li><b>proof-points-by-industry</b>: Turns case studies into proof matched to each prospect&#x27;s industry.</li></ul></details>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+      <article class="card pack">
+        <div class="meta">Paid pack · 4 skills · pay once</div>
+        <h3>Infrastructure &amp; Automation</h3>
+        <p class="blurb">Deliverability, n8n automations and a dashboard for the whole GTM machine.</p>
+        <p class="for">For: GTM engineers who build and run the stack</p>
+        <details><summary>What's inside</summary><ul><li><b>email-deliverability-metrics-and-dashboard</b>: Deliverability setup, rescue, metrics, and inbox rotation.</li><li><b>n8n-gtme-playbooks</b>: Builds n8n lead-ops automations from zero to live.</li><li><b>gtm-automations</b>: Picks and builds the highest-leverage GTM automations.</li><li><b>gtm-analytics-dashboard</b>: A health and analytics dashboard for the whole GTM workflow.</li></ul></details>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+      <article class="card pack">
+        <div class="meta">Paid pack · 3 skills · pay once</div>
+        <h3>Strategy &amp; Insights</h3>
+        <p class="blurb">A GTM plan built as a diagnosis and one bet, plus what your sales calls and meetings already know.</p>
+        <p class="for">For: Founders, agencies, sales leaders</p>
+        <details><summary>What's inside</summary><ul><li><b>gtm-strategy-plan</b>: A GTM strategy written as a diagnosis and a single bet.</li><li><b>sales-call-insights</b>: Mines sales calls for buyer language and turns it into outreach.</li><li><b>meeting-to-training-doc</b>: Turns a recorded walkthrough into an illustrated training document.</li></ul></details>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+      <article class="card pack">
+        <div class="meta">Paid pack · 1 skill · pay once</div>
+        <h3>Content</h3>
+        <p class="blurb">Turn long recordings into Shorts that publish themselves.</p>
+        <p class="for">For: Founders and creators</p>
+        <details><summary>What's inside</summary><ul><li><b>long-video-to-youtube-shorts</b>: Cuts long videos into vertical Shorts and publishes them.</li></ul></details>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+      <article class="card pack bundle">
+        <div class="meta">All-access bundle · 24 skills · pay once</div>
+        <h3>Every pack</h3>
+        <p class="blurb">All 6 packs, plus every new skill released during your update period.</p>
+        <p class="for">For: agencies and power users</p>
+        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why you can trust it</h2>
+    <div class="grid">
+      <div class="card"><h3>Read-only by default</h3><p>Skills look before they touch. Anything that sends, uploads or writes to your CRM runs as a dry run first and waits for your yes.</p></div>
+      <div class="card"><h3>Built from real work</h3><p>Every skill comes from processes run for real clients, with the examples anonymised.</p></div>
+      <div class="card"><h3>Yours to read</h3><p>Skills are plain text files. You can read every instruction before you run it.</p></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <details><summary>What is a skill?</summary><p>A folder of instructions an AI agent loads when the job calls for it. It turns a general assistant into one that runs a specific process the way a practitioner would.</p></details>
+    <details><summary>Which tools does it work with?</summary><p>Claude Code, Claude.ai, Claude Desktop, and any agent that reads SKILL.md files. Individual skills work with tools like HubSpot, Attio, Pipedrive, Email Bison, HeyReach, Instantly and n8n.</p></details>
+    <details><summary>Do I need GitHub?</summary><p>Not for the free skills. For paid packs in Claude Code you need a free GitHub account, because updates come from a private repo. On Claude.ai you can use the zip instead.</p></details>
+    <details><summary>How do updates work?</summary><p>Run <code>claude plugin update</code>, or turn on auto-update under /plugin, Marketplaces. It is off by default for marketplaces like this one.</p></details>
+    <details><summary>Can I get a refund?</summary><p>Refund terms are shown at checkout.</p></details>
+  </section>
+
+  <footer>
+    <p>Built by Prashant Mantri at <a href="https://gtmwalnut.com">GTM Walnut</a>. Want it done for you? <a href="https://gtmwalnut.com">Get in touch</a>.</p>
+  </footer>
+</main>
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var t = b.parentNode.querySelector("code").innerText;
+    navigator.clipboard.writeText(t).then(function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); });
+  });
+});
+</script>
+</body>
+</html>

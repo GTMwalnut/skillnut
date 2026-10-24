@@ -1,0 +1,15 @@
+.env
+.env.*
+*.key
+*.pem
+*api*key*
+*API*
+*secret*
+*token*
+*recovery*
+*credentials*
+settings.local.json
+.claude/
+__pycache__/
+.DS_Store
+Thumbs.db
