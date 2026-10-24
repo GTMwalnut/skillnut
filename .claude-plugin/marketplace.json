@@ -1,17 +1,17 @@
 {
-  "name": "gtmwalnut",
+  "name": "skillnut",
   "owner": {
     "name": "Prashant Mantri",
     "url": "https://gtmwalnut.com"
   },
   "metadata": {
-    "description": "GTM Walnut skills",
+    "description": "Skillnut by GTM Walnut",
     "version": "0.1.0"
   },
   "plugins": [
     {
-      "name": "gtm-walnut-free",
-      "source": "./plugins/gtm-walnut-free",
+      "name": "skillnut-free",
+      "source": "./plugins/skillnut-free",
       "description": "A guide that points you to the right skill, plus three free skills to try the depth.",
       "version": "0.1.0",
       "author": {

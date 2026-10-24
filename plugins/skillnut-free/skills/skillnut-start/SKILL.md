@@ -1,9 +1,9 @@
 ---
-name: gtm-walnut-start
-description: "The front door to the GTM Walnut skills. Asks what the user is trying to get done in go-to-market (pipeline, lists, outreach, replies, deliverability, CRM data, signals, events, automation, analytics, strategy, content), recommends the one skill that does it next, says whether that skill is free or in which paid pack, and gives the exact way to run or install it. Also explains what a skill is and how these ones work (guided, read-only by default, nothing sent or written without approval). Trigger when the user asks where to start, what the GTM Walnut skills do, which skill to use, what is in a pack, what is free, or says something broad like help me with outbound, build pipeline, or fix my GTM."
+name: skillnut-start
+description: "The front door to Skillnut, the GTM skills by GTM Walnut. Asks what the user is trying to get done in go-to-market (pipeline, lists, outreach, replies, deliverability, CRM data, signals, events, automation, analytics, strategy, content), recommends the one skill that does it next, says whether that skill is free or in which paid pack, and gives the exact way to run or install it. Also explains what a skill is and how these ones work (guided, read-only by default, nothing sent or written without approval). Trigger when the user asks where to start, what the Skillnut skills do, which skill to use, what is in a pack, what is free, or says something broad like help me with outbound, build pipeline, or fix my GTM."
 ---
 
-# GTM Walnut Start (Guide Skill)
+# Skillnut Start (Guide Skill)
 
 ## Before anything else
 
@@ -22,8 +22,8 @@ Always: plain, warm English, short sentences, no jargon unless explained in the 
 
 ## Stage 1: Welcome (your entire first reply)
 
-> Welcome to the GTM Walnut skills.
-> *Skills by Prashant Mantri · gtmwalnut.com*
+> Welcome to Skillnut.
+> *Skillnut by GTM Walnut · gtmwalnut.com*
 >
 > **"What this does"**
 > Tell me what you are trying to get done and I will point you to the one skill that does it, say whether it is free or in a pack, and show you how to run it.
@@ -60,8 +60,8 @@ Then stop.
 
 Give the user exactly how to run it:
 
-- **Free skills** (already installed with this plugin): type the skill name, for example `/gtm-walnut-free:icp-builder`, or just ask in plain words.
-- **Paid packs**: they are bought once at **skills.gtmwalnut.com**. After buying, in Claude Code: `/plugin marketplace add gtmwalnut/skills-pro`, then `/plugin install <pack>@gtmwalnut-pro`. On Claude.ai, upload the pack zip under Customize, Skills.
+- **Free skills** (already installed with this plugin): type the skill name, for example `/skillnut-free:icp-builder`, or just ask in plain words.
+- **Paid packs**: they are bought once at **skills.gtmwalnut.com**. After buying, in Claude Code: `/plugin marketplace add gtmwalnut/skillnut-pro`, then `/plugin install <pack>@skillnut-pro`. On Claude.ai, upload the pack zip under Customize, Skills.
 - If they are unsure, suggest starting with a free skill today; the handover tip at the end of each skill says what to run next.
 
 Close with one line: *"Come back here any time you are not sure which skill to run next."*
@@ -72,7 +72,7 @@ Close with one line: *"Come back here any time you are not sure which skill to r
 
 | Skill | Does | Shelf |
 |---|---|---|
-| gtm-walnut-start | Asks what you are working on and points you to the right skill (this guide) | Free |
+| skillnut-start | Asks what you are working on and points you to the right skill (this guide) | Free |
 | icp-builder | Builds the ICP from calls, CRM wins and interviews, ending in a targeting spec | Free |
 | cold-call-openers | Nine word-for-word openers by prep level, delivery rules, a two-week A/B test | Free |
 | linkedin-post-generator | Writes, rewrites and diagnoses LinkedIn posts | Free |

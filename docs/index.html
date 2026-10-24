@@ -3,178 +3,639 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTM Walnut Skills</title>
-<meta name="description" content="Agent Skills for go-to-market, built from real client work. 4 free, 24 in paid packs.">
+<title>Skillnut by GTM Walnut</title>
+<meta name="description" content="Skillnut: 28 go-to-market skills for AI agents, built by GTM Walnut from client work. Install the free ones with one command.">
+<meta name="theme-color" content="#faf6f1">
+<meta property="og:title" content="Skillnut by GTM Walnut">
+<meta property="og:description" content="28 go-to-market skills for AI agents. Each one shows its plan and asks before it sends or changes anything.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20338%20338%22%20fill%3D%22none%22%3E%3Crect%20width%3D%22338%22%20height%3D%22338%22%20rx%3D%2256%22%20fill%3D%22%23CD7864%22%3E%3C/rect%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M163.243%2053.0023C168.058%2052.8885%20167.317%2057.0256%20167.316%2060.3473C167.3%2063.3185%20167.3%2066.2898%20167.317%2069.261L167.395%20276.591C167.395%20277.963%20167.454%20280.433%20167.321%20281.732C167.258%20282.384%20166.996%20283.003%20166.573%20283.503C166.026%20284.143%20164.643%20284.968%20163.79%20284.995C161.29%20285.163%20161.613%20281.165%20159.729%20280.719C151.222%20278.705%20141.603%20277.636%20134.295%20272.383C130.906%20269.912%20128.369%20266.529%20125.168%20263.809C123.39%20262.298%20121.649%20260.875%20119.837%20259.414C117.611%20257.619%20115.191%20255.854%20113.078%20253.956C102.758%20246.357%2093.966%20232.326%2089.3685%20220.413C86.583%20213.195%2085.8909%20207.364%2084.0823%20200.034C82.3181%20192.64%2079.5727%20184.949%2078.6611%20177.391C76.5469%20159.863%2079.5653%20139.976%2086.8282%20123.995C88.3992%20120.548%2090.154%20117.188%2092.0853%20113.93C93.8686%20110.918%2095.8077%20107.996%2097.4686%20104.884C105.381%2090.0624%20107.985%2079.6218%20122.946%2070.4351C127.541%2067.6414%20132.39%2065.2891%20137.427%2063.4088C142.128%2061.6466%20146.927%2060.1564%20151.799%2058.9453C154.461%2058.2781%20157.583%2057.7412%20160.154%2056.9338C161.718%2056.4427%20160.365%2053.99%20163.243%2053.0023ZM94.2395%20200.83C94.8701%20207.875%2096.7366%20211.977%2099.4181%20218.336C101.316%20222.837%20102.185%20226.54%20104.869%20230.844C107.699%20235.309%20111.211%20239.302%20115.277%20242.675C117.932%20244.899%20120.703%20246.83%20123.791%20248.405C125.533%20249.294%20127.464%20249.96%20129.167%20250.878C134.291%20253.638%20138.466%20257.942%20142.481%20262.082C143.048%20262.668%20143.584%20263.248%20144.204%20263.78C140.817%20258.212%20135.345%20251.997%20129.718%20248.681C127.395%20247.313%20124.341%20246.405%20122.052%20244.684C115.279%20239.558%20109.578%20232.9%20104.405%20226.203C102.859%20224.199%20102.541%20220.351%20101.468%20218.354C99.0241%20213.799%2096.7219%20209.905%2095.4909%20204.771C95.296%20203.957%2094.6084%20201.556%2094.2395%20200.83ZM140.446%20123.432C139.964%20132.273%20133.613%20139.317%20132.321%20147.894C130.607%20159.269%20134.108%20170.286%20133.839%20181.607C133.777%20184.192%20132.602%20186.379%20132.115%20188.866C131.364%20192.779%20131.435%20195.056%20129.381%20198.588C116.107%20184.578%20112.531%20173.476%20112.831%20155.317C112.86%20153.568%20113.626%20144.991%20113.567%20144.71C112.738%20147.907%20111.96%20150.805%20111.463%20154.077C108.909%20170.869%20111.977%20186.35%20123.288%20199.416C125.467%20201.686%20127.5%20203.493%20130.127%20205.253C132.043%20206.537%20134.274%20207.764%20136.046%20209.202C145.688%20217.03%20151.822%20228.677%20156.299%20239.993C153.827%20226.094%20149.714%20217.382%20139.18%20207.4C136.633%20204.984%20133.67%20202.777%20131.156%20200.391C135.224%20194.991%20135.307%20191.415%20135.745%20184.792C135.901%20182.434%20136.265%20180.05%20136.289%20177.66C136.303%20175.836%20136.172%20174.015%20135.899%20172.211C135.094%20166.548%20132.619%20160.723%20133.189%20155.17C134.252%20144.802%20142.076%20137.147%20141.197%20126.265C141.135%20125.502%20140.956%20123.96%20140.446%20123.432ZM98.4037%20137.606C97.6592%20138.678%2097.0242%20139.791%2096.3636%20140.915C92.263%20147.614%2088.5101%20157.766%2089.2548%20165.526C89.5297%20168.392%2090.5655%20172.814%2091.1757%20175.766C91.8628%20179.09%2092.447%20182.92%2093.1965%20186.178C93.8222%20181.03%2093.9283%20178.441%2093.052%20173.132C92.629%20170.569%2091.8065%20166.986%2091.5492%20164.506C90.7325%20156.633%2093.7568%20148.054%2096.8907%20140.916C97.3825%20139.931%2098.0869%20138.626%2098.4037%20137.606ZM160.474%2076.8124C160.335%2077.8299%20160.138%2079.8092%20159.931%2080.7285C158.207%2093.3157%20157.149%20105.925%20156.533%20118.612C155.742%20134.893%20158.142%20150.627%20159.844%20166.748C160.068%20168.421%20160.279%20170.12%20160.344%20171.809C160.282%20172.402%20160.266%20172.378%20160.398%20172.953L160.573%20172.902C160.76%20171.425%20160.834%20162.927%20160.539%20161.651C160.744%20152.859%20160.561%20143.31%20160.564%20134.438L160.526%2080.5603C160.529%2079.3109%20160.512%2078.0613%20160.474%2076.8124ZM147.991%2070.4541C136.051%2074.5637%20118.122%2084.8524%20112.514%2096.6185C111.293%2099.1806%20110.673%20102.179%20109.85%20104.896C107.594%20112.339%20104.006%20119.232%2098.5584%20124.843L98.6318%20124.939L98.6825%20124.915C107.746%20119.02%20110.94%20114.387%20113.817%20104.157C115.328%2098.7821%20119.689%2092.0086%20123.335%2087.7782C126.308%2084.4878%20130.521%2081.2216%20134.196%2078.7706C137.571%2076.5405%20141.039%2074.4558%20144.592%2072.5226C145.155%2072.2104%20147.978%2070.7722%20148.195%2070.4853L147.991%2070.4541Z%22%20fill%3D%22white%22%3E%3C/path%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M174.626%2053.022C178.838%2052.9849%20176.802%2056.4204%20178.841%2056.9385C187.119%2059.1187%20197.266%2060.0383%20204.399%2065.2537C208.484%2068.2391%20212.029%2072.76%20216.234%2076.1061C221.042%2079.9328%20226.694%2084.1058%20231.036%2088.3794C240.664%2097.8612%20247.966%20110.969%20251.736%20123.926C252.897%20128.024%20253.601%20132.513%20254.613%20136.704C256.284%20143.624%20258.711%20150.899%20259.883%20157.885C262.992%20176.408%20259.437%20198.572%20251.374%20215.473C248.312%20221.893%20244.709%20226.904%20241.492%20232.975C237.179%20241.115%20234.234%20248.217%20228.949%20255.832C220.296%20267.986%20201.843%20275.207%20187.925%20278.705C185.379%20279.344%20181.262%20280.137%20178.698%20280.957C177.638%20281.575%20177.761%20283.725%20176.792%20284.358C174.809%20285.656%20172.975%20284.37%20171.825%20282.729C171.577%20281.004%20171.665%20277.955%20171.67%20276.127L171.676%20265.936L171.637%2068.8649C171.631%2064.8287%20171.59%2060.7899%20171.659%2056.7549C171.7%2054.4201%20172.435%2053.7035%20174.626%2053.022ZM240.542%20212.851C239.813%20212.908%20237.737%20214.629%20237.063%20215.144C232.663%20218.473%20228.694%20222.515%20227.052%20227.964C224.848%20235.282%20221.74%20242.822%20216.721%20248.761C210.616%20255.984%20201.05%20261.666%20192.815%20266.189C191.9%20266.594%20191.315%20266.954%20190.466%20267.466C191.031%20267.52%20192.81%20266.72%20193.401%20266.461C195.305%20265.811%20198.509%20264.252%20200.375%20263.314C210.348%20258.301%20221.744%20250.994%20226.711%20240.627C227.901%20238.14%20228.136%20236.075%20228.903%20233.499C229.943%20229.997%20231.311%20226.602%20232.988%20223.357C234.395%20220.618%20236.077%20218.027%20238.006%20215.629C238.469%20215.06%20240.407%20213.064%20240.542%20212.851ZM178.512%20165.487C178.212%20168.598%20178.386%20174.405%20178.386%20177.767L178.392%20240.674C178.392%20247.431%20178.248%20254.792%20178.42%20261.483C178.576%20260.428%20178.753%20259.354%20178.836%20258.291C179.791%20254.333%20179.969%20248.817%20180.515%20244.665C183.563%20221.49%20182.921%20198.744%20179.631%20175.65C179.321%20173.473%20179.25%20171.198%20178.836%20169.014C178.738%20167.861%20178.655%20166.629%20178.512%20165.487ZM182.873%2098.59C182.899%2099.5151%20183.007%2099.9222%20183.205%20100.805C185.212%20110.548%20188.649%20118.355%20195.332%20125.874C199.239%20130.269%20203.437%20133.588%20207.86%20137.436C206.857%20138.669%20206.193%20139.553%20205.463%20140.982C204.923%20142.025%20204.512%20143.128%20204.235%20144.268C203.731%20146.409%20203.606%20148.769%20203.413%20150.974C202.945%20156.347%20202.276%20160.973%20203.175%20166.368C204.149%20172.209%20206.359%20177.139%20205.696%20183.139C204.534%20193.638%20194.886%20203.656%20198.477%20214.677C198.827%20205.77%20205.471%20198.381%20206.704%20189.62C208.325%20178.111%20204.744%20167.143%20205.168%20155.706C205.248%20153.548%20206.458%20151.228%20206.818%20149.037C207.42%20145.374%20207.74%20142.591%20209.547%20139.272C214.251%20143.646%20220.269%20152.532%20222.631%20158.38C226.907%20168.969%20226.636%20182.2%20225.294%20193.374C232.009%20171.952%20228.17%20145.238%20208.117%20132.108C206.807%20131.25%20205.309%20130.408%20204.061%20129.483C194.203%20122.185%20188.343%20111.119%20183.543%20100.129L183.024%2098.6544L182.873%2098.59ZM245.825%20151.62C245.076%20156.678%20245.137%20160.063%20245.994%20165.132C246.417%20167.627%20247.171%20170.871%20247.433%20173.302C248.223%20180.627%20245.362%20189.545%20242.37%20196.218C241.798%20197.4%20241.414%20198.223%20240.97%20199.45C241.423%20198.827%20242.451%20197.183%20242.855%20196.479C246.681%20190.057%20250.723%20179.388%20249.685%20172.092C248.74%20165.452%20246.914%20158.338%20245.825%20151.62ZM194.316%2073.4993C195.087%2074.6442%20195.927%2075.9587%20196.752%2077.0449C199.417%2081.2642%20205.444%2087.1564%20209.858%2089.494C211.897%2090.5732%20214.732%2091.5225%20216.695%2092.9977C223.34%2097.991%20229.788%20105.267%20234.719%20111.924C235.839%20113.434%20236.801%20117.997%20237.643%20119.837C238.848%20122.245%20240.172%20124.267%20241.301%20126.749C242.735%20129.902%20243.34%20133.7%20244.703%20136.74C244.412%20134.552%20244.344%20132.934%20243.753%20130.698C242.601%20126.353%20240.588%20122.318%20238.999%20118.11C238.001%20115.469%20236.968%20112.357%20235.715%20109.894C231.5%20101.61%20224.097%2094.456%20216.065%2089.8698C213.956%2088.6655%20211.461%2087.8997%20209.339%2086.695C204.712%2084.0683%20200.932%2080.314%20197.229%2076.565C196.472%2075.7487%20195.102%2074.1852%20194.316%2073.4993Z%22%20fill%3D%22white%22%3E%3C/path%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* Direction. Primary: Replit (warm canvas, ember orange for actions only, pill buttons, 400-500 display with tight
+   tracking, 40px bento cards, flat + hairlines, dark preview card, input bar as the hero centrepiece).
+   Borrowed: Things (tilted product mockups with the ambient + contact shadow, mockups only).
+   Borrowed: Air (pill toggle for the install method; one compressed poster statement). */
 :root {
-  --bg: #fbfaf7; --surface: #ffffff; --ink: #1c1a17; --muted: #6b665e; --line: #e6e1d8;
-  --accent: #7a4b1e; --accent-ink: #ffffff; --soft: #f3ede3; --code: #22201c; --code-ink: #f3ede3;
+  --canvas: #faf6f1; --white: #fff; --sand: #dfddd8; --drift: #cbc7c3;
+  --ink: #0e0e0f; --charcoal: #312e2e; --pewter: #52545a; --warm-gray: #76716f; --stone: #898c94;
+  --brand: #cd7864;      /* GTM Walnut terracotta: logo, prompt glyphs, caret, feature card */
+  --ember: #a4513d;      /* primary action + active state only (terracotta darkened for 5:1 text contrast) */
+  --ember-hover: #8e4433;
+  --rust: #a4513d;       /* outline tags only */
+  --coral: #cd7864; --peach: #f2d3c9;   /* feature cards, max 2 per view */
+  --dark: #1a1919;       /* code / preview cards, poster band */
+  --mock-shadow: 0 2px 8px rgba(0,0,0,.10), 0 0 2px rgba(0,0,0,.10);   /* Things: mockups only */
+  --sans: Geist, Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --poster: Anton, "Bebas Neue", Impact, sans-serif;
+  --max: 1200px; --gutter: clamp(16px, 4vw, 40px);
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #161513; --surface: #1f1d1a; --ink: #f1ede6; --muted: #a9a297; --line: #34302b;
-          --accent: #d9a066; --accent-ink: #1c1a17; --soft: #26231f; --code: #0f0e0d; --code-ink: #f1ede6; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 16px/1.5 var(--sans); letter-spacing: -0.01em;
+       -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+svg { display: block; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; font-weight: 450; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 8px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.eyebrow { font-size: 14px; font-weight: 500; color: var(--warm-gray); letter-spacing: -0.01em; }
+
+/* pills */
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 100px;
+        font: 500 15px/1 var(--sans); text-decoration: none; cursor: pointer; border: 0; transition: background-color .2s, color .2s; }
+.pill-ember { background: var(--ember); color: #fff; }
+.pill-ember:hover { background: var(--ember-hover); }
+.pill-line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.pill-line:hover { background: var(--ink); color: #fff; }
+.pill-sm { height: 36px; padding: 0 16px; font-size: 14px; }
+
+/* nav */
+.nav { position: sticky; top: 0; z-index: 30; background: rgba(250,246,241,.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
+/* lockup: name and byline centred as a pair against the logo */
+.brand { align-items: stretch; gap: 10px; }
+.brand svg { width: 36px; height: 36px; flex: none; }
+.brand .name { display: flex; flex-direction: column; justify-content: center; gap: 6px; height: 36px; }
+.brand .name b, .brand .name small { display: block; line-height: 1; text-box: trim-both cap alphabetic; }
+.brand .name b { font-size: 17px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); }
+.brand .name small { font-size: 9.2px; font-weight: 450; letter-spacing: 0; color: var(--warm-gray); }
+@supports not (text-box: trim-both cap alphabetic) {
+  .brand .name b { margin-top: -0.17em; }
+  .brand .name small { margin-bottom: -0.2em; }
 }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-main { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
-section { padding: 48px 0 8px; }
-h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
-h2 { font-size: 1.6rem; margin: 0 0 6px; }
-h3 { margin: 0 0 6px; font-size: 1.08rem; }
-p { margin: 0 0 12px; }
-.lede { font-size: 1.15rem; color: var(--muted); max-width: 46rem; }
-.sub { color: var(--muted); margin-bottom: 20px; }
-.hero { padding-top: 72px; }
-.btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent);
-        text-decoration: none; font-weight: 600; font-size: .95rem; }
-.btn.solid { background: var(--accent); color: var(--accent-ink); }
-.btn.off { opacity: .55; cursor: default; }
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
-.card p { color: var(--muted); font-size: .95rem; }
-.meta { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-.pack { display: flex; flex-direction: column; }
-.pack .for { font-size: .88rem; }
-.pack ul { padding-left: 18px; margin: 8px 0 0; font-size: .9rem; color: var(--muted); }
-.pack li { margin-bottom: 6px; }
-.pack li b { color: var(--ink); font-weight: 600; }
-details summary { cursor: pointer; font-weight: 600; font-size: .92rem; }
-.buy { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.price { font-weight: 700; }
-.bundle { background: var(--soft); }
-.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); counter-reset: s; }
-.steps div { border-top: 3px solid var(--accent); padding-top: 12px; }
-.steps div::before { counter-increment: s; content: "Step " counter(s); display: block; font-weight: 700; color: var(--accent); }
-pre { background: var(--code); color: var(--code-ink); padding: 16px; border-radius: 10px; overflow-x: auto; font-size: .9rem; margin: 0; }
-.copy { position: relative; }
-.copy button { position: absolute; top: 8px; right: 8px; background: transparent; color: var(--code-ink); border: 1px solid #ffffff44;
-               border-radius: 6px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: .8rem; }
-.faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
-.faq details p { margin: 8px 0 0; color: var(--muted); }
-footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 24px; color: var(--muted); font-size: .9rem; }
-a { color: var(--accent); }
+.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav ul a { text-decoration: none; font-size: 14px; font-weight: 500; color: #36373b; transition: color .2s; }
+.nav ul a:hover { color: var(--ink); }
+.nav .act { display: flex; align-items: center; gap: 10px; }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 4vw, 56px); align-items: center;
+        padding-top: clamp(24px, 3.5vw, 44px); }
+.hero-copy { text-align: left; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 6px; border-radius: 100px; background: var(--white);
+         box-shadow: inset 0 0 0 1px var(--sand); font-size: 13px; font-weight: 500; text-decoration: none; color: var(--charcoal); }
+.badge b { background: var(--ember); color: #fff; font-weight: 500; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+.hero h1 { font-size: clamp(40px, 5vw, 66px); line-height: .94; letter-spacing: -0.05em; margin-top: 40px; }
+.hero .sub { margin-top: 18px; max-width: 32em; font-size: clamp(16px, 1.4vw, 18px); color: var(--pewter); }
+
+/* Air pill toggle */
+.toggle { display: inline-flex; gap: 4px; padding: 4px; margin-top: 22px; border-radius: 100px; background: rgba(14,14,15,.06); }
+.toggle button { height: 34px; padding: 0 16px; border: 0; border-radius: 100px; background: transparent; cursor: pointer;
+                 font: 500 14px/1 var(--sans); color: var(--pewter); transition: background-color .2s, color .2s; }
+.toggle button[aria-selected="true"] { background: var(--white); color: var(--ink); box-shadow: 0 0 0 1px var(--sand); }
+
+/* Replit input bar = the install command */
+.bar { position: relative; max-width: 600px; margin: 10px 0 0; background: var(--white); border: 1px solid var(--sand); border-radius: 20px;
+       padding: 10px 10px 10px 22px; display: flex; align-items: center; gap: 14px; min-height: 64px; text-align: left; }
+.bar pre { flex: 1; min-width: 0; margin: 0; font: 400 15px/1.7 var(--mono); white-space: pre; overflow-x: auto; scrollbar-width: none; }
+.bar pre::-webkit-scrollbar { display: none; }
+.bar pre .p { color: var(--ember); user-select: none; }
+.bar p { flex: 1; font-size: 15px; color: var(--pewter); }
+.go { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--ember); color: #fff; cursor: pointer;
+      display: grid; place-items: center; transition: background-color .2s, transform .2s; }
+.go:hover { background: var(--ember-hover); }
+.go:active { transform: scale(.94); }
+.go .ok { display: none; }
+.go.done .ok { display: block; }
+.go.done .cp { display: none; }
+.js .bars > div:not(.on) { display: none; }
+.hero .fine { margin-top: 12px; font-size: 13px; color: var(--warm-gray); }
+
+/* the brain: Obsidian-style graph of the real skills, packs and hand-offs (Replit dark preview + Things mockup shadow) */
+.brain { margin: 0; background: var(--dark); border-radius: 18px; box-shadow: var(--mock-shadow); overflow: hidden; color: #e9e6e1; }
+.brain-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.brain-head span:first-child { font: 400 12px var(--mono); color: #b9b4ad; }
+/* Monopo's iridescent atmosphere (sage > amber > oxblood): media only, lives behind the graph, never on UI */
+.brain-stage { position: relative; isolation: isolate; }
+.brain-stage canvas, .brain-stage .liquid-still { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.brain-stage .liquid-still { background:
+    radial-gradient(60% 70% at 18% 30%, rgba(160,224,171,.55), transparent 70%),
+    radial-gradient(55% 60% at 70% 45%, rgba(255,172,46,.6), transparent 70%),
+    radial-gradient(70% 70% at 60% 100%, rgba(165,45,37,.85), transparent 75%), #1a1919; filter: saturate(1.1); }
+.brain-stage::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;   /* Dala: the void does the work */
+    background: radial-gradient(70% 70% at 50% 48%, rgba(8,7,7,.55), rgba(8,7,7,.86)); }
+.brain-stage #brain3d { position: relative; inset: auto; z-index: 0; display: block; width: 100%; height: auto; aspect-ratio: 600 / 470; }
+.brain figcaption { padding: 12px 18px 16px; border-top: 1px solid rgba(255,255,255,.08); font-size: 13px; color: #a39e97; }
+.hero .fine a { color: inherit; text-underline-offset: 3px; }
+
+/* Things gallery: tilted, shadowed product mockups */
+.gallery { display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: center; column-gap: 8px;
+           margin: clamp(56px, 8vw, 88px) auto 0; max-width: 1180px; padding: 0 var(--gutter) clamp(24px, 4vw, 48px); }
+.mock { margin: 0; background: var(--white); border-radius: 18px; box-shadow: var(--mock-shadow); overflow: hidden; text-align: left; }
+.mock.a { transform: rotate(-4deg) translate(6px, 22px); z-index: 1; }
+.mock.b { transform: rotate(1deg); z-index: 2; }
+.mock.c { transform: rotate(3deg) translate(-6px, 26px); z-index: 1; }
+.mock-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 18px; border-bottom: 1px solid #efece7; }
+.mock-head strong { font-size: 14px; font-weight: 550; letter-spacing: -0.02em; }
+.chip { font: 500 11px/1 var(--sans); padding: 5px 8px; border-radius: 6px; background: #f3efe9; color: var(--warm-gray); white-space: nowrap; }
+.mock-body { padding: 14px 18px 18px; font-size: 13px; }
+.mock-foot { margin-top: 12px; padding-top: 12px; border-top: 1px solid #efece7; display: flex; justify-content: space-between; color: var(--warm-gray); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+/* A: ICP fit filter */
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 7px 0; }
+.rows li span:first-child { font-weight: 500; }
+.rows .tag { font-size: 11px; color: var(--warm-gray); }
+.rows li.cut .tag { color: var(--rust); box-shadow: inset 0 0 0 1px var(--rust); padding: 2px 6px; border-radius: 6px; }
+.rows li.cut::after { content: ""; position: absolute; left: 0; top: 50%; height: 1.5px; width: 0; background: var(--ink); animation: strike 9s ease-in-out infinite; }
+.rows li.cut { animation: dim 9s ease-in-out infinite; }
+.rows li.cut:nth-child(4)::after, .rows li.cut:nth-child(4) { animation-delay: .5s; }
+.rows li.cut:nth-child(6)::after, .rows li.cut:nth-child(6) { animation-delay: 1s; }
+@keyframes strike { 0%, 12% { width: 0; } 24%, 82% { width: 64%; } 94%, 100% { width: 0; } }
+@keyframes dim { 0%, 14% { opacity: 1; } 26%, 82% { opacity: .38; } 94%, 100% { opacity: 1; } }
+
+/* B: dark terminal (Replit dark preview) */
+.mock.term { background: var(--dark); color: #e9e6e1; }
+.term .mock-head { border-color: rgba(255,255,255,.08); }
+.term .chip { background: rgba(255,255,255,.08); color: #b9b4ad; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.16); }
+.tlines { list-style: none; margin: 0; padding: 16px 20px 20px; font: 400 12.5px/1.8 var(--mono); font-variant-numeric: tabular-nums; min-height: 290px; }
+.tlines li { white-space: pre; overflow: hidden; text-overflow: ellipsis; }
+.tlines .u { color: #fff; }
+.tlines .u .p, .tlines .ask b { color: var(--brand); }
+.tlines .d { color: #8f8a83; }
+.tlines .r { display: flex; justify-content: space-between; gap: 16px; }
+.tlines .r span:last-child { color: #8f8a83; }
+.caret { display: inline-block; width: .55em; height: 1.05em; vertical-align: -.18em; background: var(--brand); animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.js .tlines li.wait { visibility: hidden; }
+
+/* C: deliverability */
+.inbox { display: grid; grid-template-columns: 74px 1fr 30px; align-items: center; gap: 10px; padding: 6px 0; font-variant-numeric: tabular-nums; }
+.inbox span:first-child { color: var(--pewter); font: 400 12px var(--mono); }
+.inbox .track { height: 8px; border-radius: 100px; background: #f1ede7; overflow: hidden; }
+.inbox .fill { display: block; height: 100%; border-radius: 100px; background: var(--ink); width: var(--w); transform-origin: left; animation: grow 9s cubic-bezier(.2,.7,.2,1) infinite; }
+.inbox.low .fill { background: var(--drift); }
+.inbox b { font-weight: 500; text-align: right; font-size: 12px; }
+.inbox.low b { color: var(--rust); }
+.out { display: inline-flex; margin-top: 10px; font-size: 11px; font-weight: 500; color: var(--rust); box-shadow: inset 0 0 0 1px var(--rust); border-radius: 6px; padding: 4px 8px; animation: pop 9s ease-in-out infinite; }
+@keyframes grow { 0% { transform: scaleX(0); } 18%, 100% { transform: scaleX(1); } }
+@keyframes pop { 0%, 30% { opacity: 0; transform: translateY(4px); } 38%, 90% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+
+/* bento shelf */
+.shelf { padding-top: clamp(80px, 10vw, 128px); }
+.shelf-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.shelf-head h2 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1; letter-spacing: -0.045em; max-width: 13em; }
+.shelf-head p { color: var(--pewter); max-width: 24em; }
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+.card { border-radius: 40px; padding: 32px; background: var(--white); border: 1px solid var(--sand); display: flex; flex-direction: column; min-height: 260px; }
+.card.w5 { grid-column: span 5; } .card.w7 { grid-column: span 7; } .card.w4 { grid-column: span 4; } .card.w3 { grid-column: span 3; }
+.card.coral { background: var(--coral); border-color: var(--coral); }
+.card.peach { background: var(--peach); border-color: var(--peach); }
+.card .eyebrow { color: var(--charcoal); }
+.card h3 { margin-top: 10px; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.02; letter-spacing: -0.04em; }
+.card .blurb { margin-top: 10px; color: var(--pewter); font-size: 15px; max-width: 30em; }
+.card.coral .blurb, .card.peach .blurb { color: var(--charcoal); }
+.card .end { margin-top: auto; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.price { font-size: 14px; font-weight: 500; color: var(--charcoal); }
+.card details { margin-top: 18px; }
+.card summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; }
+.card summary::-webkit-details-marker { display: none; }
+.card summary svg { transition: transform .2s; }
+.card details[open] summary svg { transform: rotate(45deg); }
+.card details ul { list-style: none; margin: 12px 0 0; padding: 0; font-size: 14px; }
+.card details li { padding: 6px 0; border-top: 1px solid rgba(14,14,15,.1); }
+.card details li span { color: var(--pewter); }
+.card.coral details li span, .card.peach details li span { color: var(--charcoal); }
+.free-skills { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 8px; }
+.free-skills li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
+.free-skills li::before { content: ""; width: 18px; height: 18px; border-radius: 6px; background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/12px no-repeat; flex: none; }
+.pill.off { background: transparent; color: var(--charcoal); box-shadow: inset 0 0 0 1.5px rgba(14,14,15,.25); cursor: default; }
+
+/* poster band (Replit dark card + Air compressed statement) */
+.poster { margin-top: 12px; background: var(--dark); color: #fff; border-radius: 40px; padding: clamp(36px, 6vw, 72px) clamp(24px, 5vw, 64px); overflow: hidden; }
+.poster h2 { font: 400 clamp(48px, 8.4vw, 124px)/.94 var(--poster); max-width: 9.5em; text-transform: uppercase; letter-spacing: -0.005em; }
+.poster h2 .caret { width: .42em; height: .78em; vertical-align: -.02em; margin-left: .08em; }
+.poster-row { margin-top: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.poster-row b { display: block; font-weight: 500; }
+.poster-row span { display: block; margin-top: 4px; color: #a39e97; font-size: 15px; }
+
+/* faq, compact */
+.faq { padding-top: clamp(72px, 9vw, 112px); display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; }
+.faq h2 { grid-column: span 4; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.02; letter-spacing: -0.04em; }
+.faq dl { grid-column: 6 / span 7; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+.faq dt { font-weight: 500; letter-spacing: -0.02em; }
+.faq dd { margin: 6px 0 0; color: var(--pewter); font-size: 15px; }
+.faq code { font: 400 13px var(--mono); background: rgba(14,14,15,.06); padding: 1px 6px; border-radius: 6px; }
+
+/* footer */
+footer { margin-top: clamp(72px, 9vw, 112px); border-top: 1px solid var(--sand); }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 28px; padding-bottom: 36px; font-size: 14px; color: var(--warm-gray); }
+footer nav { display: flex; gap: 22px; flex-wrap: wrap; }
+footer a { text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--ink); }
+footer .dfy { color: var(--ink); font-weight: 500; }
+footer .dfy:hover { color: var(--ember); }
+footer .made { display: inline-flex; align-items: center; gap: 10px; }
+footer .made svg { height: 22px; width: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rows li.cut::after { animation: none; width: 64%; }
+  .rows li.cut { animation: none; opacity: .38; }
+  .inbox .fill, .out, .caret { animation: none; }
+}
+
+@media (max-width: 960px) {
+  .nav ul { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .brain { max-width: 560px; }
+  .gallery { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-top: 8px; padding-bottom: 28px; scrollbar-width: none; }
+  .gallery::-webkit-scrollbar { display: none; }
+  .mock { flex: 0 0 min(86%, 420px); scroll-snap-align: center; transform: none !important; }
+  .mock.b { order: -1; }
+  .card.w5, .card.w4, .card.w3 { grid-column: span 6; }
+  .card.w7 { grid-column: span 12; }
+  .poster-row { grid-template-columns: 1fr; gap: 16px; }
+  .faq h2, .faq dl { grid-column: 1 / -1; }
+  .faq dl { margin-top: 28px; }
+}
+@media (max-width: 600px) {
+  .nav .act .pill-line { display: none; }
+  .bar { padding-left: 16px; border-radius: 18px; }
+  .bar pre { font-size: 13px; }
+  .card.w5, .card.w7, .card.w4, .card.w3 { grid-column: 1 / -1; }
+  .card { border-radius: 32px; padding: 26px; min-height: 0; }
+  .faq dl { grid-template-columns: 1fr; }
+  .tlines { font-size: 11.5px; min-height: 0; }
+}
 </style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <section class="hero">
-    <div class="meta">GTM Walnut Skills</div>
-    <h1>Skills that run your GTM like an operator would</h1>
-    <p class="lede">Agent Skills for Claude and other AI agents, built from live client work: ICPs, lists, outreach, replies,
-    deliverability, CRM data, signals and automation. Each one walks you through the job step by step.</p>
-    <div class="btns"><a class="btn solid" href="#free">Install free</a><a class="btn" href="#packs">See the packs</a></div>
-  </section>
 
-  <section>
-    <h2>How it works</h2>
-    <div class="steps">
-      <div><p>Install the plugin in Claude Code, or upload the zip on Claude.ai.</p></div>
-      <div><p>Type the skill name, or just say what you need. The guide skill points you to the right one.</p></div>
-      <div><p>It asks a few questions, shows a plan, and does the work with you. You approve every step that sends or writes.</p></div>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Skillnut by GTM Walnut, home">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338 338" fill="none"><rect width="338" height="338" rx="56" fill="#CD7864"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M163.243 53.0023C168.058 52.8885 167.317 57.0256 167.316 60.3473C167.3 63.3185 167.3 66.2898 167.317 69.261L167.395 276.591C167.395 277.963 167.454 280.433 167.321 281.732C167.258 282.384 166.996 283.003 166.573 283.503C166.026 284.143 164.643 284.968 163.79 284.995C161.29 285.163 161.613 281.165 159.729 280.719C151.222 278.705 141.603 277.636 134.295 272.383C130.906 269.912 128.369 266.529 125.168 263.809C123.39 262.298 121.649 260.875 119.837 259.414C117.611 257.619 115.191 255.854 113.078 253.956C102.758 246.357 93.966 232.326 89.3685 220.413C86.583 213.195 85.8909 207.364 84.0823 200.034C82.3181 192.64 79.5727 184.949 78.6611 177.391C76.5469 159.863 79.5653 139.976 86.8282 123.995C88.3992 120.548 90.154 117.188 92.0853 113.93C93.8686 110.918 95.8077 107.996 97.4686 104.884C105.381 90.0624 107.985 79.6218 122.946 70.4351C127.541 67.6414 132.39 65.2891 137.427 63.4088C142.128 61.6466 146.927 60.1564 151.799 58.9453C154.461 58.2781 157.583 57.7412 160.154 56.9338C161.718 56.4427 160.365 53.99 163.243 53.0023ZM94.2395 200.83C94.8701 207.875 96.7366 211.977 99.4181 218.336C101.316 222.837 102.185 226.54 104.869 230.844C107.699 235.309 111.211 239.302 115.277 242.675C117.932 244.899 120.703 246.83 123.791 248.405C125.533 249.294 127.464 249.96 129.167 250.878C134.291 253.638 138.466 257.942 142.481 262.082C143.048 262.668 143.584 263.248 144.204 263.78C140.817 258.212 135.345 251.997 129.718 248.681C127.395 247.313 124.341 246.405 122.052 244.684C115.279 239.558 109.578 232.9 104.405 226.203C102.859 224.199 102.541 220.351 101.468 218.354C99.0241 213.799 96.7219 209.905 95.4909 204.771C95.296 203.957 94.6084 201.556 94.2395 200.83ZM140.446 123.432C139.964 132.273 133.613 139.317 132.321 147.894C130.607 159.269 134.108 170.286 133.839 181.607C133.777 184.192 132.602 186.379 132.115 188.866C131.364 192.779 131.435 195.056 129.381 198.588C116.107 184.578 112.531 173.476 112.831 155.317C112.86 153.568 113.626 144.991 113.567 144.71C112.738 147.907 111.96 150.805 111.463 154.077C108.909 170.869 111.977 186.35 123.288 199.416C125.467 201.686 127.5 203.493 130.127 205.253C132.043 206.537 134.274 207.764 136.046 209.202C145.688 217.03 151.822 228.677 156.299 239.993C153.827 226.094 149.714 217.382 139.18 207.4C136.633 204.984 133.67 202.777 131.156 200.391C135.224 194.991 135.307 191.415 135.745 184.792C135.901 182.434 136.265 180.05 136.289 177.66C136.303 175.836 136.172 174.015 135.899 172.211C135.094 166.548 132.619 160.723 133.189 155.17C134.252 144.802 142.076 137.147 141.197 126.265C141.135 125.502 140.956 123.96 140.446 123.432ZM98.4037 137.606C97.6592 138.678 97.0242 139.791 96.3636 140.915C92.263 147.614 88.5101 157.766 89.2548 165.526C89.5297 168.392 90.5655 172.814 91.1757 175.766C91.8628 179.09 92.447 182.92 93.1965 186.178C93.8222 181.03 93.9283 178.441 93.052 173.132C92.629 170.569 91.8065 166.986 91.5492 164.506C90.7325 156.633 93.7568 148.054 96.8907 140.916C97.3825 139.931 98.0869 138.626 98.4037 137.606ZM160.474 76.8124C160.335 77.8299 160.138 79.8092 159.931 80.7285C158.207 93.3157 157.149 105.925 156.533 118.612C155.742 134.893 158.142 150.627 159.844 166.748C160.068 168.421 160.279 170.12 160.344 171.809C160.282 172.402 160.266 172.378 160.398 172.953L160.573 172.902C160.76 171.425 160.834 162.927 160.539 161.651C160.744 152.859 160.561 143.31 160.564 134.438L160.526 80.5603C160.529 79.3109 160.512 78.0613 160.474 76.8124ZM147.991 70.4541C136.051 74.5637 118.122 84.8524 112.514 96.6185C111.293 99.1806 110.673 102.179 109.85 104.896C107.594 112.339 104.006 119.232 98.5584 124.843L98.6318 124.939L98.6825 124.915C107.746 119.02 110.94 114.387 113.817 104.157C115.328 98.7821 119.689 92.0086 123.335 87.7782C126.308 84.4878 130.521 81.2216 134.196 78.7706C137.571 76.5405 141.039 74.4558 144.592 72.5226C145.155 72.2104 147.978 70.7722 148.195 70.4853L147.991 70.4541Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M174.626 53.022C178.838 52.9849 176.802 56.4204 178.841 56.9385C187.119 59.1187 197.266 60.0383 204.399 65.2537C208.484 68.2391 212.029 72.76 216.234 76.1061C221.042 79.9328 226.694 84.1058 231.036 88.3794C240.664 97.8612 247.966 110.969 251.736 123.926C252.897 128.024 253.601 132.513 254.613 136.704C256.284 143.624 258.711 150.899 259.883 157.885C262.992 176.408 259.437 198.572 251.374 215.473C248.312 221.893 244.709 226.904 241.492 232.975C237.179 241.115 234.234 248.217 228.949 255.832C220.296 267.986 201.843 275.207 187.925 278.705C185.379 279.344 181.262 280.137 178.698 280.957C177.638 281.575 177.761 283.725 176.792 284.358C174.809 285.656 172.975 284.37 171.825 282.729C171.577 281.004 171.665 277.955 171.67 276.127L171.676 265.936L171.637 68.8649C171.631 64.8287 171.59 60.7899 171.659 56.7549C171.7 54.4201 172.435 53.7035 174.626 53.022ZM240.542 212.851C239.813 212.908 237.737 214.629 237.063 215.144C232.663 218.473 228.694 222.515 227.052 227.964C224.848 235.282 221.74 242.822 216.721 248.761C210.616 255.984 201.05 261.666 192.815 266.189C191.9 266.594 191.315 266.954 190.466 267.466C191.031 267.52 192.81 266.72 193.401 266.461C195.305 265.811 198.509 264.252 200.375 263.314C210.348 258.301 221.744 250.994 226.711 240.627C227.901 238.14 228.136 236.075 228.903 233.499C229.943 229.997 231.311 226.602 232.988 223.357C234.395 220.618 236.077 218.027 238.006 215.629C238.469 215.06 240.407 213.064 240.542 212.851ZM178.512 165.487C178.212 168.598 178.386 174.405 178.386 177.767L178.392 240.674C178.392 247.431 178.248 254.792 178.42 261.483C178.576 260.428 178.753 259.354 178.836 258.291C179.791 254.333 179.969 248.817 180.515 244.665C183.563 221.49 182.921 198.744 179.631 175.65C179.321 173.473 179.25 171.198 178.836 169.014C178.738 167.861 178.655 166.629 178.512 165.487ZM182.873 98.59C182.899 99.5151 183.007 99.9222 183.205 100.805C185.212 110.548 188.649 118.355 195.332 125.874C199.239 130.269 203.437 133.588 207.86 137.436C206.857 138.669 206.193 139.553 205.463 140.982C204.923 142.025 204.512 143.128 204.235 144.268C203.731 146.409 203.606 148.769 203.413 150.974C202.945 156.347 202.276 160.973 203.175 166.368C204.149 172.209 206.359 177.139 205.696 183.139C204.534 193.638 194.886 203.656 198.477 214.677C198.827 205.77 205.471 198.381 206.704 189.62C208.325 178.111 204.744 167.143 205.168 155.706C205.248 153.548 206.458 151.228 206.818 149.037C207.42 145.374 207.74 142.591 209.547 139.272C214.251 143.646 220.269 152.532 222.631 158.38C226.907 168.969 226.636 182.2 225.294 193.374C232.009 171.952 228.17 145.238 208.117 132.108C206.807 131.25 205.309 130.408 204.061 129.483C194.203 122.185 188.343 111.119 183.543 100.129L183.024 98.6544L182.873 98.59ZM245.825 151.62C245.076 156.678 245.137 160.063 245.994 165.132C246.417 167.627 247.171 170.871 247.433 173.302C248.223 180.627 245.362 189.545 242.37 196.218C241.798 197.4 241.414 198.223 240.97 199.45C241.423 198.827 242.451 197.183 242.855 196.479C246.681 190.057 250.723 179.388 249.685 172.092C248.74 165.452 246.914 158.338 245.825 151.62ZM194.316 73.4993C195.087 74.6442 195.927 75.9587 196.752 77.0449C199.417 81.2642 205.444 87.1564 209.858 89.494C211.897 90.5732 214.732 91.5225 216.695 92.9977C223.34 97.991 229.788 105.267 234.719 111.924C235.839 113.434 236.801 117.997 237.643 119.837C238.848 122.245 240.172 124.267 241.301 126.749C242.735 129.902 243.34 133.7 244.703 136.74C244.412 134.552 244.344 132.934 243.753 130.698C242.601 126.353 240.588 122.318 238.999 118.11C238.001 115.469 236.968 112.357 235.715 109.894C231.5 101.61 224.097 94.456 216.065 89.8698C213.956 88.6655 211.461 87.8997 209.339 86.695C204.712 84.0683 200.932 80.314 197.229 76.565C196.472 75.7487 195.102 74.1852 194.316 73.4993Z" fill="white"></path></svg><span class="name"><b>Skillnut</b><small>by GTM Walnut</small></span>
+    </a>
+    <nav aria-label="Sections"><ul><li><a href="#shelf">Packs</a></li><li><a href="#trust">Safety</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+    <div class="act">
+      <a class="pill pill-line pill-sm" href="https://github.com/gtmwalnut/skillnut">GitHub</a>
+      <a class="pill pill-ember pill-sm" href="#top">Install free</a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <section id="free">
-    <h2>Free skills</h2>
-    <p class="sub">Four skills to try the depth. Install them in Claude Code:</p>
-    <div class="copy"><pre><code>/plugin marketplace add gtmwalnut/skills
-/plugin install gtm-walnut-free@gtmwalnut</code></pre><button type="button" data-copy>Copy</button></div>
-    <p class="sub" style="margin-top:12px">Any other agent: <code>npx skills add gtmwalnut/skills</code>. Claude.ai or Claude Desktop: <a href="gtm-walnut-free.zip">download the zip</a>, then Customize, Skills, Upload a skill.</p>
-    <div class="grid"><article class="card"><h3>gtm-walnut-start</h3><p>Asks what you are working on and points you to the right skill (this guide).</p></article><article class="card"><h3>icp-builder</h3><p>Builds the ICP from calls, CRM wins and interviews, ending in a targeting spec.</p></article><article class="card"><h3>cold-call-openers</h3><p>Nine word-for-word openers by prep level, delivery rules, a two-week A/B test.</p></article><article class="card"><h3>linkedin-post-generator</h3><p>Writes, rewrites and diagnoses LinkedIn posts.</p></article></div>
-  </section>
+<main id="top">
+<section class="hero wrap">
+ <div class="hero-copy">
+  <a class="badge" href="#shelf"><b>New</b>4 free skills, 24 in paid packs</a>
+  <br>
 
-  <section id="packs">
-    <h2>Paid packs</h2>
-    <p class="sub">Pay once. 24 skills in 6 packs, delivered through a private GitHub repo and as zips.</p>
-    <div class="grid">
-      <article class="card pack">
-        <div class="meta">Paid pack · 6 skills · pay once</div>
-        <h3>Outbound Execution</h3>
-        <p class="blurb">Everything between a finished list and a booked meeting: pre-send checks, copy, campaign upload, replies.</p>
-        <p class="for">For: Teams running cold email and LinkedIn every week</p>
-        <details><summary>What's inside</summary><ul><li><b>campaign-send-checklist</b>: Last pass on a list before a send: suppression, prior outreach, fit, polish.</li><li><b>crm-overlap-check</b>: Removes anyone in a live deal, active conversation or the CRM before launch.</li><li><b>copywriting-messaging</b>: Research, write and polish cold email and LinkedIn copy.</li><li><b>email-and-linkedin-sequencer-lead-upload</b>: Builds campaigns and loads leads into email and LinkedIn sequencers.</li><li><b>ai-responder</b>: Drafts replies to every response, with a human approving each send.</li><li><b>campaign-reply-insights</b>: Analyses replies to learn which lists, angles and copy work.</li></ul></details>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
-      <article class="card pack">
-        <div class="meta">Paid pack · 5 skills · pay once</div>
-        <h3>Lists &amp; Data</h3>
-        <p class="blurb">Build the market, target it tightly, filter out non-buyers and keep the CRM clean.</p>
-        <p class="for">For: RevOps and list builders</p>
-        <details><summary>What's inside</summary><ul><li><b>tam-list-builder</b>: Builds the total addressable market, including local and niche markets.</li><li><b>outbound-targeting</b>: A tight, in-motion, campaign-ready list instead of a broad one.</li><li><b>icp-fit-filter</b>: Strips agencies, competitors and non-buyers out of a list.</li><li><b>crm-data-health</b>: Audits and repairs CRM data, writing only with sign-off.</li><li><b>crm-outreach-sync-and-manual-upload</b>: Syncs email and LinkedIn activity from sequencers into the CRM.</li></ul></details>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
-      <article class="card pack">
-        <div class="meta">Paid pack · 5 skills · pay once</div>
-        <h3>Signals &amp; Events</h3>
-        <p class="blurb">Find the accounts that are ready now, from buying signals, developer intent and conference stages.</p>
-        <p class="for">For: Signal-led and event-led outbound</p>
-        <details><summary>What's inside</summary><ul><li><b>buying-signals-playbook</b>: Works out which events mean an account is ready to buy.</li><li><b>reo-to-email-bison-and-heyreach</b>: Turns developer-intent signals into outreach end to end.</li><li><b>conference-speaker-outreach</b>: Turns conference speaker lists into a personalised outbound programme.</li><li><b>lead-attribution-analysis</b>: Shows which sequence of touches leads to a first meeting.</li><li><b>proof-points-by-industry</b>: Turns case studies into proof matched to each prospect&#x27;s industry.</li></ul></details>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
-      <article class="card pack">
-        <div class="meta">Paid pack · 4 skills · pay once</div>
-        <h3>Infrastructure &amp; Automation</h3>
-        <p class="blurb">Deliverability, n8n automations and a dashboard for the whole GTM machine.</p>
-        <p class="for">For: GTM engineers who build and run the stack</p>
-        <details><summary>What's inside</summary><ul><li><b>email-deliverability-metrics-and-dashboard</b>: Deliverability setup, rescue, metrics, and inbox rotation.</li><li><b>n8n-gtme-playbooks</b>: Builds n8n lead-ops automations from zero to live.</li><li><b>gtm-automations</b>: Picks and builds the highest-leverage GTM automations.</li><li><b>gtm-analytics-dashboard</b>: A health and analytics dashboard for the whole GTM workflow.</li></ul></details>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
-      <article class="card pack">
-        <div class="meta">Paid pack · 3 skills · pay once</div>
-        <h3>Strategy &amp; Insights</h3>
-        <p class="blurb">A GTM plan built as a diagnosis and one bet, plus what your sales calls and meetings already know.</p>
-        <p class="for">For: Founders, agencies, sales leaders</p>
-        <details><summary>What's inside</summary><ul><li><b>gtm-strategy-plan</b>: A GTM strategy written as a diagnosis and a single bet.</li><li><b>sales-call-insights</b>: Mines sales calls for buyer language and turns it into outreach.</li><li><b>meeting-to-training-doc</b>: Turns a recorded walkthrough into an illustrated training document.</li></ul></details>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
-      <article class="card pack">
-        <div class="meta">Paid pack · 1 skill · pay once</div>
-        <h3>Content</h3>
-        <p class="blurb">Turn long recordings into Shorts that publish themselves.</p>
-        <p class="for">For: Founders and creators</p>
-        <details><summary>What's inside</summary><ul><li><b>long-video-to-youtube-shorts</b>: Cuts long videos into vertical Shorts and publishes them.</li></ul></details>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
-      <article class="card pack bundle">
-        <div class="meta">All-access bundle · 24 skills · pay once</div>
-        <h3>Every pack</h3>
-        <p class="blurb">All 6 packs, plus every new skill released during your update period.</p>
-        <p class="for">For: agencies and power users</p>
-        <div class="buy"><span class="price">Price coming soon</span><span class="btn solid off" aria-disabled="true">Opens at launch</span></div>
-      </article>
+  <div class="toggle" role="tablist" aria-label="Install method">
+    <button role="tab" id="t-any" aria-controls="b-any" aria-selected="true">Any agent</button>
+    <button role="tab" id="t-cc" aria-controls="b-cc" aria-selected="false" tabindex="-1">Claude Code</button>
+    <button role="tab" id="t-ai" aria-controls="b-ai" aria-selected="false" tabindex="-1">Claude.ai</button>
+  </div>
+  <div class="bars">
+    <div role="tabpanel" id="b-any" aria-labelledby="t-any" class="on">
+      <div class="bar"><pre><span class="p">$ </span>npx skills add gtmwalnut/skillnut</pre><button class="go" type="button" data-copy="npx skills add gtmwalnut/skillnut" aria-label="Copy install command"><svg class="cp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
     </div>
-  </section>
-
-  <section>
-    <h2>Why you can trust it</h2>
-    <div class="grid">
-      <div class="card"><h3>Read-only by default</h3><p>Skills look before they touch. Anything that sends, uploads or writes to your CRM runs as a dry run first and waits for your yes.</p></div>
-      <div class="card"><h3>Built from real work</h3><p>Every skill comes from processes run for real clients, with the examples anonymised.</p></div>
-      <div class="card"><h3>Yours to read</h3><p>Skills are plain text files. You can read every instruction before you run it.</p></div>
+    <div role="tabpanel" id="b-cc" aria-labelledby="t-cc">
+      <div class="bar"><pre><span class="p">&gt; </span>/plugin marketplace add gtmwalnut/skillnut
+<span class="p">&gt; </span>/plugin install skillnut-free@skillnut</pre><button class="go" type="button" data-copy="/plugin marketplace add gtmwalnut/skillnut
+/plugin install skillnut-free@skillnut" aria-label="Copy Claude Code commands"><svg class="cp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
     </div>
-  </section>
+    <div role="tabpanel" id="b-ai" aria-labelledby="t-ai">
+      <div class="bar"><p>Download the zip, then Customize, Skills, Upload a skill.</p><a class="go" href="skillnut-free.zip" download aria-label="Download the free skills zip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a></div>
+    </div>
+  </div>
+  <p class="fine">Free, no sign-up. Skills are plain text files, so you can <a href="https://github.com/gtmwalnut/skillnut">read them on GitHub</a> before you install.</p>
+  <h1>Our GTM playbook, now a one-line install.</h1>
+  <p class="sub">You get the playbooks our team runs for 40+ B2B teams, written so your agent can follow them. It shows you its plan and asks before it sends or changes anything.</p>
+ </div>
+ <figure class="brain" aria-label="Graph of the GTM Walnut playbooks: 28 skills in 6 packs, linked the way we run them">
+  <div class="brain-head"><span>gtm-walnut / brain</span><span class="chip" style="background:rgba(255,255,255,.08);color:#b9b4ad">Live</span></div>
+  <div class="brain-stage"><div class="liquid-still" aria-hidden="true"></div><canvas id="liquid" aria-hidden="true"></canvas><canvas id="brain3d" aria-hidden="true"></canvas></div>
+  <script type="application/json" id="brain-data">[{"pack": "Free", "skills": ["ICP Builder", "Cold Call Openers", "LinkedIn Post Generator"]}, {"pack": "Outbound Execution", "skills": ["Campaign Send Checklist", "CRM Overlap Check", "Copywriting Messaging", "Email and LinkedIn Sequencer Lead Upload", "AI Responder", "Campaign Reply Insights"]}, {"pack": "Lists & Data", "skills": ["TAM List Builder", "Outbound Targeting", "ICP Fit Filter", "CRM Data Health", "CRM Outreach Sync and Manual Upload"]}, {"pack": "Signals & Events", "skills": ["Buying Signals Playbook", "Reo to Email Bison and Heyreach", "Conference Speaker Outreach", "Lead Attribution Analysis", "Proof Points by Industry"]}, {"pack": "Infrastructure & Automation", "skills": ["Email Deliverability Metrics and Dashboard", "N8n GTME Playbooks", "GTM Automations", "GTM Analytics Dashboard"]}, {"pack": "Strategy & Insights", "skills": ["GTM Strategy Plan", "Sales Call Insights", "Meeting to Training Doc"]}, {"pack": "Content", "skills": ["Long Video to YouTube Shorts"]}]</script>
+  <figcaption>Our brain: 28 skills in 6 packs, built from the work we do for clients. It names one skill at a time, so give it a few seconds.</figcaption>
+ </figure>
+</section>
 
-  <section class="faq">
-    <h2>Questions</h2>
-    <details><summary>What is a skill?</summary><p>A folder of instructions an AI agent loads when the job calls for it. It turns a general assistant into one that runs a specific process the way a practitioner would.</p></details>
-    <details><summary>Which tools does it work with?</summary><p>Claude Code, Claude.ai, Claude Desktop, and any agent that reads SKILL.md files. Individual skills work with tools like HubSpot, Attio, Pipedrive, Email Bison, HeyReach, Instantly and n8n.</p></details>
-    <details><summary>Do I need GitHub?</summary><p>Not for the free skills. For paid packs in Claude Code you need a free GitHub account, because updates come from a private repo. On Claude.ai you can use the zip instead.</p></details>
-    <details><summary>How do updates work?</summary><p>Run <code>claude plugin update</code>, or turn on auto-update under /plugin, Marketplaces. It is off by default for marketplaces like this one.</p></details>
-    <details><summary>Can I get a refund?</summary><p>Refund terms are shown at checkout.</p></details>
-  </section>
+<div class="gallery" aria-label="Three skills at work">
+  <figure class="mock a" aria-label="ICP Fit Filter removing agencies and competitors from a list">
+    <div class="mock-head"><strong>ICP Fit Filter</strong><span class="chip">Lists &amp; Data</span></div>
+    <div class="mock-body">
+      <ul class="rows">
+        <li><span>Northwind Analytics</span><span class="tag">B2B SaaS</span></li>
+        <li class="cut"><span>Brightlane Agency</span><span class="tag">Agency</span></li>
+        <li><span>Kestrel Labs</span><span class="tag">B2B SaaS</span></li>
+        <li class="cut"><span>Rival Systems</span><span class="tag">Competitor</span></li>
+        <li><span>Orbit Health</span><span class="tag">Healthtech</span></li>
+        <li class="cut"><span>Pixel &amp; Co</span><span class="tag">Agency</span></li>
+      </ul>
+      <div class="mock-foot"><span>Kept 3 of 6</span><span>Nothing deleted yet</span></div>
+    </div>
+  </figure>
 
-  <footer>
-    <p>Built by Prashant Mantri at <a href="https://gtmwalnut.com">GTM Walnut</a>. Want it done for you? <a href="https://gtmwalnut.com">Get in touch</a>.</p>
-  </footer>
+  <figure class="mock b term" aria-label="A skill running in Claude Code, waiting for approval">
+    <div class="mock-head"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chip">Claude Code</span></div>
+    <ol class="tlines" id="term">
+      <li class="u"><span class="p">&gt;</span> /outbound-targeting</li>
+      <li class="u">  Series A dev tools hiring SDRs, US</li>
+      <li class="d">&#9679; Plan first. Nothing written yet.</li>
+      <li class="r"><span>1  Accounts that fit your ICP</span><span>~1,200</span></li>
+      <li class="r"><span>2  Hiring SDRs, last 60 days</span><span>~140</span></li>
+      <li class="r"><span>3  Minus customers, open deals</span><span>&minus;22</span></li>
+      <li class="r"><span>4  Two buyers per account</span><span>~236</span></li>
+      <li class="ask">  Run step 1? Read-only. <b>(y/n)</b></li>
+      <li class="u"><span class="p">&gt;</span> <span class="caret" aria-hidden="true"></span></li>
+    </ol>
+  </figure>
+
+  <figure class="mock c" aria-label="Deliverability skill pausing a weak inbox">
+    <div class="mock-head"><strong>Inbox rotation</strong><span class="chip">Infrastructure</span></div>
+    <div class="mock-body">
+      <div class="inbox"><span>inbox-01</span><span class="track"><span class="fill" style="--w:96%"></span></span><b>96</b></div>
+      <div class="inbox"><span>inbox-02</span><span class="track"><span class="fill" style="--w:93%"></span></span><b>93</b></div>
+      <div class="inbox low"><span>inbox-03</span><span class="track"><span class="fill" style="--w:74%"></span></span><b>74</b></div>
+      <div class="inbox"><span>inbox-04</span><span class="track"><span class="fill" style="--w:91%"></span></span><b>91</b></div>
+      <div class="inbox"><span>inbox-05</span><span class="track"><span class="fill" style="--w:95%"></span></span><b>95</b></div>
+      <span class="out">inbox-03 paused: 3-day score under 80</span>
+      <div class="mock-foot"><span>3-day health score</span><span>Returns at 90+</span></div>
+    </div>
+  </figure>
+</div>
+
+<section class="shelf wrap" id="shelf">
+  <div class="shelf-head">
+    <h2>Start free. Buy only the packs you need.</h2>
+    <p>The free skills cover your ICP, cold call openers and LinkedIn posts. The other 24 come in 6 packs. You pay once and get them from a private GitHub repo or as zip files.</p>
+  </div>
+  <div class="bento">
+    <article class="card w5">
+      <p class="eyebrow">Free &middot; 4 skills</p>
+      <h3>Start here</h3>
+      <ul class="free-skills"><li>The guide (tells you which skill to run)</li><li>ICP Builder</li><li>Cold Call Openers</li><li>LinkedIn Post Generator</li></ul>
+      <div class="end"><span class="price">Free</span><a class="pill pill-ember pill-sm" href="#top">Install free</a></div>
+    </article>
+    <article class="card w7 coral">
+      <p class="eyebrow">6 skills, one-time price</p>
+      <h3>Outbound Execution</h3>
+      <p class="blurb">Everything between a finished list and a booked meeting: pre-send checks, copy, campaign upload, replies.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>Campaign Send Checklist <span>&middot; Last pass on a list before a send: suppression, prior outreach, fit, polish.</span></li><li>CRM Overlap Check <span>&middot; Removes anyone in a live deal, active conversation or the CRM before launch.</span></li><li>Copywriting Messaging <span>&middot; Research, write and polish cold email and LinkedIn copy.</span></li><li>Email and LinkedIn Sequencer Lead Upload <span>&middot; Builds campaigns and loads leads into email and LinkedIn sequencers.</span></li><li>AI Responder <span>&middot; Drafts replies to every response, with a human approving each send.</span></li><li>Campaign Reply Insights <span>&middot; Analyses replies to learn which lists, angles and copy work.</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+    <article class="card w4">
+      <p class="eyebrow">5 skills, one-time price</p>
+      <h3>Lists &amp; Data</h3>
+      <p class="blurb">Build the market, target it tightly, filter out non-buyers and keep the CRM clean.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>TAM List Builder <span>&middot; Builds the total addressable market, including local and niche markets.</span></li><li>Outbound Targeting <span>&middot; A tight, in-motion, campaign-ready list instead of a broad one.</span></li><li>ICP Fit Filter <span>&middot; Strips agencies, competitors and non-buyers out of a list.</span></li><li>CRM Data Health <span>&middot; Audits and repairs CRM data, writing only with sign-off.</span></li><li>CRM Outreach Sync and Manual Upload <span>&middot; Syncs email and LinkedIn activity from sequencers into the CRM.</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+    <article class="card w4">
+      <p class="eyebrow">5 skills, one-time price</p>
+      <h3>Signals &amp; Events</h3>
+      <p class="blurb">Find the accounts that are ready now, from buying signals, developer intent and conference stages.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>Buying Signals Playbook <span>&middot; Works out which events mean an account is ready to buy.</span></li><li>Reo to Email Bison and Heyreach <span>&middot; Turns developer-intent signals into outreach end to end.</span></li><li>Conference Speaker Outreach <span>&middot; Turns conference speaker lists into a personalised outbound programme.</span></li><li>Lead Attribution Analysis <span>&middot; Shows which sequence of touches leads to a first meeting.</span></li><li>Proof Points by Industry <span>&middot; Turns case studies into proof matched to each prospect&#x27;s industry.</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+    <article class="card w4">
+      <p class="eyebrow">4 skills, one-time price</p>
+      <h3>Infrastructure &amp; Automation</h3>
+      <p class="blurb">Deliverability, n8n automations and a dashboard for the whole GTM machine.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>Email Deliverability Metrics and Dashboard <span>&middot; Deliverability setup, rescue, metrics, and inbox rotation.</span></li><li>N8n GTME Playbooks <span>&middot; Builds n8n lead-ops automations from zero to live.</span></li><li>GTM Automations <span>&middot; Picks and builds the highest-leverage GTM automations.</span></li><li>GTM Analytics Dashboard <span>&middot; A health and analytics dashboard for the whole GTM workflow.</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+    <article class="card w4">
+      <p class="eyebrow">3 skills, one-time price</p>
+      <h3>Strategy &amp; Insights</h3>
+      <p class="blurb">A GTM plan built as a diagnosis and one bet, plus what your sales calls and meetings already know.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>GTM Strategy Plan <span>&middot; A GTM strategy written as a diagnosis and a single bet.</span></li><li>Sales Call Insights <span>&middot; Mines sales calls for buyer language and turns it into outreach.</span></li><li>Meeting to Training Doc <span>&middot; Turns a recorded walkthrough into an illustrated training document.</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+    <article class="card w3">
+      <p class="eyebrow">1 skill, one-time price</p>
+      <h3>Content</h3>
+      <p class="blurb">Turn long recordings into Shorts that publish themselves.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>Long Video to YouTube Shorts <span>&middot; Cuts long videos into vertical Shorts and publishes them.</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+    <article class="card w5 peach">
+      <p class="eyebrow">24 skills, one-time price</p>
+      <h3>All-access</h3>
+      <p class="blurb">All 6 packs, plus every new skill released during your update period.</p>
+      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the packs</summary><ul><li>Outbound Execution <span>&middot; 6 skills</span></li><li>Lists &amp; Data <span>&middot; 5 skills</span></li><li>Signals &amp; Events <span>&middot; 5 skills</span></li><li>Infrastructure &amp; Automation <span>&middot; 4 skills</span></li><li>Strategy &amp; Insights <span>&middot; 3 skills</span></li><li>Content <span>&middot; 1 skills</span></li></ul></details>
+      <div class="end"><span class="pill pill-sm off" aria-disabled="true">Opens at launch</span></div>
+    </article>
+  </div>
+
+  <div class="poster" id="trust">
+    <h2>Nothing sends without your yes<span class="caret" aria-hidden="true"></span></h2>
+    <div class="poster-row">
+      <div><b>Read-only by default</b><span>Anything that sends email, uploads leads or writes to your CRM runs as a dry run first.</span></div>
+      <div><b>From real client work</b><span>Each skill is a process we run for clients, with their names and data taken out.</span></div>
+      <div><b>Runs on your own tools</b><span>Skills use the connectors you already have. Nothing passes through our servers.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq wrap" id="faq">
+  <h2>Questions</h2>
+  <dl>
+    <div><dt>What is a skill?</dt><dd>A folder of plain text instructions. Your agent loads it when a matching job comes up and follows the steps we use with clients.</dd></div>
+    <div><dt>Where does it work?</dt><dd>Claude Code, Claude.ai, Claude Desktop, Cursor, Codex and any agent that reads SKILL.md.</dd></div>
+    <div><dt>Do I need GitHub?</dt><dd>Not for the free skills. Paid packs in Claude Code need a free GitHub account. On Claude.ai you upload a zip instead.</dd></div>
+    <div><dt>How do updates work?</dt><dd>Run <code>claude plugin update</code>. You can also turn on auto-update in Claude Code under /plugin, then Marketplaces.</dd></div>
+  </dl>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span class="made">Skillnut is made by <a href="https://gtmwalnut.com" aria-label="GTM Walnut"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1549 338" fill="none"><path d="M475.916 247.484C461.355 247.484 448.553 244.172 437.512 237.547C426.47 230.922 417.878 221.64 411.736 209.701C405.594 197.762 402.523 183.857 402.523 167.984C402.523 151.56 405.698 137.413 412.047 125.543C418.396 113.604 427.057 104.426 438.029 98.0078C449.071 91.5208 461.527 88.2773 475.398 88.2773C487.199 88.2773 497.965 90.5547 507.695 95.1094C517.495 99.6641 525.535 106.013 531.814 114.156C538.094 122.23 541.89 131.65 543.201 142.416H510.904C509.179 134.549 505.28 128.269 499.207 123.576C493.203 118.814 485.577 116.434 476.33 116.434C463.356 116.434 453.143 121.057 445.689 130.305C438.305 139.552 434.613 152.112 434.613 167.984C434.613 183.788 438.34 196.313 445.793 205.561C453.315 214.739 463.632 219.328 476.744 219.328C487.372 219.328 496.033 216.395 502.727 210.529C509.49 204.594 512.94 196.831 513.078 187.238H479.436V163.016H544.236V182.684C544.236 195.451 541.303 206.699 535.438 216.43C529.641 226.16 521.601 233.786 511.318 239.307C501.036 244.758 489.235 247.484 475.916 247.484Z" fill="#CD7864"></path><path d="M543.984 118.09V90.7617H669.341V118.09H622.656V245H590.773V118.09H543.984Z" fill="#CD7864"></path><path d="M679.233 245V90.7617H725.712L751.176 162.602C752.626 167.156 754.42 173.091 756.559 180.406C758.768 187.652 760.803 194.588 762.667 201.213C764.53 194.588 766.531 187.652 768.671 180.406C770.879 173.091 772.673 167.156 774.053 162.602L799.208 90.7617H845.686V245H814.528V171.711C814.528 166.328 814.632 159.427 814.839 151.008C815.115 142.589 815.356 134.135 815.563 125.646C812.872 134.618 810.284 143.313 807.8 151.732C805.315 160.083 803.245 166.742 801.589 171.711L775.503 245H749.624L723.227 171.711C721.64 166.949 719.604 160.6 717.12 152.664C714.704 144.728 712.186 136.447 709.563 127.82C709.77 135.964 709.977 144.038 710.184 152.043C710.391 159.979 710.495 166.535 710.495 171.711V245H679.233Z" fill="#CD7864"></path><path d="M932.548 245L891.142 90.7617H925.095L943.21 167.363C944.729 174.126 946.178 180.889 947.558 187.652C948.938 194.415 950.284 201.213 951.595 208.045C952.975 201.213 954.39 194.415 955.839 187.652C957.358 180.889 958.91 174.126 960.497 167.363L979.648 90.7617H1012.15L1031.1 167.363C1032.75 174.057 1034.3 180.786 1035.75 187.549C1037.2 194.243 1038.62 200.937 1040 207.631C1041.31 200.937 1042.65 194.243 1044.03 187.549C1045.41 180.786 1046.86 174.057 1048.38 167.363L1066.5 90.7617H1100.55L1059.04 245H1023.54L1001.59 160.842C1000.63 157.046 999.661 153.044 998.695 148.834C997.798 144.555 996.831 139.966 995.796 135.066C994.761 139.966 993.795 144.555 992.898 148.834C992.001 153.044 991.035 157.046 989.999 160.842L968.261 245H932.548Z" fill="#CD7864"></path><path d="M1127.22 246.863C1116.31 246.863 1107.31 244.137 1100.2 238.686C1093.16 233.234 1089.64 225.056 1089.64 214.152C1089.64 205.94 1091.61 199.522 1095.54 194.898C1099.47 190.206 1104.68 186.79 1111.17 184.65C1117.66 182.511 1124.7 181.096 1132.29 180.406C1142.29 179.371 1149.3 178.336 1153.3 177.301C1157.3 176.266 1159.31 173.988 1159.31 170.469V169.744C1159.31 165.742 1157.72 162.464 1154.54 159.91C1151.37 157.357 1146.99 156.08 1141.4 156.08C1135.74 156.08 1131.15 157.391 1127.63 160.014C1124.11 162.636 1122.18 166.052 1121.83 170.262H1093.16C1093.85 159.013 1098.47 150.076 1107.03 143.451C1115.59 136.757 1127.35 133.41 1142.33 133.41C1157.3 133.41 1168.9 136.757 1177.11 143.451C1185.32 150.076 1189.43 159.22 1189.43 170.883V245H1159.62V229.576H1159.2C1156.3 234.89 1152.34 239.1 1147.3 242.205C1142.26 245.311 1135.57 246.863 1127.22 246.863ZM1135.7 225.643C1143.02 225.643 1148.82 223.71 1153.09 219.846C1157.37 215.912 1159.51 210.978 1159.51 205.043V194.07C1157.79 195.036 1154.92 195.934 1150.92 196.762C1146.92 197.521 1142.47 198.28 1137.57 199.039C1132.32 199.867 1127.87 201.385 1124.21 203.594C1120.63 205.733 1118.83 208.977 1118.83 213.324C1118.83 217.189 1120.35 220.225 1123.39 222.434C1126.49 224.573 1130.6 225.643 1135.7 225.643Z" fill="#CD7864"></path><path d="M1235.14 90.7617V245H1204.6V90.7617H1235.14Z" fill="#CD7864"></path><path d="M1280.95 184.236V245H1250.41V135.688H1280.43V152.871C1284.16 146.66 1288.82 141.864 1294.41 138.482C1300 135.101 1306.72 133.41 1314.59 133.41C1326.19 133.41 1335.47 137.171 1342.44 144.693C1349.41 152.146 1352.89 162.774 1352.89 176.576V245H1322.46V182.166C1322.46 174.851 1320.7 169.296 1317.18 165.5C1313.66 161.635 1308.73 159.703 1302.38 159.703C1296.1 159.703 1290.96 161.67 1286.95 165.604C1282.95 169.537 1280.95 175.748 1280.95 184.236Z" fill="#CD7864"></path><path d="M1406.67 247.277C1395.01 247.277 1385.7 243.551 1378.73 236.098C1371.76 228.576 1368.27 217.913 1368.27 204.111V135.688H1398.81V198.521C1398.81 205.837 1400.53 211.426 1403.98 215.291C1407.5 219.087 1412.47 220.984 1418.89 220.984C1425.17 220.984 1430.31 219.018 1434.31 215.084C1438.32 211.15 1440.32 204.939 1440.32 196.451V135.688H1470.75V245H1440.83V227.816C1437.11 234.027 1432.45 238.824 1426.86 242.205C1421.27 245.587 1414.54 247.277 1406.67 247.277Z" fill="#CD7864"></path><path d="M1548.96 135.688V159.6H1526.6V211.254C1526.6 214.98 1527.33 217.568 1528.78 219.018C1530.3 220.398 1533.13 221.088 1537.27 221.088H1548.96V245H1531.16C1519.15 245 1510.28 242.654 1504.55 237.961C1498.9 233.268 1496.07 225.953 1496.07 216.016V159.6H1477.23V135.688H1496.07V105.875H1526.6V135.688H1548.96Z" fill="#CD7864"></path><rect width="338" height="338" rx="56" fill="#CD7864"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M163.243 53.0023C168.058 52.8885 167.317 57.0256 167.316 60.3473C167.3 63.3185 167.3 66.2898 167.317 69.261L167.395 276.591C167.395 277.963 167.454 280.433 167.321 281.732C167.258 282.384 166.996 283.003 166.573 283.503C166.026 284.143 164.643 284.968 163.79 284.995C161.29 285.163 161.613 281.165 159.729 280.719C151.222 278.705 141.603 277.636 134.295 272.383C130.906 269.912 128.369 266.529 125.168 263.809C123.39 262.298 121.649 260.875 119.837 259.414C117.611 257.619 115.191 255.854 113.078 253.956C102.758 246.357 93.966 232.326 89.3685 220.413C86.583 213.195 85.8909 207.364 84.0823 200.034C82.3181 192.64 79.5727 184.949 78.6611 177.391C76.5469 159.863 79.5653 139.976 86.8282 123.995C88.3992 120.548 90.154 117.188 92.0853 113.93C93.8686 110.918 95.8077 107.996 97.4686 104.884C105.381 90.0624 107.985 79.6218 122.946 70.4351C127.541 67.6414 132.39 65.2891 137.427 63.4088C142.128 61.6466 146.927 60.1564 151.799 58.9453C154.461 58.2781 157.583 57.7412 160.154 56.9338C161.718 56.4427 160.365 53.99 163.243 53.0023ZM94.2395 200.83C94.8701 207.875 96.7366 211.977 99.4181 218.336C101.316 222.837 102.185 226.54 104.869 230.844C107.699 235.309 111.211 239.302 115.277 242.675C117.932 244.899 120.703 246.83 123.791 248.405C125.533 249.294 127.464 249.96 129.167 250.878C134.291 253.638 138.466 257.942 142.481 262.082C143.048 262.668 143.584 263.248 144.204 263.78C140.817 258.212 135.345 251.997 129.718 248.681C127.395 247.313 124.341 246.405 122.052 244.684C115.279 239.558 109.578 232.9 104.405 226.203C102.859 224.199 102.541 220.351 101.468 218.354C99.0241 213.799 96.7219 209.905 95.4909 204.771C95.296 203.957 94.6084 201.556 94.2395 200.83ZM140.446 123.432C139.964 132.273 133.613 139.317 132.321 147.894C130.607 159.269 134.108 170.286 133.839 181.607C133.777 184.192 132.602 186.379 132.115 188.866C131.364 192.779 131.435 195.056 129.381 198.588C116.107 184.578 112.531 173.476 112.831 155.317C112.86 153.568 113.626 144.991 113.567 144.71C112.738 147.907 111.96 150.805 111.463 154.077C108.909 170.869 111.977 186.35 123.288 199.416C125.467 201.686 127.5 203.493 130.127 205.253C132.043 206.537 134.274 207.764 136.046 209.202C145.688 217.03 151.822 228.677 156.299 239.993C153.827 226.094 149.714 217.382 139.18 207.4C136.633 204.984 133.67 202.777 131.156 200.391C135.224 194.991 135.307 191.415 135.745 184.792C135.901 182.434 136.265 180.05 136.289 177.66C136.303 175.836 136.172 174.015 135.899 172.211C135.094 166.548 132.619 160.723 133.189 155.17C134.252 144.802 142.076 137.147 141.197 126.265C141.135 125.502 140.956 123.96 140.446 123.432ZM98.4037 137.606C97.6592 138.678 97.0242 139.791 96.3636 140.915C92.263 147.614 88.5101 157.766 89.2548 165.526C89.5297 168.392 90.5655 172.814 91.1757 175.766C91.8628 179.09 92.447 182.92 93.1965 186.178C93.8222 181.03 93.9283 178.441 93.052 173.132C92.629 170.569 91.8065 166.986 91.5492 164.506C90.7325 156.633 93.7568 148.054 96.8907 140.916C97.3825 139.931 98.0869 138.626 98.4037 137.606ZM160.474 76.8124C160.335 77.8299 160.138 79.8092 159.931 80.7285C158.207 93.3157 157.149 105.925 156.533 118.612C155.742 134.893 158.142 150.627 159.844 166.748C160.068 168.421 160.279 170.12 160.344 171.809C160.282 172.402 160.266 172.378 160.398 172.953L160.573 172.902C160.76 171.425 160.834 162.927 160.539 161.651C160.744 152.859 160.561 143.31 160.564 134.438L160.526 80.5603C160.529 79.3109 160.512 78.0613 160.474 76.8124ZM147.991 70.4541C136.051 74.5637 118.122 84.8524 112.514 96.6185C111.293 99.1806 110.673 102.179 109.85 104.896C107.594 112.339 104.006 119.232 98.5584 124.843L98.6318 124.939L98.6825 124.915C107.746 119.02 110.94 114.387 113.817 104.157C115.328 98.7821 119.689 92.0086 123.335 87.7782C126.308 84.4878 130.521 81.2216 134.196 78.7706C137.571 76.5405 141.039 74.4558 144.592 72.5226C145.155 72.2104 147.978 70.7722 148.195 70.4853L147.991 70.4541Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M174.626 53.022C178.838 52.9849 176.802 56.4204 178.841 56.9385C187.119 59.1187 197.266 60.0383 204.399 65.2537C208.484 68.2391 212.029 72.76 216.234 76.1061C221.042 79.9328 226.694 84.1058 231.036 88.3794C240.664 97.8612 247.966 110.969 251.736 123.926C252.897 128.024 253.601 132.513 254.613 136.704C256.284 143.624 258.711 150.899 259.883 157.885C262.992 176.408 259.437 198.572 251.374 215.473C248.312 221.893 244.709 226.904 241.492 232.975C237.179 241.115 234.234 248.217 228.949 255.832C220.296 267.986 201.843 275.207 187.925 278.705C185.379 279.344 181.262 280.137 178.698 280.957C177.638 281.575 177.761 283.725 176.792 284.358C174.809 285.656 172.975 284.37 171.825 282.729C171.577 281.004 171.665 277.955 171.67 276.127L171.676 265.936L171.637 68.8649C171.631 64.8287 171.59 60.7899 171.659 56.7549C171.7 54.4201 172.435 53.7035 174.626 53.022ZM240.542 212.851C239.813 212.908 237.737 214.629 237.063 215.144C232.663 218.473 228.694 222.515 227.052 227.964C224.848 235.282 221.74 242.822 216.721 248.761C210.616 255.984 201.05 261.666 192.815 266.189C191.9 266.594 191.315 266.954 190.466 267.466C191.031 267.52 192.81 266.72 193.401 266.461C195.305 265.811 198.509 264.252 200.375 263.314C210.348 258.301 221.744 250.994 226.711 240.627C227.901 238.14 228.136 236.075 228.903 233.499C229.943 229.997 231.311 226.602 232.988 223.357C234.395 220.618 236.077 218.027 238.006 215.629C238.469 215.06 240.407 213.064 240.542 212.851ZM178.512 165.487C178.212 168.598 178.386 174.405 178.386 177.767L178.392 240.674C178.392 247.431 178.248 254.792 178.42 261.483C178.576 260.428 178.753 259.354 178.836 258.291C179.791 254.333 179.969 248.817 180.515 244.665C183.563 221.49 182.921 198.744 179.631 175.65C179.321 173.473 179.25 171.198 178.836 169.014C178.738 167.861 178.655 166.629 178.512 165.487ZM182.873 98.59C182.899 99.5151 183.007 99.9222 183.205 100.805C185.212 110.548 188.649 118.355 195.332 125.874C199.239 130.269 203.437 133.588 207.86 137.436C206.857 138.669 206.193 139.553 205.463 140.982C204.923 142.025 204.512 143.128 204.235 144.268C203.731 146.409 203.606 148.769 203.413 150.974C202.945 156.347 202.276 160.973 203.175 166.368C204.149 172.209 206.359 177.139 205.696 183.139C204.534 193.638 194.886 203.656 198.477 214.677C198.827 205.77 205.471 198.381 206.704 189.62C208.325 178.111 204.744 167.143 205.168 155.706C205.248 153.548 206.458 151.228 206.818 149.037C207.42 145.374 207.74 142.591 209.547 139.272C214.251 143.646 220.269 152.532 222.631 158.38C226.907 168.969 226.636 182.2 225.294 193.374C232.009 171.952 228.17 145.238 208.117 132.108C206.807 131.25 205.309 130.408 204.061 129.483C194.203 122.185 188.343 111.119 183.543 100.129L183.024 98.6544L182.873 98.59ZM245.825 151.62C245.076 156.678 245.137 160.063 245.994 165.132C246.417 167.627 247.171 170.871 247.433 173.302C248.223 180.627 245.362 189.545 242.37 196.218C241.798 197.4 241.414 198.223 240.97 199.45C241.423 198.827 242.451 197.183 242.855 196.479C246.681 190.057 250.723 179.388 249.685 172.092C248.74 165.452 246.914 158.338 245.825 151.62ZM194.316 73.4993C195.087 74.6442 195.927 75.9587 196.752 77.0449C199.417 81.2642 205.444 87.1564 209.858 89.494C211.897 90.5732 214.732 91.5225 216.695 92.9977C223.34 97.991 229.788 105.267 234.719 111.924C235.839 113.434 236.801 117.997 237.643 119.837C238.848 122.245 240.172 124.267 241.301 126.749C242.735 129.902 243.34 133.7 244.703 136.74C244.412 134.552 244.344 132.934 243.753 130.698C242.601 126.353 240.588 122.318 238.999 118.11C238.001 115.469 236.968 112.357 235.715 109.894C231.5 101.61 224.097 94.456 216.065 89.8698C213.956 88.6655 211.461 87.8997 209.339 86.695C204.712 84.0683 200.932 80.314 197.229 76.565C196.472 75.7487 195.102 74.1852 194.316 73.4993Z" fill="white"></path></svg></a></span>
+    <nav aria-label="Footer"><a href="https://github.com/gtmwalnut/skillnut">GitHub</a><a href="skillnut-free.zip">Zip download</a><a href="https://gtmwalnut.com">gtmwalnut.com</a></nav>
+    <a class="dfy" href="https://gtmwalnut.com">Want us to run it for you? Talk to GTM Walnut &rarr;</a>
+  </div>
+</footer>
+
 <script>
-document.querySelectorAll("[data-copy]").forEach(function (b) {
-  b.addEventListener("click", function () {
-    var t = b.parentNode.querySelector("code").innerText;
-    navigator.clipboard.writeText(t).then(function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); });
+(function () {
+  // install method toggle
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.toggle [role="tab"]'));
+  function pick(t, focus) {
+    tabs.forEach(function (x) {
+      var on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute("aria-controls")).classList.toggle("on", on);
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { pick(t); });
+    t.addEventListener("keydown", function (e) {
+      var j = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+      if (j === undefined) return; e.preventDefault(); pick(tabs[(j + tabs.length) % tabs.length], true);
+    });
   });
-});
+  // copy
+  document.querySelectorAll("button.go[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      navigator.clipboard.writeText(b.getAttribute("data-copy")).then(function () {
+        b.classList.add("done"); setTimeout(function () { b.classList.remove("done"); }, 1600);
+      });
+    });
+  });
+  // liquid atmosphere behind the brain (falls back to the static gradient)
+  (function () {
+    var cv = document.getElementById("liquid"); if (!cv) return;
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var gl = cv.getContext("webgl", { premultipliedAlpha: false, antialias: false });
+    if (!gl) { cv.remove(); return; }
+    var vs = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+    var fs = [
+      "precision mediump float;uniform vec2 r;uniform float t;",
+      "float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}",
+      "float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);",
+      " return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}",
+      "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}",
+      "void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv*vec2(r.x/r.y,1.)*.85;",
+      " vec2 q=vec2(fbm(p+t*.035),fbm(p+vec2(5.2,1.3)-t*.03));",
+      " vec2 w=vec2(fbm(p+3.*q+vec2(1.7,9.2)+t*.02),fbm(p+3.*q+vec2(8.3,2.8)-t*.025));",
+      " float f=fbm(p+2.5*w);",
+      " vec3 sage=vec3(.627,.878,.671),amber=vec3(1.,.675,.18),ox=vec3(.647,.176,.145),ink=vec3(.102,.098,.098);",
+      " vec3 c=mix(ox,amber,smoothstep(.4,.78,f));",
+      " c=mix(c,sage,smoothstep(.38,.72,w.x)*.9);",
+      " c=mix(ink,c,smoothstep(.15,.65,f+.15*q.y));",
+      " float sheen=pow(smoothstep(.55,.95,fbm(p*1.4+w*2.+t*.05)),3.)*.3;c+=sheen;",
+      " gl_FragColor=vec4(c,1.);}"].join("\n");
+    function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+    var pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(pr); if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { cv.remove(); return; }
+    gl.useProgram(pr);
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(pr, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var ur = gl.getUniformLocation(pr, "r"), ut = gl.getUniformLocation(pr, "t");
+    function size() { var s = 0.5, w = Math.max(1, Math.round(cv.clientWidth * s)), hh = Math.max(1, Math.round(cv.clientHeight * s));
+      if (cv.width !== w || cv.height !== hh) { cv.width = w; cv.height = hh; gl.viewport(0, 0, w, hh); } }
+    function draw(ms) { size(); gl.uniform2f(ur, cv.width, cv.height); gl.uniform1f(ut, 12 + ms / 1000); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
+    if (still) { draw(0); return; }
+    var on = true;
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { on = es[0].isIntersecting; }).observe(cv);
+    (function loop(ms) { if (on && !document.hidden) draw(ms); requestAnimationFrame(loop); })(0);
+  })();
+
+  // particle brain: Dala's constellation of points and outlined triangles, Auros's flowing data
+  (function () {
+    var cv = document.getElementById("brain3d"); if (!cv) return;
+    var shelves = JSON.parse(document.getElementById("brain-data").textContent);
+    var names = []; shelves.forEach(function (s) { s.skills.forEach(function (k) { names.push({ skill: k, pack: s.pack }); }); });
+    var ctx = cv.getContext("2d"), still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+    function gauss() { return Math.sqrt(-2 * Math.log(rnd() + 1e-9)) * Math.cos(2 * Math.PI * rnd()); }
+    var COLORS = ["#ffffff", "#ffffff", "#ffffff", "#a0e0ab", "#ffac2e", "#cd7864", "#f2d3c9", "#fde9ff", "#e0624f"];
+    var N = cv.clientWidth < 420 ? 1800 : 3200, P = [], A = [];
+    for (var i = 0; i < N; i++) {
+      var d = [gauss(), gauss(), gauss()], m = Math.hypot(d[0], d[1], d[2]); d = [d[0] / m, d[1] / m, d[2] / m];
+      var cb = rnd() < 0.12 ? (rnd() < 0.62 ? 1 : 2) : 0;   // 1 cerebellum, 2 brain stem
+      P.push({ d: d, side: rnd() < 0.5 ? -1 : 1, cb: cb, sp: (0.25 + rnd() * 0.75) * (rnd() < 0.5 ? 1 : -1),
+               c: COLORS[Math.floor(rnd() * COLORS.length)], tri: rnd() < 0.2, s: cb ? 0.7 + rnd() * 0.6 : 0.6 + rnd() * 0.9,
+               rot: rnd() * 6.28, spin: (rnd() - 0.5) * 0.02, x: 0, y: 0, z: 0, sx: 0, sy: 0, f: 1 });
+    }
+    for (var j = 0; j < 140; j++) {               // ambient particles drifting round the brain
+      var e = [gauss(), gauss(), gauss()], r = 1.7 + rnd() * 0.9, n = Math.hypot(e[0], e[1], e[2]);
+      A.push({ p: [e[0] / n * r, e[1] / n * r * 0.75, e[2] / n * r], c: COLORS[Math.floor(rnd() * COLORS.length)], s: 0.8 + rnd() * 1.2, rot: rnd() * 6.28 });
+    }
+    function place(q, t) {
+      var a = t * 0.00016 * q.sp, ca = Math.cos(a), sa = Math.sin(a), d = q.d;
+      var y = d[1] * ca - d[2] * sa, z = d[1] * sa + d[2] * ca, x = d[0];     // data streams front to back over the surface
+      var px, py, pz;
+      if (q.cb === 1) { px = x * 0.55; py = -0.6 + y * 0.24; pz = -0.82 + z * 0.32; }
+      else if (q.cb === 2) { var h = (q.d[1] + 1) / 2; px = x * 0.16; pz = -0.38 + z * 0.14 - h * 0.12; py = -0.55 - h * 0.5; }
+      else {
+        var lat = x * q.side;                       // medial side of each hemisphere is flatter
+        var wr = 1 + 0.07 * Math.sin(9 * Math.atan2(z, y) + 4 * x) * Math.sin(7 * y + 3 * z);  // gyri
+        px = q.side * (0.5 + (lat < 0 ? lat * 0.22 : lat * 0.62)) * wr;
+        py = y * 0.74 * wr; pz = z * 1.05 * wr;
+        if (pz > -0.1 && py < -0.15) py -= 0.16 * Math.min(1, (pz + 0.1) * 1.4) * Math.min(1, (-0.15 - py) * 4);   // temporal lobe
+        if (py < -0.5) py = -0.5 + (py + 0.5) * 0.35;
+        pz *= 1.08;
+      }
+      q.x = px; q.y = py; q.z = pz;
+    }
+    var W, H, S, dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+    function size() { var w = cv.clientWidth, h = cv.clientHeight; if (w * dpr !== W || h * dpr !== H) { W = cv.width = Math.round(w * dpr); H = cv.height = Math.round(h * dpr); } S = Math.min(W, H) * 0.36; }
+    function proj(x, y, z, ang) {
+      var c = Math.cos(ang), s = Math.sin(ang), X = x * c + z * s, Z = -x * s + z * c;
+      var t = -0.32, Y = y * Math.cos(t) - Z * Math.sin(t); Z = y * Math.sin(t) + Z * Math.cos(t);
+      var f = 3.2 / (3.2 + Z); return [W / 2 + X * S * f, H * 0.5 - Y * S * f, Z, f];
+    }
+    function shape(x, y, r, rot, tri) {
+      if (!tri) { ctx.moveTo(x + r, y); ctx.arc(x, y, r, 0, 6.2832); return; }
+      for (var k = 0; k < 3; k++) { var a = rot + k * 2.0944, px = x + Math.cos(a) * r * 1.7, py = y + Math.sin(a) * r * 1.7; k ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
+      ctx.closePath();
+    }
+    var lit = -1, litName = 0, litAt = 0;
+    function pickLit() {
+      var best = -1, tries = 0;
+      while (tries++ < 60) { var k = Math.floor(Math.random() * N); if (!P[k].cb && P[k].z < -0.35 && Math.abs(P[k].sx - W / 2) < W * 0.32) { best = k; break; } }
+      lit = best; litName = (litName + 5) % names.length;
+    }
+    function frame(t) {
+      size(); ctx.clearRect(0, 0, W, H);
+      var ang = -1.25 + Math.sin(t * 0.00011) * 0.55;
+      ctx.globalCompositeOperation = "lighter";
+      for (var i = 0; i < A.length; i++) { var a = A[i], q = proj(a.p[0], a.p[1], a.p[2], ang * 0.6 + t * 0.00004);
+        ctx.globalAlpha = 0.18 + 0.12 * q[3]; ctx.strokeStyle = a.c; ctx.lineWidth = dpr * 0.8; ctx.beginPath(); shape(q[0], q[1], a.s * dpr, a.rot + t * 0.0003, true); ctx.stroke(); }
+      for (var i = 0; i < N; i++) {
+        var p = P[i]; place(p, still ? 0 : t);
+        var q = proj(p.x, p.y, p.z, ang); p.sx = q[0]; p.sy = q[1]; p.f = q[2];
+        var depth = Math.max(0, Math.min(1, (1.3 - q[2]) / 2.6));
+        ctx.globalAlpha = 0.12 + 0.78 * depth * depth;
+        ctx.beginPath(); shape(q[0], q[1], p.s * dpr * q[3], p.rot + t * p.spin * 0.05, p.tri);
+        if (p.tri) { ctx.strokeStyle = p.c; ctx.lineWidth = dpr * 0.9; ctx.stroke(); } else { ctx.fillStyle = p.c; ctx.fill(); }
+      }
+      ctx.globalCompositeOperation = "source-over";
+      if (t - litAt > 2600 || lit < 0) { pickLit(); litAt = t; }
+      if (lit >= 0) {
+        var L = P[lit], near = [];
+        for (var i = 0; i < N; i += 2) { if (i === lit || P[i].z > 0) continue; var dx = P[i].sx - L.sx, dy = P[i].sy - L.sy, dd = dx * dx + dy * dy;
+          if (dd > 30 * dpr * 30 * dpr && dd < 90 * dpr * 90 * dpr) near.push([dd, i]); }
+        near.sort(function (a, b) { return a[0] - b[0]; });
+        var fade = Math.min(1, (t - litAt) / 400) * Math.min(1, (2600 - (t - litAt)) / 400 + 0.0001);
+        ctx.globalAlpha = 0.55 * fade; ctx.strokeStyle = "#fff"; ctx.lineWidth = dpr * 0.8;
+        near.slice(0, 5).forEach(function (n) { var o = P[n[1]]; ctx.beginPath(); ctx.moveTo(L.sx, L.sy); ctx.lineTo(o.sx, o.sy); ctx.stroke();
+          ctx.beginPath(); ctx.arc(o.sx, o.sy, 2.2 * dpr, 0, 6.2832); ctx.fillStyle = "#fff"; ctx.fill(); });
+        ctx.globalAlpha = fade;
+        ctx.beginPath(); ctx.arc(L.sx, L.sy, 4.5 * dpr, 0, 6.2832); ctx.fillStyle = "#cd7864"; ctx.fill();
+        ctx.lineWidth = 1.5 * dpr; ctx.strokeStyle = "#fff"; ctx.stroke();
+        var nm = names[litName];
+        ctx.font = "500 " + 13 * dpr + "px Geist, Inter, system-ui, sans-serif";
+        var tw = ctx.measureText(nm.skill).width, right = L.sx + 16 * dpr + tw < W - 12 * dpr, lx = right ? L.sx + 16 * dpr : Math.max(12 * dpr + tw, L.sx - 16 * dpr), ly = L.sy - 14 * dpr;
+        ctx.textAlign = right ? "left" : "right";
+        ctx.lineJoin = "round"; ctx.lineWidth = 4 * dpr; ctx.strokeStyle = "rgba(10,8,8,.75)";
+        ctx.strokeText(nm.skill, lx, ly); ctx.fillStyle = "#fff"; ctx.fillText(nm.skill, lx, ly);
+        ctx.font = "400 " + 11 * dpr + "px 'Geist Mono', ui-monospace, monospace";
+        ctx.strokeText(nm.pack.toUpperCase(), lx, ly + 16 * dpr); ctx.fillStyle = "#f2d3c9"; ctx.fillText(nm.pack.toUpperCase(), lx, ly + 16 * dpr);
+      }
+      ctx.globalAlpha = 1;
+    }
+    if (still) { frame(0); setInterval(function () { litAt = -1e9; frame(0); }, 2600); return; }
+    var on = true;
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { on = es[0].isIntersecting; }).observe(cv);
+    (function loop(t) { if (on && !document.hidden) frame(t); requestAnimationFrame(loop); })(0);
+  })();
+
+  // terminal types itself once it is on screen
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var lines = Array.prototype.slice.call(document.querySelectorAll("#term li"));
+  lines.forEach(function (l) { l.classList.add("wait"); });
+  var run = function () {
+    var t = 0, d = [200, 450, 800, 420, 300, 300, 300, 650, 450];
+    lines.forEach(function (l, i) { t += d[i]; setTimeout(function () { l.classList.remove("wait"); }, t); });
+  };
+  if (!("IntersectionObserver" in window)) return run();
+  var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: .4 });
+  io.observe(document.getElementById("term"));
+})();
 </script>
 </body>
 </html>
