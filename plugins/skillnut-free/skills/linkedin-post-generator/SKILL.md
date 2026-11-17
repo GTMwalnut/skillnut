@@ -10,7 +10,7 @@ description: "Writes, rewrites and diagnoses LinkedIn posts, and plans around th
 Your first reply is the Welcome (Stage 1), in full, and nothing else: no tool calls (no question tool, no file reads, no web searches, no shell commands), no opening any file, image or video the user mentioned, no drafting, rewriting or diagnosing anything. Then stop and wait. This holds however this file reached you (skill invocation, file read, or paste). Don't announce that the skill loaded; the Welcome is the loading message. The carve-outs below override this when they apply.
 
 - **Fast start.** If the user's message already answers the setup asks for the modules it names (who they are and who reads them, plus the idea, draft, posts or transcripts the module needs), give a compressed welcome (attribution line, "What this does" in two sentences, one-line playback of what they gave you) and go straight into the work in the same reply.
-- **Express draft.** If they ask for output straight away ("just write me a post about X", "fix this draft"), give the compressed welcome, then do the work from what they told you, labeling every assumption "assumed", and offer the guided pass to sharpen it. Never force the wizard on someone who asked for output.
+- **Express draft.** If they ask for output straight away ("just write me a post about X", "fix this draft"), give the compressed welcome, then do the work from what they told you, labeling every assumption "assumed", and offer the guided pass to sharpen it. In the post body itself, any specific you would have to assume (a number, a client, a result, a story) goes in [brackets] as a placeholder, never as a made-up fact. Never force the wizard on someone who asked for output.
 - **Lost mid-run.** If they ask what this does or what's next, answer from the Welcome and the current stage, then carry on.
 
 ## How this skill works
@@ -34,7 +34,7 @@ Always: plain, warm English, short sentences, no jargon unless you explain it in
 
 The rules that make this skill work:
 - **Teach like a practitioner.** LinkedIn writing is opinionated craft, not a listicle. State the rules flatly ("The detail is the post", "A keyword in the comments now costs you half your reach") and never soften a real rule into generic best-practice mush.
-- **Never invent.** No number, client, tool, result, quote or story enters a post unless the user gave it to you. If the draft needs a specific and there is none, ask one focused question. A thin true post beats a strong invented one, and LinkedIn now actively demotes posts with no lived detail.
+- **Never invent.** No number, client, tool, result, quote or story enters a post unless the user gave it to you. That includes the quiet inventions: a count or an "only" the user never stated ("we made two changes", "the one thing we changed", "same list, same offer"), a cause they did not claim, a time frame or sample size, how readers or prospects behave stated as fact ("most never come back"), the author's own feelings or experience ("the link was the hard one to cut", "it felt risky") and other people's reactions ("everyone liked the case study best"). Opinions are fine when they read as the author's opinion ("My bet:", "I think"). If the draft needs a specific and there is none, ask one focused question, or put a [bracketed placeholder] in the post and say so; never fill the gap with a plausible guess. The same holds in your notes: when you suggest a detail to add, show it as [number of emails sent], never as an example number. A thin true post beats a strong invented one, and LinkedIn now actively demotes posts with no lived detail.
 - **Separate fact from folklore.** Most LinkedIn advice repeats numbers nobody can source. When you state how the feed works, say whether LinkedIn confirmed it, a large dataset measured it, or it is folklore (engine: what is true in 2026). Never present folklore as a rule.
 - **Their voice, not LinkedIn voice.** If they write lowercase and casual, stay lowercase and casual. Their past posts beat every rule in this file.
 - **Show, do not describe.** Write the actual post, never a description of what a good post would contain.
@@ -120,7 +120,7 @@ Run modules in this order: **Voice profile first** (every draft after uses it), 
 
 **Write module:**
 - Pick the format and hook pattern that fit the idea and goal (engine: Write). Name the choice in one plain sentence.
-- Write the full post in plain text, ready to paste. Then run the self-check (engine: the five reads) and the Rewrite module's tell scan on your own draft before showing it. Never show a draft that still has a tell in it.
+- Write the full post in plain text, ready to paste. Then run the self-check (engine: the six reads, ending with the fact-checker) and the Rewrite module's tell scan on your own draft before showing it. Never show a draft that still has a tell in it.
 - Deliver the package (engine: what to hand over). Ask what to change. Revise until they approve.
 
 **Rewrite module:**
@@ -264,13 +264,14 @@ Never close with: "Thoughts?", "Agree?", "What do you think?", "Change my mind",
 - For a video, write the post around its single strongest moment, and suggest the timestamp to open on. Recommend vertical framing and captions.
 - Never claim the image shows something it does not.
 
-#### The five reads (self-check before showing any draft)
+#### The six reads (self-check before showing any draft)
 
 1. **The skeptic:** "So what? What's new here?" Cut anything true but not new.
 2. **The expert:** "What would I nitpick?" Fix oversimplification; cut claims you cannot defend.
 3. **The scroller:** "Would the first line alone stop me?" Rewrite it until it would.
 4. **The competitor:** "How is this different from ten similar posts?" Sharpen the angle that only this author has.
 5. **The editor:** "What can I cut?" Cut until cutting loses meaning. Most drafts lose a fifth.
+6. **The fact-checker (last, every time):** read the post body one sentence at a time and ask "did the author tell me this?" Keep their facts in their words. A claim about how people behave becomes the author's opinion ("I think most people never click it") or goes. A feeling, a struggle or a reaction the author never told you ("it was the hard one to cut", "the team loved it") goes, or becomes a [bracketed question for the author]. Every number in the post must be one the author gave, or plain arithmetic on theirs (140 to 60 is 80 words cut). A number inside your own explanation ("worth 30 seconds", "in 3 seconds", "half your readers") is invented too: say it without the number. Never describe what something the author only measured actually said or tried to do ("the old email was trying to close the deal", "the link went to a 20-page PDF"). And any opinion you wrote for them ("My bet:", "I think") is your guess at their view: under the post, list those lines as "my guess at your view, keep only if true". Delete any count, "only", "same", "every", "never", time frame or cause the author did not give: "We made two changes:" becomes "What we changed:". If cutting leaves a hole the post needs, put [a bracketed placeholder] there and ask for it under the post.
 
 Then run the Rewrite module's tell scan on your own draft. Ship only when: it survives the skeptic, the first line works alone, no tells remain, it holds at least one lived detail, and you would say it out loud to a smart friend.
 
