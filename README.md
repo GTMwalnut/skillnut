@@ -4,27 +4,39 @@ Agent Skills built from real GTM client work. Each one is a guided run: it asks 
 
 Store: https://skills.gtmwalnut.com
 
-## Skillnut Free (`skillnut-free`)
+## Skillnut Free
 
-A guide that points you to the right skill, plus three free skills to try the depth.
+A guide plus 7 GTM skills by GTM Walnut: ICP, cold call openers, events, CRM data, a GTM dashboard, training docs and LinkedIn posts.
 
 | Skill | What it does |
 |---|---|
 | `skillnut-start` | The front door to Skillnut, the GTM skills by GTM Walnut. |
 | `icp-builder` | Build the user's Ideal Customer Profile from a deep context layer, not guesswork. |
 | `cold-call-openers` | Open a cold call so the prospect stays on the line. |
-| `linkedin-post-generator` | Writes, rewrites and diagnoses LinkedIn posts in three modules run alone or together. |
+| `linkedin-post-generator` | Writes, rewrites and diagnoses LinkedIn posts, and plans around them, in six modules run alone or together. |
+| `conference-outreach` | Turns events into pipeline: conference speakers, attendees, webinars and event ROI. |
+| `crm-data-health` | Diagnose, repair and keep fresh a B2B CRM's data in six modules, in a fixed order: measure first, fix companies before contacts, write to the CRM last and only with sign-off. |
+| `gtm-analytics-dashboard` | Design and build a bird's-eye analytics and health dashboard for an entire AI-automated GTM workflow, from intent finding and enrichment to email deliverability: the architecture heartbeat (which sources, APIs, MCP connections and agents are working or broken, which inboxes and LinkedIn senders are connected and warming, whether reps get reply alerts), the funnel (lead volume by source daily, weekly, monthly; fit, dedup and CRM overlap; campaign and channel performance), and reply analytics (positive and negative by campaign, bounces, patterns by location and topic). |
+| `meeting-to-training-doc` | Turns a recorded walkthrough, demo, onboarding call, or training session into a linear, illustrated training document. |
 
-```
-/plugin marketplace add gtmwalnut/skillnut
-/plugin install skillnut-free@skillnut
-```
+### Install
 
-## Other ways to install
+- **Claude Code, Cursor, Codex or any agent that reads SKILL.md:** `npx skills add gtmwalnut/skillnut`
+- **Claude.ai or Claude Desktop (Pro, Max, Team or Enterprise):** download `skillnut-free.zip` from https://skills.gtmwalnut.com, then Customize > Plugins > Add > Upload plugin. One file, every skill.
+- **Free Claude plan:** download `skillnut-free-one-by-one.zip` from https://skills.gtmwalnut.com, unzip it, and upload each skill under Customize > Skills.
 
-- Any agent that reads `SKILL.md`: `npx skills add gtmwalnut/skillnut`
-- Claude.ai or Claude Desktop: download the zip from the store, then Customize > Skills > Upload a skill.
+## More skills
+
+32 more skills come in two paid packs, bought once at https://skills.gtmwalnut.com:
+
+| Pack | Skills | Price |
+|---|---|---|
+| GTM Engineering: Outbound Pipeline | 17 | $99 |
+| GTM Engineering & RevOps | 15 | $99 |
+| All Access: every skill, 40 in all | 40 | $149 |
+
+Get them only from https://skills.gtmwalnut.com. Copies anywhere else are not ours and may have been changed.
 
 ## Updates
 
-Run `claude plugin update <plugin>@skillnut`. Auto-update is off by default for third-party marketplaces: turn it on under /plugin > Marketplaces.
+Run the same `npx skills add` command again, or download the new file from the store (paid packs: the link in your receipt). We email buyers when a pack changes.
