@@ -17,8 +17,7 @@
    text, Inter at weight 460 for display with tight tracking, midnight wine as the ONLY filled action, royal violet for
    inline links only, lilac mist for secondary buttons, selected states and light badges, white 16px cards with hairline
    borders and no shadows, one full-bleed deep-lagoon band, a decorative gradient atmosphere behind floating
-   translucent product cards, a wine footer. Kept from the previous design: the layout, the brain graph (media) and the
-   three product mockups (product evidence). The GTM Walnut mark keeps its own colour; it is the logo, not an accent. */
+   translucent product cards, a wine footer. Kept from the previous design: the brain graph (media), which names several skills at once. The GTM Walnut mark keeps its own colour; it is the logo, not an accent. */
 :root {
   --canvas: #ffffff;     /* bright white page canvas (user's choice over the reference's parchment); cards keep hairline borders */
   --white: #fff;         /* Paper White: cards that lift off the canvas */
@@ -37,7 +36,7 @@
   color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--canvas); color: var(--ink); font: 450 16px/1.5 var(--sans); letter-spacing: 0;
        -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 svg { display: block; }
@@ -80,37 +79,47 @@ p { margin: 0; text-wrap: pretty; }
 .nav .act { display: flex; align-items: center; gap: 10px; }
 
 /* hero */
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 4vw, 56px); align-items: center;
-        padding-top: clamp(24px, 3.5vw, 44px); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 4vw, 56px); align-items: start;
+        padding-top: clamp(16px, 2.5vw, 32px); }
 .hero-copy { text-align: left; }
 .badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; border-radius: 999px; background: var(--white);
          box-shadow: inset 0 0 0 1px var(--mist); font-size: 14px; font-weight: 460; text-decoration: none; color: var(--ink); }
 .badge b { background: var(--lilac); color: var(--ink); font-weight: 600; font-size: 12px; padding: 3px 9px; border-radius: 999px; }
-.hero h1 { font-size: clamp(40px, 5vw, 64px); line-height: .96; letter-spacing: -0.028em; margin-top: 40px; }
-.hero .sub { margin-top: 18px; max-width: 32em; font-size: clamp(16px, 1.4vw, 18px); line-height: 1.5; color: var(--stone); }
+.hero h1 { font-size: clamp(34px, 3.8vw, 52px); line-height: .98; letter-spacing: -0.028em; margin-top: 16px; }
+.hero-side { display: flex; flex-direction: column; gap: 14px; }
+.hero-side .sub { font-size: 11.5px; line-height: 1.55; color: var(--stone); }
 
-/* install method: suite-tab strip, selected tab in lilac */
-.toggle { display: inline-flex; margin-top: 24px; border-radius: 8px; background: var(--white); box-shadow: inset 0 0 0 1px var(--mist); overflow: hidden; }
-.toggle button { height: 40px; padding: 0 16px; border: 0; background: transparent; cursor: pointer;
-                 font: 460 14px/1 var(--sans); color: var(--ink); transition: background-color .2s; }
-.toggle button + button { box-shadow: inset 1px 0 0 var(--mist); }
-.toggle button[aria-selected="true"] { background: var(--lilac); }
+/* three ways to get the skills, in plain words */
+.ways { list-style: none; margin: 18px 0 0; padding: 0; background: var(--white); border: 1px solid var(--mist); border-radius: 16px; counter-reset: way; }
+.ways > li { counter-increment: way; display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; align-content: start; padding: 12px 14px; }
+.ways > li.inline { grid-template-columns: 24px minmax(0, 1fr) auto; align-items: center; }
+.ways > li.inline .do { grid-column: 3; grid-row: 1 / span 2; margin-top: 0; }
+.ways > li + li { border-top: 1px solid var(--mist); }
+.ways > li::before { content: counter(way); grid-column: 1; grid-row: 1 / span 2; width: 24px; height: 24px; border-radius: 50%; background: var(--lilac);
+                     color: var(--ink); display: grid; place-items: center; font: 600 12px/1 var(--sans); }
+.ways > li > * { grid-column: 2; min-width: 0; }
+.ways .how { display: block; }
+.ways b { font-weight: 540; font-size: 15px; }
+.ways .how { margin-top: 1px; color: var(--stone); font-size: 13px; }
+.ways .do { margin-top: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--stone); }
+.ways .do a:not(.pill) { color: var(--violet); text-decoration: none; }
+.ways .do a:not(.pill):hover { text-decoration: underline; text-underline-offset: 3px; }
+.ways .pill svg { width: 15px; height: 15px; }
+.ways .pill-sm { height: 36px; padding: 0 14px; font-size: 14px; }
 
-/* the install command, in a white card */
-.bar { position: relative; max-width: 600px; margin: 10px 0 0; background: var(--white); border: 1px solid var(--mist); border-radius: 16px;
-       padding: 8px 8px 8px 20px; display: flex; align-items: center; gap: 14px; min-height: 64px; text-align: left; }
-.bar pre { flex: 1; min-width: 0; margin: 0; font: 400 15px/1.7 var(--mono); white-space: pre; overflow-x: auto; scrollbar-width: none; }
+/* the install command */
+.bar { position: relative; flex: 1 1 100%; min-width: 0; background: var(--white); border: 1px solid var(--mist); border-radius: 12px;
+       padding: 5px 5px 5px 12px; display: flex; align-items: center; gap: 10px; min-height: 46px; text-align: left; }
+.bar pre { flex: 1; min-width: 0; margin: 0; font: 400 12.5px/1.7 var(--mono); white-space: pre; overflow-x: auto; scrollbar-width: none; }
 .bar pre::-webkit-scrollbar { display: none; }
 .bar pre .p { color: var(--stone); user-select: none; }
-.bar p { flex: 1; font-size: 15px; color: var(--stone); }
-.go { flex: none; width: 48px; height: 48px; border-radius: 12px; border: 0; background: var(--wine); color: #fff; cursor: pointer;
+.go { flex: none; width: 34px; height: 34px; border-radius: 9px; border: 0; background: var(--wine); color: #fff; cursor: pointer;
       display: grid; place-items: center; transition: background-color .2s, transform .2s; }
 .go:hover { background: var(--wine-hover); }
 .go:active { transform: scale(.94); }
 .go .ok { display: none; }
 .go.done .ok { display: block; }
 .go.done .cp { display: none; }
-.js .bars > div:not(.on) { display: none; }
 .hero .fine { margin-top: 12px; font-size: 14px; color: var(--stone); }
 .hero .fine a { color: var(--violet); text-decoration: none; }
 .hero .fine a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -129,102 +138,50 @@ p { margin: 0; text-wrap: pretty; }
     background: radial-gradient(70% 70% at 50% 48%, rgba(10,9,9,.5), rgba(10,9,9,.84)); }
 .brain-stage #brain3d { position: relative; inset: auto; z-index: 0; display: block; width: 100%; height: auto; aspect-ratio: 600 / 470; }
 .brain figcaption { padding: 12px 18px 16px; border-top: 1px solid rgba(255,255,255,.08); font-size: 13px; color: #a8a39c; }
-
-/* floating product cards over a decorative gradient atmosphere (full-bleed band) */
-.gallery { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: center; column-gap: 16px;
-           margin: clamp(56px, 8vw, 96px) auto 0; max-width: 1180px; padding: clamp(56px, 7vw, 96px) var(--gutter) clamp(72px, 8vw, 112px); }
-.gallery::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%);
-    background:
-      radial-gradient(38% 60% at 68% 50%, rgba(113,76,182,.5), transparent 70%),
-      radial-gradient(30% 55% at 93% 50%, rgba(79,107,237,.45), transparent 70%),
-      radial-gradient(45% 50% at 50% 98%, rgba(236,160,205,.55), transparent 70%),
-      radial-gradient(40% 50% at 50% 75%, rgba(127,214,230,.5), transparent 70%),
-      radial-gradient(35% 55% at 12% 45%, rgba(212,199,255,.55), transparent 70%),
-      var(--canvas);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
-            mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent); }
-.mock { margin: 0; background: rgba(255,255,255,.85); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-        border: 1px solid rgba(255,255,255,.5); border-radius: 16px; overflow: hidden; text-align: left; }
-.mock.a { transform: translateY(24px); z-index: 1; }
-.mock.b { z-index: 2; }
-.mock.c { transform: translateY(32px); z-index: 1; }
-.mock-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px; border-bottom: 1px solid rgba(41,40,39,.08); }
-.mock-head strong { font-size: 14px; font-weight: 600; }
 .chip { font: 500 11px/1 var(--sans); padding: 5px 8px; border-radius: 999px; background: var(--lilac); color: var(--ink); white-space: nowrap; }
-.mock-body { padding: 14px 16px 16px; font-size: 13px; }
-.mock-foot { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(41,40,39,.08); display: flex; justify-content: space-between; color: var(--stone); font-size: 12px; font-variant-numeric: tabular-nums; }
 
-/* A: ICP fit filter */
-.rows { list-style: none; margin: 0; padding: 0; }
-.rows li { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 7px 0; }
-.rows li span:first-child { font-weight: 500; }
-.rows .tag { font-size: 11px; color: var(--stone); }
-.rows li.cut .tag { color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); padding: 2px 6px; border-radius: 6px; }
-.rows li.cut::after { content: ""; position: absolute; left: 0; top: 50%; height: 1.5px; width: 0; background: var(--ink); animation: strike 9s ease-in-out infinite; }
-.rows li.cut { animation: dim 9s ease-in-out infinite; }
-.rows li.cut:nth-child(4)::after, .rows li.cut:nth-child(4) { animation-delay: .5s; }
-.rows li.cut:nth-child(6)::after, .rows li.cut:nth-child(6) { animation-delay: 1s; }
-@keyframes strike { 0%, 12% { width: 0; } 24%, 82% { width: 64%; } 94%, 100% { width: 0; } }
-@keyframes dim { 0%, 14% { opacity: 1; } 26%, 82% { opacity: .38; } 94%, 100% { opacity: 1; } }
-
-/* B: code window */
-.mock.term { background: var(--code); color: #ece9e4; border-color: rgba(255,255,255,.08); }
-.term .mock-head { border-color: rgba(255,255,255,.08); }
-.term .chip { background: rgba(255,255,255,.1); color: #c9c4bd; }
-.dots { display: flex; gap: 6px; }
-.dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.16); }
-.tlines { list-style: none; margin: 0; padding: 16px 20px 20px; font: 400 12.5px/1.8 var(--mono); font-variant-numeric: tabular-nums; min-height: 290px; }
-.tlines li { white-space: pre; overflow: hidden; text-overflow: ellipsis; }
-.tlines .u { color: #fff; }
-.tlines .u .p, .tlines .ask b { color: var(--lilac); }
-.tlines .d { color: #8f8a83; }
-.tlines .r { display: flex; justify-content: space-between; gap: 16px; }
-.tlines .r span:last-child { color: #8f8a83; }
-.caret { display: inline-block; width: .55em; height: 1.05em; vertical-align: -.18em; background: var(--lilac); animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-.js .tlines li.wait { visibility: hidden; }
-
-/* C: deliverability */
-.inbox { display: grid; grid-template-columns: 74px 1fr 30px; align-items: center; gap: 10px; padding: 6px 0; font-variant-numeric: tabular-nums; }
-.inbox span:first-child { color: var(--stone); font: 400 12px var(--mono); }
-.inbox .track { height: 8px; border-radius: 999px; background: rgba(41,40,39,.08); overflow: hidden; }
-.inbox .fill { display: block; height: 100%; border-radius: 999px; background: var(--ink); width: var(--w); transform-origin: left; animation: grow 9s cubic-bezier(.2,.7,.2,1) infinite; }
-.inbox.low .fill { background: #b9b6b1; }
-.inbox b { font-weight: 500; text-align: right; font-size: 12px; }
-.inbox.low b { color: var(--stone); }
-.out { display: inline-flex; margin-top: 10px; font-size: 11px; font-weight: 500; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); border-radius: 6px; padding: 4px 8px; animation: pop 9s ease-in-out infinite; }
-@keyframes grow { 0% { transform: scaleX(0); } 18%, 100% { transform: scaleX(1); } }
-@keyframes pop { 0%, 30% { opacity: 0; transform: translateY(4px); } 38%, 90% { opacity: 1; transform: none; } 100% { opacity: 0; } }
-
-/* packs */
-.shelf { padding-top: clamp(80px, 10vw, 120px); }
-.shelf-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
-.shelf-head h2 { font-size: clamp(34px, 4.4vw, 49px); line-height: 1; letter-spacing: -0.027em; max-width: 13em; }
+/* packs: all four side by side, floating translucent cards over the decorative gradient atmosphere (full-bleed band) */
+.shelf { position: relative; isolation: isolate; margin-top: clamp(8px, 1.5vw, 16px); padding: clamp(40px, 5vw, 56px) 0 clamp(48px, 6vw, 72px); }
+.shelf::before { content: ""; position: absolute; z-index: -1; inset: 0;
+    background:
+      radial-gradient(42% 62% at 68% 50%, rgba(113,76,182,.62), transparent 72%),
+      radial-gradient(34% 58% at 93% 50%, rgba(79,107,237,.55), transparent 72%),
+      radial-gradient(48% 52% at 50% 96%, rgba(236,160,205,.62), transparent 72%),
+      radial-gradient(44% 52% at 50% 72%, rgba(127,214,230,.55), transparent 72%),
+      radial-gradient(40% 58% at 12% 45%, rgba(212,199,255,.7), transparent 72%),
+      radial-gradient(36% 50% at 30% 20%, rgba(113,76,182,.35), transparent 72%),
+      var(--canvas);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent); }
+.shelf-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.shelf-head h2 { font-size: clamp(30px, 3.8vw, 49px); line-height: 1; letter-spacing: -0.027em; }
 .shelf-head p { color: var(--stone); max-width: 26em; }
-.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-.card { border-radius: 16px; padding: clamp(24px, 3vw, 32px); background: var(--white); border: 1px solid var(--mist); display: flex; flex-direction: column; min-height: 260px; }
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; align-items: start; }
+.card { border-radius: 16px; padding: 22px; background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+        border: 1px solid rgba(41,40,39,.08); display: flex; flex-direction: column; }
 .card.w5 { grid-column: span 5; } .card.w7 { grid-column: span 7; } .card.w4 { grid-column: span 4; } .card.w3 { grid-column: span 3; }
-.card.coral { background: var(--white); border-color: var(--mist); }
-.card.peach { background: var(--lilac); border-color: var(--lilac); }      /* lilac wash: the all-in selection */
-.card .eyebrow { color: var(--stone); }
+@supports (grid-template-rows: subgrid) {   /* line up title, blurb, price row and list across the four packs */
+  .card { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+}
+.card.peach { background: rgba(212,199,255,.92); border-color: rgba(212,199,255,.92); }      /* lilac wash: the all-in selection */
+.card .eyebrow { margin-top: 6px; font-size: 13px; color: var(--stone); }
 .card.peach .eyebrow { color: var(--ink); }
-.card h3 { margin-top: 10px; font-size: clamp(24px, 2.4vw, 28px); line-height: 1.14; letter-spacing: -0.022em; }
-.card .blurb { margin-top: 10px; color: var(--stone); font-size: 16px; max-width: 32em; }
+.card h3 { margin-top: 0; font-size: 22px; line-height: 1.14; letter-spacing: -0.018em; }
+.card .blurb { margin-top: 8px; color: var(--stone); font-size: 14px; line-height: 1.45; }
 .card.peach .blurb { color: var(--ink); }
-.card .end { margin-top: auto; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.price { font-size: 18px; font-weight: 540; color: var(--ink); font-variant-numeric: tabular-nums; }
-.card details { margin-top: 18px; }
-.card summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 500; }
-.card summary::-webkit-details-marker { display: none; }
-.card summary svg { transition: transform .2s; }
-.card details[open] summary svg { transform: rotate(45deg); }
-.card details ul { list-style: none; margin: 12px 0 0; padding: 0; font-size: 14px; }
-.card details li { padding: 6px 0; border-top: 1px solid rgba(41,40,39,.1); }
-.card details li span { color: var(--stone); }
-.card.peach details li span { color: var(--ink); }
-.free-skills { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 8px; }
-.free-skills li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 460; }
-.free-skills li::before { content: ""; width: 18px; height: 18px; border-radius: 5px; background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/12px no-repeat; flex: none; }
+.card .buy { margin-top: 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; align-self: start; }
+.card .buy .partner { flex-basis: 100%; margin-top: -4px; font-size: 12px; color: var(--stone); }
+.card.peach .buy .partner { color: var(--ink); opacity: .7; }
+.price { font-size: 20px; font-weight: 540; color: var(--ink); font-variant-numeric: tabular-nums; }
+.skill-list { list-style: none; margin: 16px 0 0; padding: 12px 0 0; border-top: 1px solid rgba(41,40,39,.1); font-size: 12px; line-height: 1.3; }
+.skill-list li { display: flex; align-items: baseline; gap: 8px; margin: 0 -6px; padding: 1.5px 6px; border-radius: 6px; cursor: default;
+                 transition: background-color .35s, color .35s; }
+.skill-list li::before { content: ""; flex: none; width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .55; transform: translateY(-2px); }
+.skill-list.packs { font-size: 13px; }
+.skill-list.packs li { display: block; padding: 3px 6px; }
+.skill-list.packs li::before { display: inline-block; margin-right: 8px; }
+.skill-list.packs li span { opacity: .7; }
+.card.peach .skill-list { border-top-color: rgba(41,40,39,.18); }
 .pill.off { background: transparent; color: var(--stone); box-shadow: inset 0 0 0 1px var(--mist); cursor: default; }
 
 /* the one dark band: deep lagoon, full-bleed */
@@ -259,33 +216,28 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rows li.cut::after { animation: none; width: 64%; }
-  .rows li.cut { animation: none; opacity: .38; }
-  .inbox .fill, .out, .caret { animation: none; }
+  .caret { animation: none; }
+  .skill-list li { transition: none; }
 }
 
+@media (max-width: 1100px) {
+  .card.w3 { grid-column: span 6; }
+}
 @media (max-width: 960px) {
   .nav ul { display: none; }
   .hero { grid-template-columns: 1fr; }
   .brain { max-width: 560px; }
-  .gallery { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-top: 40px; padding-bottom: 48px; scrollbar-width: none; }
-  .gallery::-webkit-scrollbar { display: none; }
-  .mock { flex: 0 0 min(86%, 420px); scroll-snap-align: center; transform: none !important; }
-  .mock.b { order: -1; }
-  .card.w5, .card.w4, .card.w3 { grid-column: span 6; }
-  .card.w7 { grid-column: span 12; }
   .poster-row { grid-template-columns: 1fr; gap: 16px; }
   .faq h2, .faq dl { grid-column: 1 / -1; }
   .faq dl { margin-top: 28px; }
 }
 @media (max-width: 600px) {
   .nav .act .pill-line { display: none; }
-  .bar { padding-left: 16px; }
-  .bar pre { font-size: 13px; }
+  .bar pre { font-size: 12.5px; }
+  .ways > li.inline { grid-template-columns: 24px minmax(0, 1fr); }
+  .ways > li.inline .do { grid-column: 2; grid-row: auto; margin-top: 8px; }
   .card.w5, .card.w7, .card.w4, .card.w3 { grid-column: 1 / -1; }
-  .card { min-height: 0; }
   .faq dl { grid-template-columns: 1fr; }
-  .tlines { font-size: 11.5px; min-height: 0; }
 }
 </style>
 <script>document.documentElement.classList.add("js")</script>
@@ -300,7 +252,7 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
     <nav aria-label="Sections"><ul><li><a href="#shelf">Packs</a></li><li><a href="#trust">Safety</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
     <div class="act">
       <a class="pill pill-line pill-sm" href="https://github.com/gtmwalnut/skillnut">GitHub</a>
-      <a class="pill pill-ember pill-sm" href="#top">Install free</a>
+      <a class="pill pill-ember pill-sm" href="#get">Install free</a>
     </div>
   </div>
 </header>
@@ -309,113 +261,62 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
 <section class="hero wrap">
  <div class="hero-copy">
   <a class="badge" href="#shelf"><b>New</b>8 free skills, 33 in paid packs</a>
-  <br>
-
-  <div class="toggle" role="tablist" aria-label="Install method">
-    <button role="tab" id="t-any" aria-controls="b-any" aria-selected="true">Claude Code &amp; agents</button>
-    <button role="tab" id="t-ai" aria-controls="b-ai" aria-selected="false" tabindex="-1">Claude.ai</button>
-  </div>
-  <div class="bars">
-    <div role="tabpanel" id="b-any" aria-labelledby="t-any" class="on">
-      <div class="bar"><pre><span class="p">$ </span>npx skills add gtmwalnut/skillnut</pre><button class="go" type="button" data-copy="npx skills add gtmwalnut/skillnut" aria-label="Copy install command"><svg class="cp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-    </div>
-    <div role="tabpanel" id="b-ai" aria-labelledby="t-ai">
-      <div class="bar"><p>Download one file, then Customize, Plugins, Add, Upload plugin.</p><a class="go" href="skillnut-free.zip" download aria-label="Download the free skills as one file"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a></div>
-      <p class="fine">On the free Claude plan? <a href="skillnut-free-one-by-one.zip" download>Download the skills one by one</a> and upload each under Customize, Skills.</p>
-    </div>
-  </div>
-  <p class="fine">Free, no sign-up. Skills are plain text files, so you can <a href="https://github.com/gtmwalnut/skillnut">read them on GitHub</a> before you install.</p>
   <h1>Our GTM playbook, now a one-line install.</h1>
-  <p class="sub">You get the playbooks our team runs for 40+ B2B teams, written so your agent can follow them. It shows you its plan and asks before it sends or changes anything.</p>
+  <ol class="ways" id="get" aria-label="Three ways to get the skills">
+    <li><b>Install from GitHub</b><span class="how">For Claude Code, Cursor or Codex: run one command.</span>
+      <div class="do"><div class="bar"><pre><span class="p">$ </span>npx skills add gtmwalnut/skillnut</pre><button class="go" type="button" data-copy="npx skills add gtmwalnut/skillnut" aria-label="Copy install command"><svg class="cp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div></div></li>
+    <li><b>Upload it to Claude</b><span class="how">Download one file, then in Claude open Customize, Plugins, Add, Upload plugin.</span>
+      <div class="do"><a class="pill pill-ember pill-sm" href="skillnut-free.zip" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Download free skills</a><span>On the free Claude plan? <a href="skillnut-free-one-by-one.zip" download>Get them one by one</a></span></div></li>
+    <li class="inline"><b>Buy the full packs</b><span class="how">33 more skills for outbound and RevOps, one-time price.</span>
+      <div class="do"><a class="pill pill-line pill-sm" href="#shelf">See the packs</a></div></li>
+  </ol>
  </div>
+ <div class="hero-side">
+  <p class="sub">A skill is a set of written instructions that teaches Claude a GTM job, like building a target list, writing cold emails or cleaning up your CRM. You ask in plain words, and Claude follows the same steps we use with our clients. It shows you its plan and asks before it sends or changes anything.</p>
  <figure class="brain" aria-label="Graph of the GTM Walnut playbooks: 41 skills in 2 packs, linked the way we run them">
   <div class="brain-head"><span>gtm-walnut / brain</span><span class="chip" style="background:rgba(255,255,255,.08);color:#b9b4ad">Live</span></div>
   <div class="brain-stage"><div class="liquid-still" aria-hidden="true"></div><canvas id="liquid" aria-hidden="true"></canvas><canvas id="brain3d" aria-hidden="true"></canvas></div>
-  <script type="application/json" id="brain-data">[{"pack": "Free", "skills": ["ICP Builder", "Cold Call Openers", "LinkedIn Post Generator", "Conference Outreach", "CRM Data Health", "GTM Analytics Dashboard", "Meeting to Training Doc"]}, {"pack": "GTM Engineering: Outbound Pipeline", "skills": ["TAM List Builder", "Outbound Targeting", "ICP Fit Filter", "Email Data Provider Waterfall", "Buying Signals Playbook", "Account Activity Surge", "Signal to CRM Prospecting", "Reo to Email Bison and Heyreach", "Copywriting Messaging", "Proof Points by Industry", "Campaign Send Checklist", "CRM Overlap Check", "Email and LinkedIn Sequencer Lead Upload", "Email LinkedIn Orchestrator", "Local Business Outbound", "Email Deliverability Metrics and Dashboard", "AI Responder", "Campaign Reply Insights"]}, {"pack": "GTM Engineering & RevOps", "skills": ["Hubspot Implementation Playbook", "Attio Implementation Playbook", "Lead and Account Scoring", "Lead Attribution Analysis", "CRM Outreach Sync and Manual Upload", "N8n GTME Playbooks", "GTM Automations", "Claude Code Outbound Pipeline", "CRM Agent Autopilot", "GTM Strategy Plan", "Sales Call Insights", "LinkedIn Ads Program", "Partner and Creator Programs", "Agency Back Office", "Long Video to YouTube Shorts"]}]</script>
-  <figcaption>Our brain: 41 skills in 2 packs, built from the work we do for clients. It names one skill at a time, so give it a few seconds.</figcaption>
+  <script type="application/json" id="brain-data">[{"pack": "Free", "skills": ["ICP Builder", "Cold Call Openers", "LinkedIn Post Generator", "Conference Outreach", "CRM Data Health", "GTM Analytics Dashboard", "Meeting to Training Doc"]}, {"pack": "GTM Engineering: Outbound Pipeline", "skills": ["TAM List Builder", "Outbound Targeting", "ICP Fit Filter", "Email Data Provider Waterfall", "Buying Signals Playbook", "Account Activity Surge", "Signal to CRM Prospecting", "Reo to Email Bison and HeyReach", "Copywriting Messaging", "Proof Points by Industry", "Campaign Send Checklist", "CRM Overlap Check", "Email and LinkedIn Sequencer Lead Upload", "Email LinkedIn Orchestrator", "Local Business Outbound", "Email Deliverability Metrics and Dashboard", "AI Responder", "Campaign Reply Insights"]}, {"pack": "GTM Engineering & RevOps", "skills": ["HubSpot Implementation Playbook", "Attio Implementation Playbook", "Lead and Account Scoring", "Lead Attribution Analysis", "CRM Outreach Sync and Manual Upload", "n8n GTME Playbooks", "GTM Automations", "Claude Code Outbound Pipeline", "CRM Agent Autopilot", "GTM Strategy Plan", "Sales Call Insights", "LinkedIn Ads Program", "Partner and Creator Programs", "Agency Back Office", "Long Video to YouTube Shorts"]}]</script>
  </figure>
+ </div>
 </section>
 
-<div class="gallery" aria-label="Three skills at work">
-  <figure class="mock a" aria-label="ICP Fit Filter removing agencies and competitors from a list">
-    <div class="mock-head"><strong>ICP Fit Filter</strong><span class="chip">Outbound Pipeline</span></div>
-    <div class="mock-body">
-      <ul class="rows">
-        <li><span>Northwind Analytics</span><span class="tag">B2B SaaS</span></li>
-        <li class="cut"><span>Brightlane Agency</span><span class="tag">Agency</span></li>
-        <li><span>Kestrel Labs</span><span class="tag">B2B SaaS</span></li>
-        <li class="cut"><span>Rival Systems</span><span class="tag">Competitor</span></li>
-        <li><span>Orbit Health</span><span class="tag">Healthtech</span></li>
-        <li class="cut"><span>Pixel &amp; Co</span><span class="tag">Agency</span></li>
-      </ul>
-      <div class="mock-foot"><span>Kept 3 of 6</span><span>Nothing deleted yet</span></div>
-    </div>
-  </figure>
 
-  <figure class="mock b term" aria-label="A skill running in Claude Code, waiting for approval">
-    <div class="mock-head"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chip">Claude Code</span></div>
-    <ol class="tlines" id="term">
-      <li class="u"><span class="p">&gt;</span> /outbound-targeting</li>
-      <li class="u">  Series A dev tools hiring SDRs, US</li>
-      <li class="d">&#9679; Plan first. Nothing written yet.</li>
-      <li class="r"><span>1  Accounts that fit your ICP</span><span>~1,200</span></li>
-      <li class="r"><span>2  Hiring SDRs, last 60 days</span><span>~140</span></li>
-      <li class="r"><span>3  Minus customers, open deals</span><span>&minus;22</span></li>
-      <li class="r"><span>4  Two buyers per account</span><span>~236</span></li>
-      <li class="ask">  Run step 1? Read-only. <b>(y/n)</b></li>
-      <li class="u"><span class="p">&gt;</span> <span class="caret" aria-hidden="true"></span></li>
-    </ol>
-  </figure>
-
-  <figure class="mock c" aria-label="Deliverability skill pausing a weak inbox">
-    <div class="mock-head"><strong>Inbox rotation</strong><span class="chip">Outbound Pipeline</span></div>
-    <div class="mock-body">
-      <div class="inbox"><span>inbox-01</span><span class="track"><span class="fill" style="--w:96%"></span></span><b>96</b></div>
-      <div class="inbox"><span>inbox-02</span><span class="track"><span class="fill" style="--w:93%"></span></span><b>93</b></div>
-      <div class="inbox low"><span>inbox-03</span><span class="track"><span class="fill" style="--w:74%"></span></span><b>74</b></div>
-      <div class="inbox"><span>inbox-04</span><span class="track"><span class="fill" style="--w:91%"></span></span><b>91</b></div>
-      <div class="inbox"><span>inbox-05</span><span class="track"><span class="fill" style="--w:95%"></span></span><b>95</b></div>
-      <span class="out">inbox-03 paused: 3-day score under 80</span>
-      <div class="mock-foot"><span>3-day health score</span><span>Returns at 90+</span></div>
-    </div>
-  </figure>
-</div>
-
-<section class="shelf wrap" id="shelf">
+<section class="shelf" id="shelf">
+ <div class="wrap">
   <div class="shelf-head">
     <h2>Start free. Buy only the packs you need.</h2>
-    <p>The free skills cover your ICP, cold call openers, events, CRM data, a GTM dashboard, training docs and LinkedIn posts. The other 33 come in 2 packs, sold on our partner site, agensi.io. You pay once.</p>
   </div>
   <div class="bento">
-    <article class="card w5">
-      <p class="eyebrow">Free &middot; 8 skills</p>
+    <article class="card w3">
       <h3>Start here</h3>
-      <ul class="free-skills"><li>The guide (tells you which skill to run)</li><li>ICP Builder</li><li>Cold Call Openers</li><li>LinkedIn Post Generator</li><li>Conference Outreach</li><li>CRM Data Health</li><li>GTM Analytics Dashboard</li><li>Meeting to Training Doc</li></ul>
-      <div class="end"><span class="price">Free</span><a class="pill pill-ember pill-sm" href="#top">Install free</a></div>
+      <p class="eyebrow">Free &middot; 8 skills</p>
+      <div class="buy"><span class="price">Free</span><a class="pill pill-ember pill-sm" href="#get">Install free</a></div>
+      <ul class="skill-list"><li data-skill="The guide (tells you which skill to run)">The guide (tells you which skill to run)</li><li data-skill="ICP Builder">ICP Builder</li><li data-skill="Cold Call Openers">Cold Call Openers</li><li data-skill="LinkedIn Post Generator">LinkedIn Post Generator</li><li data-skill="Conference Outreach">Conference Outreach</li><li data-skill="CRM Data Health">CRM Data Health</li><li data-skill="GTM Analytics Dashboard">GTM Analytics Dashboard</li><li data-skill="Meeting to Training Doc">Meeting to Training Doc</li></ul>
     </article>
-    <article class="card w7 coral">
-      <p class="eyebrow">18 skills, one-time price</p>
+    <article class="card w3">
       <h3>GTM Engineering: Outbound Pipeline</h3>
-      <p class="blurb">Everything from the market list to the booked meeting: targeting, buying signals, copy, campaign upload, deliverability and replies.</p>
-      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>TAM List Builder <span>&middot; Builds a defensible total addressable market end to end, for mainstream B2B, local or niche markets (contractors, clinics), enterprise named accounts and partner channels.</span></li><li>Outbound Targeting <span>&middot; Builds a tight, in-motion, campaign-ready list instead of spraying a broad one.</span></li><li>ICP Fit Filter <span>&middot; Strip non-buyers out of a campaign list, keeping only the companies and people that match the user&#x27;s ICP.</span></li><li>Email Data Provider Waterfall <span>&middot; Choose and order your email and contact data providers by testing them fairly, then run the waterfall on your full list.</span></li><li>Buying Signals Playbook <span>&middot; Work out the events that mean an account is ready to buy, then run them.</span></li><li>Account Activity Surge <span>&middot; Find the accounts that are heating up while nobody works them, in three modules.</span></li><li>Signal to CRM Prospecting <span>&middot; Runs a scheduled prospecting routine end to end: monitors chosen sources (websites, registries, news feeds, publications, job boards) for a trigger signal, qualifies the companies behind each signal against an ideal customer profile (ICP), dedupes against the CRM, creates the new companies in HubSpot with full field mapping and territory-based owners, finds the right people at each company through a data-provider waterfall (Clay, ZoomInfo, Prospeo, Oxygen), finds verified work emails, creates and links the contacts, and posts a short totals-only summary to a team Slack channel through a bot, with review items sent privately.</span></li><li>Reo to Email Bison and Heyreach <span>&middot; Turns fresh Reo.dev developer-intent signals (GitHub repos, website, docs, LinkedIn) into outreach: pulls everyone new since the last batch, drops excluded signals and anyone already contacted (live campaigns, earlier batches, HubSpot, do-not-contact list, sender networks), applies the ICP plus seniority and account-tier gates, normalizes names, writes openers from each person&#x27;s own signal, verifies emails, loads the running Email Bison and HeyReach campaigns, verifies the load, catches job changers, logs the batch.</span></li><li>Copywriting Messaging <span>&middot; The one copywriting skill for cold outreach, in six modules run alone or together.</span></li><li>Proof Points by Industry <span>&middot; Turn a pile of case studies into an industry-indexed proof matrix, then pull the right proof into outreach so a pharma prospect hears a pharma story and a bank hears a bank story.</span></li><li>Campaign Send Checklist <span>&middot; One pre-send check for a campaign list, in five modules run alone or together, removing people first and polishing last.</span></li><li>CRM Overlap Check <span>&middot; Clean a campaign list against the user&#x27;s CRM before launch: interactively walk them through removing every company in a live or won deal, every person already in an active conversation or who was on a closed-lost deal, anyone already in the system under the same name, and the team&#x27;s close contacts.</span></li><li>Email and LinkedIn Sequencer Lead Upload <span>&middot; Builds and loads outreach campaigns from a personalized lead list.</span></li><li>Email LinkedIn Orchestrator <span>&middot; Makes a separate email sequencer and LinkedIn tool behave like one multichannel sequence (the Lemlist idea, built with n8n), so a LinkedIn step in the email cadence happens on LinkedIn without a rep doing it by hand.</span></li><li>Local Business Outbound <span>&middot; Runs the end-to-end cold email play for local businesses found through Google listings (restaurants, shops, clinics, trades), whose owners B2B databases barely cover.</span></li><li>Email Deliverability Metrics and Dashboard <span>&middot; Cold-email deliverability, practice and measurement.</span></li><li>AI Responder <span>&middot; Handle everything that happens after a cold email or LinkedIn message is sent, as a drafts-only AI responder with a human approving every send.</span></li><li>Campaign Reply Insights <span>&middot; Analyzes cold email and LinkedIn campaign replies to learn what is working, and makes sure good replies get answered.</span></li></ul></details>
-      <div class="end"><span class="price">$199</span><a class="pill pill-ember pill-sm" href="https://www.agensi.io/bundles/gtm-engineering-outbound-pipeline">Buy once</a></div>
+      <p class="eyebrow">18 skills, one-time price</p>
+      <div class="buy"><span class="price">$199</span><a class="pill pill-ember pill-sm" href="https://www.agensi.io/bundles/gtm-engineering-outbound-pipeline">Buy once</a><span class="partner">Checkout on our partner site, agensi.io</span></div>
+      <ul class="skill-list"><li data-skill="TAM List Builder" title="Builds a defensible total addressable market end to end, for mainstream B2B, local or niche markets (contractors, clinics), enterprise named accounts and partner channels.">TAM List Builder</li><li data-skill="Outbound Targeting" title="Builds a tight, in-motion, campaign-ready list instead of spraying a broad one.">Outbound Targeting</li><li data-skill="ICP Fit Filter" title="Strip non-buyers out of a campaign list, keeping only the companies and people that match the user&#x27;s ICP.">ICP Fit Filter</li><li data-skill="Email Data Provider Waterfall" title="Choose and order your email and contact data providers by testing them fairly, then run the waterfall on your full list.">Email Data Provider Waterfall</li><li data-skill="Buying Signals Playbook" title="Work out the events that mean an account is ready to buy, then run them.">Buying Signals Playbook</li><li data-skill="Account Activity Surge" title="Find the accounts that are heating up while nobody works them, in three modules.">Account Activity Surge</li><li data-skill="Signal to CRM Prospecting" title="Runs a scheduled prospecting routine end to end: monitors chosen sources (websites, registries, news feeds, publications, job boards) for a trigger signal, qualifies the companies behind each signal against an ideal customer profile (ICP), dedupes against the CRM, creates the new companies in HubSpot with full field mapping and territory-based owners, finds the right people at each company through a data-provider waterfall (Clay, ZoomInfo, Prospeo, Oxygen), finds verified work emails, creates and links the contacts, and posts a short totals-only summary to a team Slack channel through a bot, with review items sent privately.">Signal to CRM Prospecting</li><li data-skill="Reo to Email Bison and HeyReach" title="Turns fresh Reo.dev developer-intent signals (GitHub repos, website, docs, LinkedIn) into outreach: pulls everyone new since the last batch, drops excluded signals and anyone already contacted (live campaigns, earlier batches, HubSpot, do-not-contact list, sender networks), applies the ICP plus seniority and account-tier gates, normalizes names, writes openers from each person&#x27;s own signal, verifies emails, loads the running Email Bison and HeyReach campaigns, verifies the load, catches job changers, logs the batch.">Reo to Email Bison and HeyReach</li><li data-skill="Copywriting Messaging" title="The one copywriting skill for cold outreach, in six modules run alone or together.">Copywriting Messaging</li><li data-skill="Proof Points by Industry" title="Turn a pile of case studies into an industry-indexed proof matrix, then pull the right proof into outreach so a pharma prospect hears a pharma story and a bank hears a bank story.">Proof Points by Industry</li><li data-skill="Campaign Send Checklist" title="One pre-send check for a campaign list, in five modules run alone or together, removing people first and polishing last.">Campaign Send Checklist</li><li data-skill="CRM Overlap Check" title="Clean a campaign list against the user&#x27;s CRM before launch: interactively walk them through removing every company in a live or won deal, every person already in an active conversation or who was on a closed-lost deal, anyone already in the system under the same name, and the team&#x27;s close contacts.">CRM Overlap Check</li><li data-skill="Email and LinkedIn Sequencer Lead Upload" title="Builds and loads outreach campaigns from a personalized lead list.">Email and LinkedIn Sequencer Lead Upload</li><li data-skill="Email LinkedIn Orchestrator" title="Makes a separate email sequencer and LinkedIn tool behave like one multichannel sequence (the Lemlist idea, built with n8n), so a LinkedIn step in the email cadence happens on LinkedIn without a rep doing it by hand.">Email LinkedIn Orchestrator</li><li data-skill="Local Business Outbound" title="Runs the end-to-end cold email play for local businesses found through Google listings (restaurants, shops, clinics, trades), whose owners B2B databases barely cover.">Local Business Outbound</li><li data-skill="Email Deliverability Metrics and Dashboard" title="Cold-email deliverability, practice and measurement.">Email Deliverability Metrics and Dashboard</li><li data-skill="AI Responder" title="Handle everything that happens after a cold email or LinkedIn message is sent, as a drafts-only AI responder with a human approving every send.">AI Responder</li><li data-skill="Campaign Reply Insights" title="Analyzes cold email and LinkedIn campaign replies to learn what is working, and makes sure good replies get answered.">Campaign Reply Insights</li></ul>
     </article>
-    <article class="card w7">
-      <p class="eyebrow">15 skills, one-time price</p>
+    <article class="card w3">
       <h3>GTM Engineering &amp; RevOps</h3>
-      <p class="blurb">The systems behind the selling: CRM setup in HubSpot or Attio, scoring and attribution, n8n and agent automations, GTM strategy and growth programs.</p>
-      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the skills</summary><ul><li>Hubspot Implementation Playbook <span>&middot; Audit, rebuild and hand over a HubSpot portal in seven modules, in the order that avoids rework.</span></li><li>Attio Implementation Playbook <span>&middot; Implements, audits and runs an Attio CRM workspace end to end, in the order that avoids rework: workspace settings, security and permissions, objects (standard, custom, attributes, statuses, imports, migration), lists, the workflow builder (block types, variables, testing, credits), ready-to-build automations (lead triage and round robin, closed-won handoff with a required-field gate, stale-deal sweep, form and webhook intake, MRR change routing, AI summaries, new person to LinkedIn invite), connecting tools (inbox and calendar, Slack, Typeform, Segment, n8n/Make/Zapier, REST API and webhooks), AI attributes, and one linked data model.</span></li><li>Lead and Account Scoring <span>&middot; Score and prioritise leads and accounts from your own CRM deal history (HubSpot, Attio or any CRM with an API or export), in five modules.</span></li><li>Lead Attribution Analysis <span>&middot; Reconstructs the full multi-channel touch history for a set of target accounts to show what sequence of steps leads to a first appointment, and what happens to an account after a deal is lost.</span></li><li>CRM Outreach Sync and Manual Upload <span>&middot; Syncs email and LinkedIn outreach activity from sequencing tools (Email Bison, HeyReach, Instantly, Smartlead, Expandi) into a CRM (HubSpot, Salesforce, Attio, GoHighLevel, Close, Pipedrive) by API: creates or reuses the contact, attaches it to the right company, fills only empty fields, and logs each touch (sends, replies, forwards, invites, acceptances, messages) as a dated activity with direction.</span></li><li>N8n GTME Playbooks <span>&middot; Builds and runs n8n lead-ops automations for outbound through Claude, from zero to live, even for first-time n8n users: n8n Cloud setup, the MCP link to Claude, credentials for every tool, and four playbooks.</span></li><li>GTM Automations <span>&middot; Pick and build the highest-leverage GTM automations from a catalog of thirteen: intent-based campaigns, human-in-the-loop outreach off website deanonymization, Slack approvals, social listening, local-business scraping, AI-agent orchestration, the LLM upgrade, AI note-taking, prompt-based list building, domain and inbox infrastructure, AI-native CRM workflows, flag-triggered phone and LinkedIn enrichment on the CRM via Clay, and CRM records pushed into HeyReach for LinkedIn connection requests, naming real tools for each (Clay, n8n, HeyReach, Instantly and many more).</span></li><li>Claude Code Outbound Pipeline <span>&middot; Run a whole outbound campaign from Claude Code through APIs, from one brief.</span></li><li>CRM Agent Autopilot <span>&middot; Sets up an AI agent to run recurring CRM jobs on its own, safely, one module at a time.</span></li><li>GTM Strategy Plan <span>&middot; Writes an AI-led GTM strategy plan framed as a diagnosis and one bet, not a menu: a correctable situation read, the one constraint, numbered decisions, an ordered lead-source mix (CRM reactivation first, signal-led outbound last), buying-group titles, a warm-up-led build order, a day-by-day cadence, a signal engine, agent rules (a reply anywhere stops every channel; a human approves every AI reply), lean measurement, a timeline, honest targets, a needs list.</span></li><li>Sales Call Insights <span>&middot; Mines recorded sales conversations (demos, discovery, pricing calls) for the exact language buyers use, then turns it into outreach that gets replies.</span></li><li>LinkedIn Ads Program <span>&middot; Plan, launch and run a B2B LinkedIn Ads program end to end, in five modules.</span></li><li>Partner and Creator Programs <span>&middot; Build and run a partner and affiliate program and a creator program for a B2B SaaS company, or the agency running its growth, in seven modules.</span></li><li>Agency Back Office <span>&middot; Run the contracts and the money admin of a small GTM, outbound or RevOps agency or consultancy, in eight modules.</span></li><li>Long Video to YouTube Shorts <span>&middot; Turns long-form videos (YouTube, Tella, Loom, Riverside, Descript, Zoom, or a local file) into 15 to 20 second vertical YouTube Shorts and publishes them.</span></li></ul></details>
-      <div class="end"><span class="price">$199</span><a class="pill pill-ember pill-sm" href="https://www.agensi.io/bundles/gtm-engineering-revops">Buy once</a></div>
+      <p class="eyebrow">15 skills, one-time price</p>
+      <div class="buy"><span class="price">$199</span><a class="pill pill-ember pill-sm" href="https://www.agensi.io/bundles/gtm-engineering-revops">Buy once</a><span class="partner">Checkout on our partner site, agensi.io</span></div>
+      <ul class="skill-list"><li data-skill="HubSpot Implementation Playbook" title="Audit, rebuild and hand over a HubSpot portal in seven modules, in the order that avoids rework.">HubSpot Implementation Playbook</li><li data-skill="Attio Implementation Playbook" title="Implements, audits and runs an Attio CRM workspace end to end, in the order that avoids rework: workspace settings, security and permissions, objects (standard, custom, attributes, statuses, imports, migration), lists, the workflow builder (block types, variables, testing, credits), ready-to-build automations (lead triage and round robin, closed-won handoff with a required-field gate, stale-deal sweep, form and webhook intake, MRR change routing, AI summaries, new person to LinkedIn invite), connecting tools (inbox and calendar, Slack, Typeform, Segment, n8n/Make/Zapier, REST API and webhooks), AI attributes, and one linked data model.">Attio Implementation Playbook</li><li data-skill="Lead and Account Scoring" title="Score and prioritise leads and accounts from your own CRM deal history (HubSpot, Attio or any CRM with an API or export), in five modules.">Lead and Account Scoring</li><li data-skill="Lead Attribution Analysis" title="Reconstructs the full multi-channel touch history for a set of target accounts to show what sequence of steps leads to a first appointment, and what happens to an account after a deal is lost.">Lead Attribution Analysis</li><li data-skill="CRM Outreach Sync and Manual Upload" title="Syncs email and LinkedIn outreach activity from sequencing tools (Email Bison, HeyReach, Instantly, Smartlead, Expandi) into a CRM (HubSpot, Salesforce, Attio, GoHighLevel, Close, Pipedrive) by API: creates or reuses the contact, attaches it to the right company, fills only empty fields, and logs each touch (sends, replies, forwards, invites, acceptances, messages) as a dated activity with direction.">CRM Outreach Sync and Manual Upload</li><li data-skill="n8n GTME Playbooks" title="Builds and runs n8n lead-ops automations for outbound through Claude, from zero to live, even for first-time n8n users: n8n Cloud setup, the MCP link to Claude, credentials for every tool, and four playbooks.">n8n GTME Playbooks</li><li data-skill="GTM Automations" title="Pick and build the highest-leverage GTM automations from a catalog of thirteen: intent-based campaigns, human-in-the-loop outreach off website deanonymization, Slack approvals, social listening, local-business scraping, AI-agent orchestration, the LLM upgrade, AI note-taking, prompt-based list building, domain and inbox infrastructure, AI-native CRM workflows, flag-triggered phone and LinkedIn enrichment on the CRM via Clay, and CRM records pushed into HeyReach for LinkedIn connection requests, naming real tools for each (Clay, n8n, HeyReach, Instantly and many more).">GTM Automations</li><li data-skill="Claude Code Outbound Pipeline" title="Run a whole outbound campaign from Claude Code through APIs, from one brief.">Claude Code Outbound Pipeline</li><li data-skill="CRM Agent Autopilot" title="Sets up an AI agent to run recurring CRM jobs on its own, safely, one module at a time.">CRM Agent Autopilot</li><li data-skill="GTM Strategy Plan" title="Writes an AI-led GTM strategy plan framed as a diagnosis and one bet, not a menu: a correctable situation read, the one constraint, numbered decisions, an ordered lead-source mix (CRM reactivation first, signal-led outbound last), buying-group titles, a warm-up-led build order, a day-by-day cadence, a signal engine, agent rules (a reply anywhere stops every channel; a human approves every AI reply), lean measurement, a timeline, honest targets, a needs list.">GTM Strategy Plan</li><li data-skill="Sales Call Insights" title="Mines recorded sales conversations (demos, discovery, pricing calls) for the exact language buyers use, then turns it into outreach that gets replies.">Sales Call Insights</li><li data-skill="LinkedIn Ads Program" title="Plan, launch and run a B2B LinkedIn Ads program end to end, in five modules.">LinkedIn Ads Program</li><li data-skill="Partner and Creator Programs" title="Build and run a partner and affiliate program and a creator program for a B2B SaaS company, or the agency running its growth, in seven modules.">Partner and Creator Programs</li><li data-skill="Agency Back Office" title="Run the contracts and the money admin of a small GTM, outbound or RevOps agency or consultancy, in eight modules.">Agency Back Office</li><li data-skill="Long Video to YouTube Shorts" title="Turns long-form videos (YouTube, Tella, Loom, Riverside, Descript, Zoom, or a local file) into 15 to 20 second vertical YouTube Shorts and publishes them.">Long Video to YouTube Shorts</li></ul>
     </article>
-    <article class="card w5 peach">
-      <p class="eyebrow">33 skills, one-time price</p>
+    <article class="card w3 peach">
       <h3>All Access</h3>
-      <p class="blurb">All 41 skills: the 33 paid skills, plus the 8 free ones you already have.</p>
-      <details><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>See the packs</summary><ul><li>GTM Engineering: Outbound Pipeline <span>&middot; 18 skills</span></li><li>GTM Engineering &amp; RevOps <span>&middot; 15 skills</span></li></ul></details>
-      <div class="end"><span class="price">$299</span><a class="pill pill-ember pill-sm" href="https://www.agensi.io/bundles/skillnut-all-access">Get everything</a></div>
+      <p class="eyebrow">33 skills, one-time price</p>
+      <div class="buy"><span class="price">$299</span><a class="pill pill-ember pill-sm" href="https://www.agensi.io/bundles/skillnut-all-access">Get everything</a><span class="partner">Checkout on our partner site, agensi.io</span></div>
+      <ul class="skill-list packs"><li>GTM Engineering: Outbound Pipeline <span>&middot; 18 skills</span></li><li>GTM Engineering &amp; RevOps <span>&middot; 15 skills</span></li></ul>
     </article>
   </div>
+ </div>
+</section>
 
+<section class="wrap">
   <div class="poster" id="trust">
     <h2>Nothing sends without your yes<span class="caret" aria-hidden="true"></span></h2>
     <div class="poster-row">
@@ -452,22 +353,6 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
   // header hairline once the page scrolls
   var nav = document.querySelector(".nav");
   if (nav) { var onScroll = function () { nav.classList.toggle("scrolled", window.scrollY > 8); }; onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); }
-  // install method toggle
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.toggle [role="tab"]'));
-  function pick(t, focus) {
-    tabs.forEach(function (x) {
-      var on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1;
-      document.getElementById(x.getAttribute("aria-controls")).classList.toggle("on", on);
-    });
-    if (focus) t.focus();
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener("click", function () { pick(t); });
-    t.addEventListener("keydown", function (e) {
-      var j = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
-      if (j === undefined) return; e.preventDefault(); pick(tabs[(j + tabs.length) % tabs.length], true);
-    });
-  });
   // copy
   document.querySelectorAll("button.go[data-copy]").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -507,7 +392,7 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
     var loc = gl.getAttribLocation(pr, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
     var ur = gl.getUniformLocation(pr, "r"), ut = gl.getUniformLocation(pr, "t");
-    function size() { var s = 0.5, w = Math.max(1, Math.round(cv.clientWidth * s)), hh = Math.max(1, Math.round(cv.clientHeight * s));
+    function size() { var s = Math.min(window.devicePixelRatio || 1, 2), w = Math.max(1, Math.round(cv.clientWidth * s)), hh = Math.max(1, Math.round(cv.clientHeight * s));
       if (cv.width !== w || cv.height !== hh) { cv.width = w; cv.height = hh; gl.viewport(0, 0, w, hh); } }
     function draw(ms) { size(); gl.uniform2f(ur, cv.width, cv.height); gl.uniform1f(ut, 12 + ms / 1000); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
     if (still) { draw(0); return; }
@@ -554,8 +439,9 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
       }
       q.x = px; q.y = py; q.z = pz;
     }
-    var W, H, S, dpr = Math.min(window.devicePixelRatio || 1, 1.6);
-    function size() { var w = cv.clientWidth, h = cv.clientHeight; if (w * dpr !== W || h * dpr !== H) { W = cv.width = Math.round(w * dpr); H = cv.height = Math.round(h * dpr); } S = Math.min(W, H) * 0.36; }
+    var W, H, S, dpr = 1;
+    function size() { dpr = Math.min(window.devicePixelRatio || 1, 3);   // re-read every frame, so zooming stays sharp
+      var w = cv.clientWidth, h = cv.clientHeight; if (Math.round(w * dpr) !== W || Math.round(h * dpr) !== H) { W = cv.width = Math.round(w * dpr); H = cv.height = Math.round(h * dpr); } S = Math.min(W, H) * 0.36; }
     function proj(x, y, z, ang) {
       var c = Math.cos(ang), s = Math.sin(ang), X = x * c + z * s, Z = -x * s + z * c;
       var t = -0.32, Y = y * Math.cos(t) - Z * Math.sin(t); Z = y * Math.sin(t) + Z * Math.cos(t);
@@ -566,11 +452,28 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
       for (var k = 0; k < 3; k++) { var a = rot + k * 2.0944, px = x + Math.cos(a) * r * 1.7, py = y + Math.sin(a) * r * 1.7; k ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
       ctx.closePath();
     }
-    var lit = -1, litName = 0, litAt = 0;
-    function pickLit() {
-      var best = -1, tries = 0;
-      while (tries++ < 60) { var k = Math.floor(Math.random() * N); if (!P[k].cb && P[k].z < -0.35 && Math.abs(P[k].sx - W / 2) < W * 0.32) { best = k; break; } }
-      lit = best; litName = (litName + 5) % names.length;
+    // skill labels: several at once, each in its own part of the brain; one slot refreshes every LIFE/SLOTS ms,
+    // so every skill is named within about ten seconds.
+    var SLOTS = cv.clientWidth < 420 ? 4 : 8, LIFE = 2000, FADE = 300, nextName = 0, slots = [];
+    var order = names.map(function (_, i) { return i; });
+    for (var k = order.length - 1; k > 0; k--) { var r2 = Math.floor(rnd() * (k + 1)), tmp = order[k]; order[k] = order[r2]; order[r2] = tmp; }
+    for (var k = 0; k < SLOTS; k++) slots.push({ i: k, side: k % 2, node: -1, name: null, at: null });
+    function packTint() { return "#d4c7ff"; }
+    function packTag(p) { return p === "Free" ? "FREE" : (/Outbound/.test(p) ? "OUTBOUND PIPELINE" : "REVOPS"); }
+    function refill(s, now) {
+      s.name = names[order[nextName++ % order.length]];
+      ctx.font = "500 " + 12 * dpr + "px Inter, system-ui, sans-serif";
+      var w = ctx.measureText(s.name.skill).width + 14 * dpr, rows = SLOTS / 2, band = H * 0.64 / rows;
+      var y0 = H * 0.18 + Math.floor(s.i / 2) * band + band * 0.25, y1 = y0 + band * 0.5;
+      var x0 = s.side ? W * 0.5 : Math.max(W * 0.22, w), x1 = s.side ? Math.min(W * 0.78, W - w) : W * 0.5;
+      s.node = -1;
+      for (var pass = 0; pass < 2 && s.node < 0; pass++) {
+        for (var tries = 0; tries < 120; tries++) {
+          var k = Math.floor(Math.random() * N), q = P[k], inX = pass ? (s.side ? q.sx >= W * 0.5 : q.sx < W * 0.5) : (q.sx > x0 && q.sx < x1);
+          if (!q.cb && q.z < -0.15 && inX && q.sy > y0 && q.sy < y1) { s.node = k; break; }
+        }
+      }
+      s.at = now;
     }
     function frame(t) {
       size(); ctx.clearRect(0, 0, W, H);
@@ -587,47 +490,41 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
         if (p.tri) { ctx.strokeStyle = p.c; ctx.lineWidth = dpr * 0.9; ctx.stroke(); } else { ctx.fillStyle = p.c; ctx.fill(); }
       }
       ctx.globalCompositeOperation = "source-over";
-      if (t - litAt > 2600 || lit < 0) { pickLit(); litAt = t; }
-      if (lit >= 0) {
-        var L = P[lit], near = [];
-        for (var i = 0; i < N; i += 2) { if (i === lit || P[i].z > 0) continue; var dx = P[i].sx - L.sx, dy = P[i].sy - L.sy, dd = dx * dx + dy * dy;
-          if (dd > 30 * dpr * 30 * dpr && dd < 90 * dpr * 90 * dpr) near.push([dd, i]); }
-        near.sort(function (a, b) { return a[0] - b[0]; });
-        var fade = Math.min(1, (t - litAt) / 400) * Math.min(1, (2600 - (t - litAt)) / 400 + 0.0001);
-        ctx.globalAlpha = 0.55 * fade; ctx.strokeStyle = "#fff"; ctx.lineWidth = dpr * 0.8;
-        near.slice(0, 5).forEach(function (n) { var o = P[n[1]]; ctx.beginPath(); ctx.moveTo(L.sx, L.sy); ctx.lineTo(o.sx, o.sy); ctx.stroke();
-          ctx.beginPath(); ctx.arc(o.sx, o.sy, 2.2 * dpr, 0, 6.2832); ctx.fillStyle = "#fff"; ctx.fill(); });
+      var now = still ? performance.now() : t;
+      slots.forEach(function (s) {
+        if (s.at === null) { refill(s, now); s.at = now - s.i * (LIFE / SLOTS); }
+        else if (now - s.at > LIFE) refill(s, now);
+        if (s.node < 0) return;
+        var L = P[s.node], age = now - s.at, fade = Math.max(0, Math.min(1, age / FADE, (LIFE - age) / FADE)), tint = packTint(s.name.pack);
         ctx.globalAlpha = fade;
-        ctx.beginPath(); ctx.arc(L.sx, L.sy, 4.5 * dpr, 0, 6.2832); ctx.fillStyle = "#d4c7ff"; ctx.fill();
-        ctx.lineWidth = 1.5 * dpr; ctx.strokeStyle = "#fff"; ctx.stroke();
-        var nm = names[litName];
-        ctx.font = "500 " + 13 * dpr + "px Geist, Inter, system-ui, sans-serif";
-        var tw = ctx.measureText(nm.skill).width, right = L.sx + 16 * dpr + tw < W - 12 * dpr, lx = right ? L.sx + 16 * dpr : Math.max(12 * dpr + tw, L.sx - 16 * dpr), ly = L.sy - 14 * dpr;
-        ctx.textAlign = right ? "left" : "right";
-        ctx.lineJoin = "round"; ctx.lineWidth = 4 * dpr; ctx.strokeStyle = "rgba(10,8,8,.75)";
-        ctx.strokeText(nm.skill, lx, ly); ctx.fillStyle = "#fff"; ctx.fillText(nm.skill, lx, ly);
-        ctx.font = "400 " + 11 * dpr + "px 'Geist Mono', ui-monospace, monospace";
-        ctx.strokeText(nm.pack.toUpperCase(), lx, ly + 16 * dpr); ctx.fillStyle = "#d4c7ff"; ctx.fillText(nm.pack.toUpperCase(), lx, ly + 16 * dpr);
-      }
+        var X = Math.round(L.sx), Y = Math.round(L.sy);
+        ctx.beginPath(); ctx.arc(X, Y, 3.5 * dpr, 0, 6.2832); ctx.fillStyle = tint; ctx.fill();
+        ctx.lineWidth = 1.2 * dpr; ctx.strokeStyle = "#fff"; ctx.stroke();
+        // crisp label: solid dark tag, text on whole pixels, no blurry outline
+        var tag = packTag(s.name.pack), f1 = Math.round(12 * dpr), f2 = Math.round(9.5 * dpr), pad = Math.round(7 * dpr);
+        ctx.font = "500 " + f1 + "px Inter, system-ui, sans-serif"; var w1 = ctx.measureText(s.name.skill).width;
+        ctx.font = "500 " + f2 + "px 'Geist Mono', ui-monospace, monospace"; var w2 = ctx.measureText(tag).width;
+        var bw = Math.round(Math.max(w1, w2) + pad * 2), bh = Math.round(f1 + f2 + pad * 2 + 3 * dpr);
+        var bx = s.side ? X + Math.round(10 * dpr) : X - Math.round(10 * dpr) - bw;
+        bx = Math.max(Math.round(4 * dpr), Math.min(bx, W - bw - Math.round(4 * dpr)));
+        var by = Y - Math.round(bh / 2);
+        ctx.fillStyle = "rgba(16,15,15,.84)"; ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, Math.round(6 * dpr)); else ctx.rect(bx, by, bw, bh);
+        ctx.fill();
+        ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+        ctx.font = "500 " + f1 + "px Inter, system-ui, sans-serif"; ctx.fillStyle = "#fff";
+        ctx.fillText(s.name.skill, bx + pad, by + pad + f1 - Math.round(dpr));
+        ctx.font = "500 " + f2 + "px 'Geist Mono', ui-monospace, monospace"; ctx.fillStyle = tint;
+        ctx.fillText(tag, bx + pad, by + pad + f1 + f2 + Math.round(2 * dpr));
+      });
       ctx.globalAlpha = 1;
     }
-    if (still) { frame(0); setInterval(function () { litAt = -1e9; frame(0); }, 2600); return; }
+    if (still) { frame(0); setInterval(function () { frame(0); }, 250); return; }
     var on = true;
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { on = es[0].isIntersecting; }).observe(cv);
     (function loop(t) { if (on && !document.hidden) frame(t); requestAnimationFrame(loop); })(0);
   })();
 
-  // terminal types itself once it is on screen
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var lines = Array.prototype.slice.call(document.querySelectorAll("#term li"));
-  lines.forEach(function (l) { l.classList.add("wait"); });
-  var run = function () {
-    var t = 0, d = [200, 450, 800, 420, 300, 300, 300, 650, 450];
-    lines.forEach(function (l, i) { t += d[i]; setTimeout(function () { l.classList.remove("wait"); }, t); });
-  };
-  if (!("IntersectionObserver" in window)) return run();
-  var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: .4 });
-  io.observe(document.getElementById("term"));
 })();
 </script>
 </body>
