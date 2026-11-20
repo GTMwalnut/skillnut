@@ -95,7 +95,7 @@ p { margin: 0; text-wrap: pretty; }
 .ways > li.inline { grid-template-columns: 24px minmax(0, 1fr) auto; align-items: center; }
 .ways > li.inline .do { grid-column: 3; grid-row: 1 / span 2; margin-top: 0; }
 .ways > li + li { border-top: 1px solid var(--mist); }
-.ways > li::before { content: counter(way); grid-column: 1; grid-row: 1 / span 2; width: 24px; height: 24px; border-radius: 50%; background: var(--lilac);
+.ways > li::before { content: counter(way); grid-column: 1; grid-row: 1; width: 24px; height: 24px; border-radius: 50%; background: var(--lilac);
                      color: var(--ink); display: grid; place-items: center; font: 600 12px/1 var(--sans); }
 .ways > li > * { grid-column: 2; min-width: 0; }
 .ways .how { display: block; }
@@ -104,6 +104,15 @@ p { margin: 0; text-wrap: pretty; }
 .ways .do { margin-top: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--stone); }
 .ways .do a:not(.pill) { color: var(--violet); text-decoration: none; }
 .ways .do a:not(.pill):hover { text-decoration: underline; text-underline-offset: 3px; }
+.ways .opt { margin-top: 10px; }
+.ways .opt .bar { margin-top: 8px; }
+.ways .opt.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; border-top: 1px dashed var(--mist); }
+.ways .opt.row .how { flex: 1; min-width: 0; }
+.ways .opt.row .pill { flex: none; }
+.ways .how strong { font-weight: 540; color: var(--ink); }
+.ways .how small { display: block; margin-top: 3px; font-size: 12px; }
+.ways .how small a { color: var(--violet); text-decoration: none; }
+.ways .how small a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ways .pill svg { width: 15px; height: 15px; }
 .ways .pill-sm { height: 36px; padding: 0 14px; font-size: 14px; }
 
@@ -236,6 +245,7 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
   .bar pre { font-size: 12.5px; }
   .ways > li.inline { grid-template-columns: 24px minmax(0, 1fr); }
   .ways > li.inline .do { grid-column: 2; grid-row: auto; margin-top: 8px; }
+  .ways .opt.row { flex-direction: column; align-items: flex-start; }
   .card.w5, .card.w7, .card.w4, .card.w3 { grid-column: 1 / -1; }
   .faq dl { grid-template-columns: 1fr; }
 }
@@ -262,17 +272,18 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
  <div class="hero-copy">
   <a class="badge" href="#shelf"><b>New</b>8 free skills, 33 in paid packs</a>
   <h1>Our GTM playbook, now a one-line install.</h1>
-  <ol class="ways" id="get" aria-label="Three ways to get the skills">
-    <li><b>Install from GitHub</b><span class="how">For Claude Code, Cursor or Codex: run one command.</span>
-      <div class="do"><div class="bar"><pre><span class="p">$ </span>npx skills add gtmwalnut/skillnut</pre><button class="go" type="button" data-copy="npx skills add gtmwalnut/skillnut" aria-label="Copy install command"><svg class="cp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div></div></li>
-    <li><b>Upload it to Claude</b><span class="how">Download one file, then in Claude open Customize, Plugins, Add, Upload plugin.</span>
-      <div class="do"><a class="pill pill-ember pill-sm" href="skillnut-free.zip" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Download free skills</a><span>On the free Claude plan? <a href="skillnut-free-one-by-one.zip" download>Get them one by one</a></span></div></li>
+  <ol class="ways" id="get" aria-label="Two ways to get the skills">
+    <li><b>Get the free skills</b>
+      <div class="opt"><span class="how"><strong>Install from GitHub</strong> for Claude Code, Cursor or Codex: run one command.</span>
+        <div class="bar"><pre><span class="p">$ </span>npx skills add gtmwalnut/skillnut</pre><button class="go" type="button" data-copy="npx skills add gtmwalnut/skillnut" aria-label="Copy install command"><svg class="cp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div></div>
+      <div class="opt row"><span class="how"><strong>Upload it to Claude</strong>: download one file, then open Customize, Plugins, Add, Upload plugin.</span>
+        <a class="pill pill-ember pill-sm" href="skillnut-free.zip" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Download free skills</a></div></li>
     <li class="inline"><b>Buy the full packs</b><span class="how">33 more skills for outbound and RevOps, one-time price.</span>
       <div class="do"><a class="pill pill-line pill-sm" href="#shelf">See the packs</a></div></li>
   </ol>
  </div>
  <div class="hero-side">
-  <p class="sub">A skill is a set of written instructions that teaches Claude a GTM job, like building a target list, writing cold emails or cleaning up your CRM. You ask in plain words, and Claude follows the same steps we use with our clients. It shows you its plan and asks before it sends or changes anything.</p>
+  <p class="sub">A skill is a set of written instructions that teaches Claude a GTM job, like building a target list, writing cold emails or cleaning up your CRM. You ask in plain words, and Claude follows the same steps we use with our clients.</p>
  <figure class="brain" aria-label="Graph of the GTM Walnut playbooks: 41 skills in 2 packs, linked the way we run them">
   <div class="brain-head"><span>gtm-walnut / brain</span><span class="chip" style="background:rgba(255,255,255,.08);color:#b9b4ad">Live</span></div>
   <div class="brain-stage"><div class="liquid-still" aria-hidden="true"></div><canvas id="liquid" aria-hidden="true"></canvas><canvas id="brain3d" aria-hidden="true"></canvas></div>
@@ -454,7 +465,7 @@ footer .made svg { height: 22px; width: auto; }   /* GTM Walnut wordmark keeps i
     }
     // skill labels: several at once, each in its own part of the brain; one slot refreshes every LIFE/SLOTS ms,
     // so every skill is named within about ten seconds.
-    var SLOTS = cv.clientWidth < 420 ? 4 : 8, LIFE = 2000, FADE = 300, nextName = 0, slots = [];
+    var SLOTS = cv.clientWidth < 420 ? 4 : 6, LIFE = 1600, FADE = 300, nextName = 0, slots = [];
     var order = names.map(function (_, i) { return i; });
     for (var k = order.length - 1; k > 0; k--) { var r2 = Math.floor(rnd() * (k + 1)), tmp = order[k]; order[k] = order[r2]; order[r2] = tmp; }
     for (var k = 0; k < SLOTS; k++) slots.push({ i: k, side: k % 2, node: -1, name: null, at: null });
