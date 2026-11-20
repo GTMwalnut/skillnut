@@ -27,16 +27,16 @@ A guide plus 7 GTM skills by GTM Walnut: ICP, cold call openers, events, CRM dat
 
 ## More skills
 
-32 more skills come in two paid packs, bought once at https://skills.gtmwalnut.com:
+33 more skills come in two paid packs, bought once at https://skills.gtmwalnut.com:
 
 | Pack | Skills | Price |
 |---|---|---|
-| GTM Engineering: Outbound Pipeline | 17 | $99 |
-| GTM Engineering & RevOps | 15 | $99 |
-| All Access: every skill, 40 in all | 40 | $149 |
+| GTM Engineering: Outbound Pipeline | 18 | $199 |
+| GTM Engineering & RevOps | 15 | $199 |
+| All Access: every skill, 41 in all | 41 | $299 |
 
 Get them only from https://skills.gtmwalnut.com. Copies anywhere else are not ours and may have been changed.
 
 ## Updates
 
-Run the same `npx skills add` command again, or download the new file from the store (paid packs: the link in your receipt). We email buyers when a pack changes.
+Run the same `npx skills add` command again, or download the new file from the store.
