@@ -4,6 +4,8 @@ Agent Skills built from real GTM client work. Each one is a guided run: it asks 
 
 Store: https://skills.gtmwalnut.com
 
+**Paid skills:** 33 more skills come in two packs. To get them, go to [More skills](#more-skills) below.
+
 ## Skillnut Free
 
 A guide plus 7 GTM skills by GTM Walnut: ICP, cold call openers, events, CRM data, a GTM dashboard, training docs and LinkedIn posts.
@@ -27,15 +29,15 @@ A guide plus 7 GTM skills by GTM Walnut: ICP, cold call openers, events, CRM dat
 
 ## More skills
 
-33 more skills come in two paid packs, bought once at https://skills.gtmwalnut.com:
+Want the full set? 33 more skills come in two paid packs, each a one-time price. Click a pack to buy it on our partner site, agensi.io:
 
 | Pack | Skills | Price |
 |---|---|---|
-| GTM Engineering: Outbound Pipeline | 18 | $199 |
-| GTM Engineering & RevOps | 15 | $199 |
-| All Access: every skill, 41 in all | 41 | $299 |
+| [GTM Engineering: Outbound Pipeline](https://www.agensi.io/bundles/gtm-engineering-outbound-pipeline) | 18 | $199 |
+| [GTM Engineering & RevOps](https://www.agensi.io/bundles/gtm-engineering-revops) | 15 | $199 |
+| [All Access: every skill, 41 in all](https://www.agensi.io/bundles/skillnut-all-access) | 41 | $299 |
 
-Get them only from https://skills.gtmwalnut.com. Copies anywhere else are not ours and may have been changed.
+Buy them only through https://skills.gtmwalnut.com or the links above. Copies anywhere else are not ours and may have been changed.
 
 ## Updates
 
