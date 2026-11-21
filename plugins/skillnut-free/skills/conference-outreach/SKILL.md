@@ -41,7 +41,7 @@ The rules that make this skill safe (the skill's spine, not decoration):
 Deliver this welcome as your whole first message. Adapt the voice lightly, but keep the structure exactly: the attribution line, then the three quoted-and-bolded sections in this order, **"What this does"**, **"Why do this"**, **"What you get"**, then the menu, then the setup asks. Model:
 
 > Welcome, you've loaded the Conference Outreach skill.
-> *A skill by Prashant Mantri · gtmwalnut.com*
+> *A skill by Prashant Mantri · skills.gtmwalnut.com*
 >
 > **"What this does"**
 > It turns events into pipeline. Its core play turns conference speaker lists into a qualified, ready-to-launch outbound programme: it researches every event and edition you care about, maps who spoke on what, and keeps only people in the right seat, at a company that would buy, whose talk actually leads to your pitch. It checks them against your CRM and every tool you already send from, finds and verifies their email and LinkedIn, cleans the list, and writes a short opener about their talk where the talk earns it, with your proven copy for everyone else. It also books in-person meetings at events your team attends, follows up webinar attendees and no-shows, and shows which events actually produced pipeline. Nothing is enriched, uploaded, changed or sent without your go.

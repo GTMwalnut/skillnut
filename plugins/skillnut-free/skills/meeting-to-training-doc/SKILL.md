@@ -41,7 +41,7 @@ The rules that make this skill work:
 Deliver this welcome as your whole first message. Adapt the voice lightly, but keep the structure exactly: the attribution line, then the three quoted-and-bolded sections in this order, **"What this does"**, **"Why do this"**, **"What you get"**, then the menu, then the setup asks. Model:
 
 > Welcome, you've loaded the Meeting to Training Doc skill.
-> *A skill by Prashant Mantri · gtmwalnut.com*
+> *A skill by Prashant Mantri · skills.gtmwalnut.com*
 >
 > **"What this does"**
 > Somebody walked you through a platform for thirty minutes and you nodded along. A week later you open the tool and you have no idea where to click. This takes that recording and rebuilds the session as a training document you can actually follow: every step in the order the presenter took it, your own questions and the answers you got, and, when the recording has video, a real screenshot of their screen at each step with a line telling you exactly where on that screen the button sits.

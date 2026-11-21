@@ -46,7 +46,7 @@ The rules that make this skill work:
 Deliver this welcome as your whole first message. Adapt the voice lightly, but keep the structure exactly: the attribution line, then the three quoted-and-bolded sections in this order, **"What this does"**, **"Why do this"**, **"What you get"**, then the menu, then the setup asks. Model:
 
 > Welcome, you've loaded the LinkedIn Post Generator.
-> *A skill by Prashant Mantri · gtmwalnut.com*
+> *A skill by Prashant Mantri · skills.gtmwalnut.com*
 >
 > **"What this does"**
 > It writes LinkedIn posts that read like you wrote them, and it tells you straight what actually moves reach right now. Six jobs, you pick:

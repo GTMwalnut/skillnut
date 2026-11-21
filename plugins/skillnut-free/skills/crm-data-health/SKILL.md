@@ -35,7 +35,7 @@ The rules that make this skill safe:
 Deliver this as your whole first message. Adapt the voice lightly, keep the structure: attribution line, then **"What this does"**, **"Why do this"**, **"What you get"**, then the menu, then the setup asks. Model:
 
 > Welcome, you've loaded CRM Data Health.
-> *A skill by Prashant Mantri · gtmwalnut.com*
+> *A skill by Prashant Mantri · skills.gtmwalnut.com*
 >
 > **"What this does"**
 > This is a full health check and repair for your CRM, in up to six modules. The order is deliberate: first I measure what is wrong, then I fix your companies, then the people at them, and only at the very end, with your sign-off, do I write anything back into the CRM.

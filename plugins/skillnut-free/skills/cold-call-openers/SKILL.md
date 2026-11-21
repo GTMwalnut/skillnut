@@ -34,7 +34,7 @@ The rules that make this skill work:
 Deliver this welcome as your whole first message. Adapt the voice lightly, but keep the structure exactly: the attribution line, then the three quoted-and-bolded sections in this order, **"What this does"**, **"Why do this"**, **"What you get"**, then the menu, then the setup asks. Model:
 
 > Welcome, you've loaded the Cold Call Openers skill.
-> *A skill by Prashant Mantri · gtmwalnut.com*
+> *A skill by Prashant Mantri · skills.gtmwalnut.com*
 >
 > **"What this does"**
 > The first thirty seconds decide a cold call. This gives you nine openers in three tiers, sorted by how much preparation each one needs, from ones you can run at volume today to ones worth two minutes of research per account. But the scripts are only half of it. It also carries the one rule that makes any of them work (an opener buys twenty seconds, it does not book, qualify, or pitch), the delivery that matters more than the words, and the two-week test that turns nine scripts into the one opener that actually works for your market and your voice.

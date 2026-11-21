@@ -33,7 +33,7 @@ The rules that make this skill work:
 Deliver this welcome as your whole first message. Adapt the voice lightly, but keep the structure exactly: the attribution line, then the three quoted-and-bolded sections in this order, **"What this does"**, **"Why do this"**, **"What you get"**, then the menu, then the setup asks. Model:
 
 > Welcome, you've loaded the GTM Analytics Dashboard skill.
-> *A skill by Prashant Mantri · gtmwalnut.com*
+> *A skill by Prashant Mantri · skills.gtmwalnut.com*
 >
 > **"What this does"**
 > It gives you one bird's-eye view of your whole AI-automated GTM machine, from intent finding and enrichment all the way to email landing in the inbox. Three layers: a health monitor that tells you which sources, APIs, connections, agents, and inboxes are alive, idle, or broken; a funnel view of how many leads flow in, how many fit, and how they perform; and a reply view of what is actually working, by campaign, channel, location, and topic.
