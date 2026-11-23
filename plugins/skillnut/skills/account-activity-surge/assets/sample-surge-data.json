@@ -1,0 +1,1931 @@
+{
+ "generated": "2026-10-21",
+ "window": "2025-10-21 to 2026-10-21",
+ "months": [
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ],
+ "channels": [
+  "Email reply",
+  "LinkedIn reply",
+  "Meeting / demo",
+  "Survey",
+  "Website",
+  "Conference",
+  "Content / webinar"
+ ],
+ "title": "Account Activity Surge - last 12 months (sample data)",
+ "channel_definitions": {
+  "Email reply": "Inbound emails from the company, auto-replies removed.",
+  "LinkedIn reply": "Replies to LinkedIn outreach, synced to the CRM.",
+  "Meeting / demo": "Meetings logged in the CRM, plus demo-request and meeting-link forms.",
+  "Survey": "Completed a named industry survey.",
+  "Website": "Identified website visits (person or company).",
+  "Conference": "On an event attendee list, or an event meeting or dinner was logged.",
+  "Content / webinar": "Gated content downloads, webinar registrations or lead-gen ad forms."
+ },
+ "caveats": [
+  "All companies, people and numbers on this page are fictional sample data."
+ ],
+ "source": "fictional sample",
+ "accounts": [
+  {
+   "name": "Larkspur Pharma",
+   "group": "No open deal",
+   "segment": "Life sciences",
+   "priority": "1 - High",
+   "pipeline_status": "No open deal - previous deal closed-lost",
+   "deal": "Larkspur - Platform",
+   "stage": "Sales Pipeline > Closed lost",
+   "amount": 120000.0,
+   "deal_owner": "Sam Carter",
+   "company_owner": "Sam Carter",
+   "channels_12m": 4,
+   "channels_6m": 4,
+   "people": 1,
+   "activities": 13,
+   "first": "2025-11-17",
+   "latest": "2026-10-02",
+   "by_channel": {
+    "Email reply": 4,
+    "Meeting / demo": 1,
+    "Conference": 4,
+    "Content / webinar": 4
+   },
+   "monthly": {
+    "Email reply": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    "Meeting / demo": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Conference": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     2,
+     1,
+     0
+    ],
+    "Content / webinar": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     1
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Mei Tanaka",
+     "title": "VP Finance",
+     "channels": [
+      "Email reply",
+      "Content / webinar",
+      "Conference",
+      "Meeting / demo"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-10-02",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Mei Tanaka",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-09-12",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Mei Tanaka",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-08-22",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Mei Tanaka",
+     "detail": "Re: quick question"
+    },
+    {
+     "date": "2026-08-17",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Mei Tanaka",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-08-05",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Mei Tanaka",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-07-16",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Mei Tanaka",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-06-26",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Mei Tanaka",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-06-23",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Mei Tanaka",
+     "detail": "Re: quick question"
+    },
+    {
+     "date": "2026-06-03",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Mei Tanaka",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-05-17",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Mei Tanaka",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-03-14",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Mei Tanaka",
+     "detail": "Re: follow-up"
+    },
+    {
+     "date": "2025-11-17",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Mei Tanaka",
+     "detail": "Buyer's guide"
+    }
+   ],
+   "suggested_action": "Previous deal closed-lost and the account is engaging again: assign an owner and reopen with the engaged people.",
+   "crm_url": "https://crm.example.com/company/1005"
+  },
+  {
+   "name": "Pinecrest Biotech",
+   "group": "No open deal",
+   "segment": "Life sciences",
+   "priority": "1 - High",
+   "pipeline_status": "No open deal - never had a deal",
+   "deal": null,
+   "stage": null,
+   "amount": null,
+   "deal_owner": null,
+   "company_owner": "Jordan Lee",
+   "channels_12m": 3,
+   "channels_6m": 3,
+   "people": 5,
+   "activities": 13,
+   "first": "2025-12-22",
+   "latest": "2026-10-14",
+   "by_channel": {
+    "Survey": 4,
+    "Conference": 5,
+    "Content / webinar": 4
+   },
+   "monthly": {
+    "Survey": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "Conference": [
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     2,
+     0
+    ],
+    "Content / webinar": [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     1
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Hana Patel",
+     "title": "Head of Compliance",
+     "channels": [
+      "Content / webinar",
+      "Survey",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Elena Ruiz",
+     "title": "Director, Operations",
+     "channels": [
+      "Content / webinar",
+      "Survey",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Elena Moreau",
+     "title": "Program Manager",
+     "channels": [
+      "Content / webinar",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Raj Costa",
+     "title": "Head of Compliance",
+     "channels": [
+      "Content / webinar",
+      "Survey"
+     ]
+    },
+    {
+     "name": "Sara Ruiz",
+     "title": "Director, Medical Information",
+     "channels": [
+      "Survey",
+      "Conference"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-10-14",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Hana Patel",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-10-01",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Elena Ruiz",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-09-10",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Elena Moreau",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-09-06",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Raj Costa",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-09-06",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Elena Ruiz",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-09-01",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Elena Ruiz",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-08-31",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Hana Patel",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-07-18",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Hana Patel",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-05-15",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Sara Ruiz",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-05-05",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Sara Ruiz",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-05-01",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Raj Costa",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-02-20",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Elena Moreau",
+     "detail": "Buyer's guide"
+    }
+   ],
+   "suggested_action": "No deal and rising engagement: assign an owner and reach out to the engaged people this week.",
+   "crm_url": "https://crm.example.com/company/1009"
+  },
+  {
+   "name": "Harbor Medical Devices",
+   "group": "No open deal",
+   "segment": "Life sciences",
+   "priority": "1 - High",
+   "pipeline_status": "No open deal - never had a deal",
+   "deal": null,
+   "stage": null,
+   "amount": null,
+   "deal_owner": null,
+   "company_owner": "Jordan Lee",
+   "channels_12m": 2,
+   "channels_6m": 2,
+   "people": 6,
+   "activities": 18,
+   "first": "2025-12-02",
+   "latest": "2026-10-11",
+   "by_channel": {
+    "Conference": 9,
+    "Content / webinar": 9
+   },
+   "monthly": {
+    "Conference": [
+     0,
+     1,
+     0,
+     0,
+     0,
+     2,
+     3,
+     2,
+     0,
+     0,
+     1,
+     0
+    ],
+    "Content / webinar": [
+     0,
+     0,
+     0,
+     0,
+     2,
+     1,
+     0,
+     1,
+     2,
+     1,
+     0,
+     2
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Chloe Moreau",
+     "title": "Chief of Staff",
+     "channels": [
+      "Conference",
+      "Content / webinar"
+     ]
+    },
+    {
+     "name": "Chloe Shah",
+     "title": "Head of Compliance",
+     "channels": [
+      "Content / webinar",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Hana Fischer",
+     "title": "Director, Operations",
+     "channels": [
+      "Content / webinar",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Hana Costa",
+     "title": "Chief of Staff",
+     "channels": [
+      "Content / webinar"
+     ]
+    },
+    {
+     "name": "Omar Lindqvist",
+     "title": "Head of Compliance",
+     "channels": [
+      "Conference"
+     ]
+    },
+    {
+     "name": "Ana Novak",
+     "title": "Operations Analyst",
+     "channels": [
+      "Conference"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-10-11",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Hana Costa",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-10-07",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Hana Fischer",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-09-01",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Hana Fischer",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-08-19",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Chloe Moreau",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-07-13",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Hana Fischer",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-07-05",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Chloe Shah",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-06-27",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Omar Lindqvist",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-06-23",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Chloe Moreau",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-06-18",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Chloe Shah",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-05-29",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Chloe Moreau",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-05-17",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Ana Novak",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-05-16",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Hana Fischer",
+     "detail": "Industry summit attendee list"
+    }
+   ],
+   "suggested_action": "No deal and rising engagement: assign an owner and reach out to the engaged people this week.",
+   "crm_url": "https://crm.example.com/company/1003"
+  },
+  {
+   "name": "Oakline Diagnostics",
+   "group": "Open deal",
+   "segment": "Life sciences",
+   "priority": "1 - High",
+   "pipeline_status": "Open deal",
+   "deal": "Oakline - Platform",
+   "stage": "Sales Pipeline > Solution Presentation",
+   "amount": 40000.0,
+   "deal_owner": "Alex Reed",
+   "company_owner": "Alex Reed",
+   "channels_12m": 2,
+   "channels_6m": 1,
+   "people": 4,
+   "activities": 8,
+   "first": "2026-02-18",
+   "latest": "2026-10-10",
+   "by_channel": {
+    "LinkedIn reply": 7,
+    "Website": 1
+   },
+   "monthly": {
+    "LinkedIn reply": [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     3,
+     1,
+     0,
+     1
+    ],
+    "Website": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Omar Costa",
+     "title": "Operations Analyst",
+     "channels": [
+      "LinkedIn reply"
+     ]
+    },
+    {
+     "name": "Elena Nguyen",
+     "title": "Program Manager",
+     "channels": [
+      "LinkedIn reply"
+     ]
+    },
+    {
+     "name": "Kofi Moreau",
+     "title": "Operations Analyst",
+     "channels": [
+      "LinkedIn reply"
+     ]
+    },
+    {
+     "name": "Jonas Costa",
+     "title": "VP Finance",
+     "channels": [
+      "LinkedIn reply"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-10-10",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Kofi Moreau",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-08-11",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Elena Nguyen",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-07-26",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Omar Costa",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-07-25",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Omar Costa",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-07-22",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Omar Costa",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-04-18",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": null,
+     "detail": "Pricing page"
+    },
+    {
+     "date": "2026-03-13",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Jonas Costa",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-02-18",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Elena Nguyen",
+     "detail": "Replied to connection message"
+    }
+   ],
+   "suggested_action": "Early-stage deal with wide engagement: move it to the next stage and multi-thread the engaged people.",
+   "crm_url": "https://crm.example.com/company/1007"
+  },
+  {
+   "name": "Silverleaf Labs",
+   "group": "Open deal",
+   "segment": "Life sciences",
+   "priority": "2 - Medium",
+   "pipeline_status": "Open deal",
+   "deal": "Silverleaf - Platform",
+   "stage": "Sales Pipeline > Solution Presentation",
+   "amount": 250000.0,
+   "deal_owner": "Alex Reed",
+   "company_owner": "Alex Reed",
+   "channels_12m": 4,
+   "channels_6m": 2,
+   "people": 1,
+   "activities": 12,
+   "first": "2025-12-03",
+   "latest": "2026-09-04",
+   "by_channel": {
+    "Email reply": 5,
+    "Survey": 2,
+    "Website": 2,
+    "Content / webinar": 3
+   },
+   "monthly": {
+    "Email reply": [
+     0,
+     2,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Survey": [
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Website": [
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Content / webinar": [
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Omar Tanaka",
+     "title": "Chief of Staff",
+     "channels": [
+      "Email reply",
+      "Website",
+      "Content / webinar",
+      "Survey"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-09-04",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Omar Tanaka",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-05-24",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": "Omar Tanaka",
+     "detail": "Product page"
+    },
+    {
+     "date": "2026-03-30",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Omar Tanaka",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-03-13",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Omar Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-02-28",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Omar Tanaka",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-02-04",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Omar Tanaka",
+     "detail": "Re: follow-up"
+    },
+    {
+     "date": "2026-01-25",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Omar Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2025-12-26",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Omar Tanaka",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2025-12-17",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Omar Tanaka",
+     "detail": "Re: follow-up"
+    },
+    {
+     "date": "2025-12-15",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Omar Tanaka",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2025-12-04",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": "Omar Tanaka",
+     "detail": "Product page"
+    },
+    {
+     "date": "2025-12-03",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Omar Tanaka",
+     "detail": "Re: follow-up"
+    }
+   ],
+   "suggested_action": "Early-stage deal with wide engagement: move it to the next stage and multi-thread the engaged people.",
+   "crm_url": "https://crm.example.com/company/1010"
+  },
+  {
+   "name": "Northwind Biologics",
+   "group": "Open deal",
+   "segment": "Life sciences",
+   "priority": "2 - Medium",
+   "pipeline_status": "Open deal",
+   "deal": "Northwind - Platform",
+   "stage": "Sales Pipeline > Discovery",
+   "amount": 250000.0,
+   "deal_owner": "Alex Reed",
+   "company_owner": "Alex Reed",
+   "channels_12m": 3,
+   "channels_6m": 3,
+   "people": 5,
+   "activities": 23,
+   "first": "2025-11-30",
+   "latest": "2026-07-28",
+   "by_channel": {
+    "Website": 7,
+    "Conference": 10,
+    "Content / webinar": 6
+   },
+   "monthly": {
+    "Website": [
+     0,
+     1,
+     1,
+     1,
+     0,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Conference": [
+     1,
+     0,
+     2,
+     2,
+     3,
+     0,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Content / webinar": [
+     0,
+     0,
+     1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Priya Shah",
+     "title": "VP Finance",
+     "channels": [
+      "Website",
+      "Content / webinar",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Ines Tanaka",
+     "title": "VP Finance",
+     "channels": [
+      "Content / webinar",
+      "Website",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Chloe Fischer",
+     "title": "Director, Operations",
+     "channels": [
+      "Website",
+      "Conference",
+      "Content / webinar"
+     ]
+    },
+    {
+     "name": "Sara Shah",
+     "title": "Director, Medical Information",
+     "channels": [
+      "Conference"
+     ]
+    },
+    {
+     "name": "Priya Fischer",
+     "title": "VP Finance",
+     "channels": [
+      "Conference",
+      "Content / webinar",
+      "Website"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-07-28",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Ines Tanaka",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-07-05",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Chloe Fischer",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-06-29",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Priya Shah",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-06-28",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Sara Shah",
+     "detail": "Booth dinner"
+    },
+    {
+     "date": "2026-06-17",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Chloe Fischer",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-04-26",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": "Ines Tanaka",
+     "detail": "Pricing page"
+    },
+    {
+     "date": "2026-04-17",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": "Priya Shah",
+     "detail": "Product page"
+    },
+    {
+     "date": "2026-04-14",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": "Priya Shah",
+     "detail": "Product page"
+    },
+    {
+     "date": "2026-04-02",
+     "channel": "Website",
+     "type": "Website visit",
+     "person": "Priya Shah",
+     "detail": "Product page"
+    },
+    {
+     "date": "2026-03-28",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Priya Fischer",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-03-12",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Priya Shah",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-03-07",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Sara Shah",
+     "detail": "Booth dinner"
+    }
+   ],
+   "suggested_action": "Deal is open: brief the deal owner on who else at the account is engaging.",
+   "crm_url": "https://crm.example.com/company/1001"
+  },
+  {
+   "name": "Granite Peak Health",
+   "group": "No open deal",
+   "segment": "Life sciences",
+   "priority": "2 - Medium",
+   "pipeline_status": "No open deal - previous deal closed-lost",
+   "deal": "Granite - Platform",
+   "stage": "Sales Pipeline > Closed lost",
+   "amount": 85000.0,
+   "deal_owner": "Sam Carter",
+   "company_owner": "Sam Carter",
+   "channels_12m": 3,
+   "channels_6m": 3,
+   "people": 2,
+   "activities": 8,
+   "first": "2026-02-20",
+   "latest": "2026-09-24",
+   "by_channel": {
+    "Email reply": 2,
+    "Survey": 4,
+    "Conference": 2
+   },
+   "monthly": {
+    "Email reply": [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    "Survey": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     2,
+     0
+    ],
+    "Conference": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Hana Patel",
+     "title": "Chief of Staff",
+     "channels": [
+      "Survey",
+      "Email reply",
+      "Conference"
+     ]
+    },
+    {
+     "name": "Ines Shah",
+     "title": "Director, Operations",
+     "channels": [
+      "Survey",
+      "Conference",
+      "Email reply"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-09-24",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Hana Patel",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-09-17",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Hana Patel",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-08-28",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Hana Patel",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-08-23",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Hana Patel",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-08-16",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Hana Patel",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-07-24",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Ines Shah",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-07-08",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Ines Shah",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-02-20",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Ines Shah",
+     "detail": "RE: workflow automation"
+    }
+   ],
+   "suggested_action": "Previous deal closed-lost and the account is engaging again: assign an owner and reopen with the engaged people.",
+   "crm_url": "https://crm.example.com/company/1011"
+  },
+  {
+   "name": "Crescent Health Partners",
+   "group": "Open deal",
+   "segment": "Agency / CRO",
+   "priority": "2 - Medium",
+   "pipeline_status": "Open deal",
+   "deal": "Crescent - Platform",
+   "stage": "Sales Pipeline > Solution Presentation",
+   "amount": 120000.0,
+   "deal_owner": "Alex Reed",
+   "company_owner": "Alex Reed",
+   "channels_12m": 3,
+   "channels_6m": 2,
+   "people": 1,
+   "activities": 10,
+   "first": "2025-11-27",
+   "latest": "2026-07-26",
+   "by_channel": {
+    "Email reply": 4,
+    "Meeting / demo": 3,
+    "Conference": 3
+   },
+   "monthly": {
+    "Email reply": [
+     0,
+     0,
+     0,
+     2,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Meeting / demo": [
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "Conference": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Sara Tanaka",
+     "title": "VP Finance",
+     "channels": [
+      "Email reply",
+      "Conference",
+      "Meeting / demo"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-07-26",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Sara Tanaka",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-07-22",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Sara Tanaka",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-06-22",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Sara Tanaka",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-04-13",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Sara Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-03-31",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Sara Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-03-14",
+     "channel": "Conference",
+     "type": "Event meeting",
+     "person": "Sara Tanaka",
+     "detail": "Industry summit attendee list"
+    },
+    {
+     "date": "2026-02-25",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Sara Tanaka",
+     "detail": "Re: quick question"
+    },
+    {
+     "date": "2026-02-21",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Sara Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-01-31",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Sara Tanaka",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2025-11-27",
+     "channel": "Conference",
+     "type": "Attendee list",
+     "person": "Sara Tanaka",
+     "detail": "Booth dinner"
+    }
+   ],
+   "suggested_action": "Deal is open: brief the deal owner on who else at the account is engaging.",
+   "crm_url": "https://crm.example.com/company/1004"
+  },
+  {
+   "name": "Bluefin Therapeutics",
+   "group": "No open deal",
+   "segment": "Life sciences",
+   "priority": "2 - Medium",
+   "pipeline_status": "No open deal - previous deal closed-lost",
+   "deal": "Bluefin - Platform",
+   "stage": "Sales Pipeline > Closed lost",
+   "amount": 250000.0,
+   "deal_owner": "Sam Carter",
+   "company_owner": "Sam Carter",
+   "channels_12m": 2,
+   "channels_6m": 2,
+   "people": 5,
+   "activities": 10,
+   "first": "2025-12-04",
+   "latest": "2026-07-11",
+   "by_channel": {
+    "LinkedIn reply": 4,
+    "Content / webinar": 6
+   },
+   "monthly": {
+    "LinkedIn reply": [
+     0,
+     2,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "Content / webinar": [
+     0,
+     1,
+     2,
+     1,
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Priya Shah",
+     "title": "Director, Operations",
+     "channels": [
+      "Content / webinar"
+     ]
+    },
+    {
+     "name": "Tom Novak",
+     "title": "Operations Analyst",
+     "channels": [
+      "LinkedIn reply",
+      "Content / webinar"
+     ]
+    },
+    {
+     "name": "Mei Shah",
+     "title": "Chief of Staff",
+     "channels": [
+      "Content / webinar",
+      "LinkedIn reply"
+     ]
+    },
+    {
+     "name": "Lukas Patel",
+     "title": "VP Finance",
+     "channels": [
+      "LinkedIn reply",
+      "Content / webinar"
+     ]
+    },
+    {
+     "name": "Chloe Fischer",
+     "title": "Director, Operations",
+     "channels": [
+      "LinkedIn reply"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-07-11",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Priya Shah",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-06-08",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Priya Shah",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2026-05-06",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Tom Novak",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-03-27",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Chloe Fischer",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2026-02-27",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Tom Novak",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-01-30",
+     "channel": "Content / webinar",
+     "type": "Guide download",
+     "person": "Mei Shah",
+     "detail": "Live webinar"
+    },
+    {
+     "date": "2026-01-23",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Priya Shah",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2025-12-23",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Mei Shah",
+     "detail": "Replied to connection message"
+    },
+    {
+     "date": "2025-12-06",
+     "channel": "Content / webinar",
+     "type": "Webinar registration",
+     "person": "Lukas Patel",
+     "detail": "Buyer's guide"
+    },
+    {
+     "date": "2025-12-04",
+     "channel": "LinkedIn reply",
+     "type": "LinkedIn reply",
+     "person": "Lukas Patel",
+     "detail": "Replied to connection message"
+    }
+   ],
+   "suggested_action": "Previous deal closed-lost and the account is engaging again: assign an owner and reopen with the engaged people.",
+   "crm_url": "https://crm.example.com/company/1002"
+  },
+  {
+   "name": "Meridian Clinical Research",
+   "group": "No open deal",
+   "segment": "Agency / CRO",
+   "priority": "2 - Medium",
+   "pipeline_status": "No open deal - previous deal closed-lost",
+   "deal": "Meridian - Platform",
+   "stage": "Sales Pipeline > Closed lost",
+   "amount": 120000.0,
+   "deal_owner": "Sam Carter",
+   "company_owner": "Sam Carter",
+   "channels_12m": 2,
+   "channels_6m": 2,
+   "people": 3,
+   "activities": 27,
+   "first": "2025-12-29",
+   "latest": "2026-10-18",
+   "by_channel": {
+    "Email reply": 14,
+    "Meeting / demo": 13
+   },
+   "monthly": {
+    "Email reply": [
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     2,
+     3,
+     2,
+     3,
+     1,
+     0
+    ],
+    "Meeting / demo": [
+     0,
+     0,
+     1,
+     0,
+     1,
+     1,
+     2,
+     1,
+     3,
+     1,
+     1,
+     2
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Chloe Tanaka",
+     "title": "Program Manager",
+     "channels": [
+      "Meeting / demo",
+      "Email reply"
+     ]
+    },
+    {
+     "name": "Chloe Shah",
+     "title": "Director, Medical Information",
+     "channels": [
+      "Email reply",
+      "Meeting / demo"
+     ]
+    },
+    {
+     "name": "Marco Fischer",
+     "title": "VP Finance",
+     "channels": [
+      "Meeting / demo",
+      "Email reply"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-10-18",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Chloe Shah",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-10-02",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Chloe Tanaka",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-09-18",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Chloe Tanaka",
+     "detail": "Re: quick question"
+    },
+    {
+     "date": "2026-09-10",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Marco Fischer",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-08-30",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Chloe Tanaka",
+     "detail": "Re: quick question"
+    },
+    {
+     "date": "2026-08-24",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Chloe Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-08-14",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Chloe Tanaka",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-08-06",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Chloe Shah",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-07-27",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Chloe Tanaka",
+     "detail": "RE: workflow automation"
+    },
+    {
+     "date": "2026-07-25",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Chloe Tanaka",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-07-18",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Marco Fischer",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-07-16",
+     "channel": "Email reply",
+     "type": "Email reply",
+     "person": "Marco Fischer",
+     "detail": "Re: quick question"
+    }
+   ],
+   "suggested_action": "Previous deal closed-lost and the account is engaging again: assign an owner and reopen with the engaged people.",
+   "crm_url": "https://crm.example.com/company/1008"
+  },
+  {
+   "name": "Summit Ridge University",
+   "group": "No open deal",
+   "segment": "Higher education",
+   "priority": "2 - Medium",
+   "pipeline_status": "No open deal - never had a deal",
+   "deal": null,
+   "stage": null,
+   "amount": null,
+   "deal_owner": null,
+   "company_owner": "Jordan Lee",
+   "channels_12m": 2,
+   "channels_6m": 2,
+   "people": 3,
+   "activities": 14,
+   "first": "2026-03-10",
+   "latest": "2026-09-26",
+   "by_channel": {
+    "Meeting / demo": 10,
+    "Survey": 4
+   },
+   "monthly": {
+    "Meeting / demo": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     2,
+     0,
+     2,
+     3,
+     2,
+     0
+    ],
+    "Survey": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0
+    ]
+   },
+   "people_list": [
+    {
+     "name": "Omar Lindqvist",
+     "title": "Senior Manager, IT",
+     "channels": [
+      "Meeting / demo",
+      "Survey"
+     ]
+    },
+    {
+     "name": "Raj Patel",
+     "title": "Chief of Staff",
+     "channels": [
+      "Meeting / demo"
+     ]
+    },
+    {
+     "name": "Sara Ruiz",
+     "title": "Program Manager",
+     "channels": [
+      "Meeting / demo",
+      "Survey"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "date": "2026-09-26",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Raj Patel",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-09-15",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Omar Lindqvist",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-09-14",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Omar Lindqvist",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-08-25",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Raj Patel",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-08-14",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Omar Lindqvist",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-08-08",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Omar Lindqvist",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-07-29",
+     "channel": "Meeting / demo",
+     "type": "Meeting",
+     "person": "Sara Ruiz",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-07-02",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Raj Patel",
+     "detail": "Intro call"
+    },
+    {
+     "date": "2026-07-01",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Sara Ruiz",
+     "detail": "Industry benchmark survey"
+    },
+    {
+     "date": "2026-05-17",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Omar Lindqvist",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-05-17",
+     "channel": "Meeting / demo",
+     "type": "Demo request",
+     "person": "Raj Patel",
+     "detail": "Book a demo form"
+    },
+    {
+     "date": "2026-04-23",
+     "channel": "Survey",
+     "type": "Benchmark survey",
+     "person": "Omar Lindqvist",
+     "detail": "Industry benchmark survey"
+    }
+   ],
+   "suggested_action": "No deal and rising engagement: assign an owner and reach out to the engaged people this week.",
+   "crm_url": "https://crm.example.com/company/1006"
+  }
+ ]
+}

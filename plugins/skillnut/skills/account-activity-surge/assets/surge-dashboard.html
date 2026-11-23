@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account Activity Surge</title>
+<style>
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #dfe3e8;
+  --text: #17202b;
+  --muted: #5d6875;
+  --faint: #8a94a0;
+  --nodeal: #d9534f;
+  --nodeal-soft: #fbe4e3;
+  --deal: #2f6fde;
+  --deal-soft: #e2ebfb;
+  --p1: #b42318;
+  --p2: #9a6700;
+  --p3: #5d6875;
+  --focus: #2f6fde;
+  --shadow: 0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.08);
+  --ch1: #0e9f8e; --ch2: #7c5cd6; --ch3: #c98a0b; --ch4: #3a9a48;
+  --ch5: #c2539a; --ch6: #8c6d46; --ch7: #5b7083; --ch8: #1f8fb3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141a; --surface: #161d25; --surface-2: #1d2630; --border: #2b3642;
+    --text: #e6ebf0; --muted: #a2adb9; --faint: #7a8693;
+    --nodeal: #f0716b; --nodeal-soft: #3a2121; --deal: #6f9ff0; --deal-soft: #1c2a42;
+    --p1: #ff8b80; --p2: #e5b84a; --p3: #a2adb9; --focus: #6f9ff0;
+    --shadow: 0 1px 2px rgba(0,0,0,.4);
+    --ch1: #2cc3b0; --ch2: #a08af0; --ch3: #e5b84a; --ch4: #5cc06a;
+    --ch5: #e07bbd; --ch6: #b8956a; --ch7: #8fa3b8; --ch8: #4fb7d9;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141a; --surface: #161d25; --surface-2: #1d2630; --border: #2b3642;
+  --text: #e6ebf0; --muted: #a2adb9; --faint: #7a8693;
+  --nodeal: #f0716b; --nodeal-soft: #3a2121; --deal: #6f9ff0; --deal-soft: #1c2a42;
+  --p1: #ff8b80; --p2: #e5b84a; --p3: #a2adb9; --focus: #6f9ff0;
+  --shadow: 0 1px 2px rgba(0,0,0,.4);
+  --ch1: #2cc3b0; --ch2: #a08af0; --ch3: #e5b84a; --ch4: #5cc06a;
+  --ch5: #e07bbd; --ch6: #b8956a; --ch7: #8fa3b8; --ch8: #4fb7d9;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1440px; margin: 0 auto; padding: 20px 16px 48px; }
+header.top { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 16px; }
+h1 { font-size: 22px; line-height: 1.2; margin: 0 0 4px; letter-spacing: -.01em; }
+.sub { color: var(--muted); font-size: 13px; }
+button { font: inherit; color: inherit; }
+.linkbtn { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; cursor: pointer; color: var(--muted); }
+.linkbtn:hover { color: var(--text); background: var(--surface); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* KPI strip */
+.kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.kpi { text-align: left; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; cursor: pointer; box-shadow: var(--shadow); }
+.kpi:hover { border-color: var(--faint); }
+.kpi .v { font-size: 26px; font-weight: 650; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi .l { color: var(--muted); font-size: 12.5px; }
+.kpi.hero { background: var(--nodeal-soft); border-color: var(--nodeal); }
+.kpi.hero .v { color: var(--nodeal); font-size: 30px; }
+.kpi.on { outline: 2px solid var(--focus); outline-offset: -1px; }
+
+/* Filters */
+.filters { position: sticky; top: 0; z-index: 20; background: var(--bg); padding: 10px 0; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+.frow { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.frow + .frow { margin-top: 8px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 9px; overflow: hidden; background: var(--surface); }
+.seg button { border: 0; background: none; padding: 6px 11px; cursor: pointer; color: var(--muted); white-space: nowrap; }
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--surface-2); color: var(--text); font-weight: 600; }
+select, input[type="search"] { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; max-width: 100%; }
+input[type="search"] { min-width: 220px; flex: 1 1 220px; }
+label.inline { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; white-space: nowrap; }
+input[type="range"] { width: 110px; accent-color: var(--focus); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 3px 10px 3px 8px; font-size: 12.5px; cursor: pointer; color: var(--muted); }
+.chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.chip[aria-pressed="true"] { color: var(--text); border-color: var(--text); font-weight: 600; }
+.chip.static { cursor: default; color: var(--text); }
+.count { color: var(--muted); font-size: 13px; margin-left: auto; white-space: nowrap; }
+
+/* Panels */
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 16px; }
+.phead { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.phead h2 { font-size: 15px; margin: 0; }
+.phead .hint { color: var(--muted); font-size: 12.5px; }
+
+/* Matrix */
+.mx-scroll { overflow-x: auto; }
+table.mx { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 1060px; }
+.mx th, .mx td { border-bottom: 1px solid var(--border); padding: 6px 8px; vertical-align: middle; }
+.mx thead th { position: sticky; top: 0; background: var(--surface); font-size: 12px; font-weight: 600; color: var(--muted); text-align: center; cursor: pointer; user-select: none; white-space: nowrap; z-index: 2; }
+.mx thead th .sw { display: block; height: 3px; border-radius: 2px; margin: 4px auto 0; width: 70%; }
+.mx thead th.sorted { color: var(--text); }
+.mx thead th .arrow { font-size: 10px; margin-left: 3px; }
+.mx th.acct, .mx td.acct { position: sticky; left: 0; background: var(--surface); text-align: left; z-index: 1; width: 360px; min-width: 300px; max-width: 380px; box-shadow: 1px 0 0 var(--border); }
+.mx thead th.acct { z-index: 3; }
+.mx tbody tr { cursor: pointer; }
+.mx tbody tr:hover td { background: var(--surface-2); }
+.mx tbody tr:hover td.cell.filled { filter: brightness(.97); }
+.aname { display: flex; align-items: center; gap: 6px; font-weight: 600; }
+.aname .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gchip { flex: none; display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px; white-space: nowrap; }
+.gchip.nodeal { background: var(--nodeal-soft); color: var(--nodeal); }
+.gchip.deal { background: var(--deal-soft); color: var(--deal); }
+.gchip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pbadge { flex: none; font-size: 11px; font-weight: 700; border: 1px solid currentColor; border-radius: 5px; padding: 0 5px; }
+.pbadge.p1 { color: var(--p1); } .pbadge.p2 { color: var(--p2); } .pbadge.p3 { color: var(--p3); }
+.insight { color: var(--muted); font-size: 12px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+td.cell { text-align: center; width: 64px; min-width: 58px; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 13px; padding: 4px; }
+td.cell .box { display: flex; align-items: center; justify-content: center; height: 30px; border-radius: 6px; }
+td.cell.empty .box { color: var(--faint); font-weight: 400; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.deal { min-width: 170px; font-size: 12.5px; }
+td.deal .amt { color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--muted); font-size: 12px; padding: 10px 14px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.empty-state { padding: 32px 14px; text-align: center; color: var(--muted); }
+
+/* Scatter */
+.sc-wrap { padding: 8px 14px 14px; }
+svg text { fill: var(--muted); font-size: 11px; }
+.sc-dot { cursor: pointer; stroke: var(--surface); stroke-width: 1.5; fill-opacity: .78; }
+.sc-dot:hover, .sc-dot:focus { fill-opacity: 1; stroke: var(--text); }
+.tip { position: fixed; z-index: 60; pointer-events: none; background: var(--text); color: var(--bg); font-size: 12px; padding: 6px 9px; border-radius: 7px; max-width: 280px; box-shadow: var(--shadow); display: none; }
+.tip b { display: block; }
+
+/* About */
+details.about { padding: 0 14px; }
+details.about summary { cursor: pointer; padding: 12px 0; font-weight: 600; }
+.about dl { margin: 0 0 12px; }
+.about dt { font-weight: 600; margin-top: 8px; }
+.about dd { margin: 2px 0 0; color: var(--muted); }
+.about .small { font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding: 10px 0 14px; }
+.about .small ul { margin: 4px 0 0; padding-left: 18px; }
+
+/* Drawer */
+.scrim { position: fixed; inset: 0; background: rgba(10,15,20,.35); z-index: 40; display: none; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 100%); background: var(--surface); border-left: 1px solid var(--border); z-index: 50; transform: translateX(100%); transition: transform .2s ease; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,.12); }
+.drawer.open { transform: none; }
+.drawer.open + .scrim, .scrim.open { display: block; }
+.dhead { position: sticky; top: 0; background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; z-index: 1; }
+.dhead h3 { margin: 0 0 6px; font-size: 18px; }
+.dbody { padding: 4px 16px 32px; }
+.dsec { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.dsec:last-child { border-bottom: 0; }
+.dsec h4 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.kv { display: grid; grid-template-columns: 120px 1fr; gap: 4px 12px; font-size: 13px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; }
+.action { background: var(--surface-2); border-radius: 8px; padding: 8px 10px; margin-top: 10px; font-size: 13px; }
+.people { list-style: none; margin: 0; padding: 0; }
+.people li { padding: 8px 0; border-bottom: 1px dashed var(--border); }
+.people li:last-child { border-bottom: 0; }
+.people .t { color: var(--muted); font-size: 12.5px; }
+.people .chips { margin-top: 4px; }
+.mini { font-size: 11.5px; padding: 1px 8px 1px 6px; }
+.feed { list-style: none; margin: 0; padding: 0; }
+.feed li { display: grid; grid-template-columns: 14px 86px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px dashed var(--border); font-size: 13px; }
+.feed li:last-child { border-bottom: 0; }
+.feed .dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; }
+.feed .d { color: var(--muted); font-variant-numeric: tabular-nums; }
+.feed .det { color: var(--muted); font-size: 12.5px; word-break: break-word; }
+.lane-svg { width: 100%; height: auto; display: block; }
+.none { color: var(--faint); }
+.crm { font-size: 12.5px; }
+.crm a { color: var(--deal); }
+
+@media (max-width: 900px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi.hero { grid-column: span 2; }
+  .filters { position: static; }
+}
+@media (max-width: 560px) {
+  .mx th.acct, .mx td.acct { width: 220px; min-width: 200px; max-width: 220px; }
+  .kv { grid-template-columns: 100px 1fr; }
+  .feed li { grid-template-columns: 12px 74px 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .drawer { transition: none; } }
+</style>
+</head>
+<body>
+<!-- Data goes here. render_surge_dashboard.py replaces the placeholder with the surge JSON. -->
+<script id="surge-data" type="application/json">__SURGE_DATA__</script>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1 id="title">Account Activity Surge</h1>
+      <div class="sub" id="subtitle"></div>
+    </div>
+    <button class="linkbtn" id="themeBtn" type="button" title="Switch light or dark">Theme</button>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Key numbers (click to filter)"></section>
+
+  <section class="filters" aria-label="Filters">
+    <div class="frow">
+      <div class="seg" role="group" aria-label="Deal status" id="groupSeg">
+        <button type="button" data-g="nodeal" aria-pressed="false">No open deal</button>
+        <button type="button" data-g="deal" aria-pressed="false">Open deal</button>
+        <button type="button" data-g="both" aria-pressed="true">Both</button>
+      </div>
+      <select id="fPriority" aria-label="Priority"><option value="">All priorities</option></select>
+      <select id="fSegment" aria-label="Segment"><option value="">All segments</option></select>
+      <select id="fPipeline" aria-label="Pipeline status"><option value="">All pipeline statuses</option></select>
+      <select id="fOwner" aria-label="Owner"><option value="">All owners</option></select>
+      <input type="search" id="fSearch" placeholder="Search company or person" aria-label="Search company or person">
+    </div>
+    <div class="frow">
+      <span class="sub">Has activity in:</span>
+      <div class="chips" id="fChannels"></div>
+    </div>
+    <div class="frow">
+      <label class="inline">Min channels <input type="range" id="fMinCh" min="1" max="7" value="1"> <b id="vMinCh">1</b></label>
+      <label class="inline">Min people <input type="range" id="fMinPeople" min="1" max="10" value="1"> <b id="vMinPeople">1</b></label>
+      <label class="inline"><input type="checkbox" id="fActive90"> Active in last 90 days</label>
+      <button class="linkbtn" type="button" id="resetBtn">Reset filters</button>
+      <span class="count" id="countLbl" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="mxTitle">
+    <div class="phead">
+      <div>
+        <h2 id="mxTitle">Account by channel</h2>
+        <div class="hint">Each cell counts activity in that channel. Click a row for the full account.</div>
+      </div>
+      <div class="seg" role="group" aria-label="Time range" id="rangeSeg">
+        <button type="button" data-r="6" aria-pressed="false">Last 6 months</button>
+        <button type="button" data-r="12" aria-pressed="true">Last 12 months</button>
+      </div>
+    </div>
+    <div class="mx-scroll"><table class="mx" id="mx"><thead></thead><tbody></tbody></table></div>
+    <div class="legend" id="mxLegend"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="scTitle">
+    <div class="phead">
+      <div>
+        <h2 id="scTitle">Where is the heat?</h2>
+        <div class="hint">Across: channels used in 12 months. Up: people engaged. Bubble size: total activity. Click a bubble to open the account.</div>
+      </div>
+      <div class="chips"><span class="chip static"><span class="dot" style="background:var(--nodeal)"></span>No open deal</span><span class="chip static"><span class="dot" style="background:var(--deal)"></span>Open deal</span></div>
+    </div>
+    <div class="sc-wrap"><svg id="scatter" role="img" aria-label="Scatter of accounts by channels and people"></svg></div>
+  </section>
+
+  <section class="panel">
+    <details class="about" id="about">
+      <summary>About this data</summary>
+      <dl id="defs"></dl>
+      <div class="small" id="caveats"></div>
+    </details>
+  </section>
+</div>
+
+<aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="dTitle" role="dialog">
+  <div class="dhead">
+    <div>
+      <h3 id="dTitle"></h3>
+      <div id="dBadges" class="chips"></div>
+    </div>
+    <button class="linkbtn" type="button" id="dClose" aria-label="Close">Close</button>
+  </div>
+  <div class="dbody" id="dBody"></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(function () {
+  "use strict";
+  var DASH = "\u2013";
+  var raw;
+  try { raw = JSON.parse(document.getElementById("surge-data").textContent); }
+  catch (e) {
+    document.querySelector(".wrap").innerHTML = '<div class="panel empty-state">No surge data is loaded yet. Run render_surge_dashboard.py to put the data into this page.</div>';
+    return;
+  }
+
+  // ---------- helpers ----------
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function blank(v) { return v === null || v === undefined || v === "" || (typeof v === "number" && isNaN(v)); }
+  function show(v) { return blank(v) ? '<span class="none">' + DASH + '</span>' : esc(v); }
+  var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  function parseDate(s) { if (!s) return null; var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s); return m ? new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])) : null; }
+  function fmtDate(s) { var d = parseDate(s); return d ? d.getUTCDate() + " " + MON[d.getUTCMonth()] + " " + d.getUTCFullYear() : null; }
+  function fmtMonth(s) { var m = /^(\d{4})-(\d{2})/.exec(s || ""); return m ? MON[+m[2] - 1] + " " + m[1].slice(2) : s; }
+  function fmtMoney(n) {
+    if (blank(n)) return null; n = +n; if (isNaN(n)) return null;
+    var a = Math.abs(n), s;
+    if (a >= 1e6) s = (Math.round(n / 1e5) / 10) + "M";
+    else if (a >= 1e3) s = Math.round(n / 1e3) + "K";
+    else s = String(Math.round(n));
+    return "$" + s;
+  }
+  function daysBetween(a, b) { return Math.round((b - a) / 86400000); }
+  function sum(arr) { var t = 0; for (var i = 0; i < arr.length; i++) t += +arr[i] || 0; return t; }
+  function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967295; }
+
+  // ---------- normalise data ----------
+  var CH = raw.channels || [];
+  var MONTHS = raw.months || [];
+  var NM = MONTHS.length;
+  var asOf = parseDate(raw.generated) || new Date();
+  var labels = raw.labels || {};
+  var GL = { nodeal: labels.no_open_deal || "No open deal", deal: labels.open_deal || "Open deal" };
+  var CH_COLORS = ["var(--ch1)","var(--ch2)","var(--ch3)","var(--ch4)","var(--ch5)","var(--ch6)","var(--ch7)","var(--ch8)"];
+  function chColor(c) { var i = CH.indexOf(c); return CH_COLORS[(i < 0 ? 7 : i) % CH_COLORS.length]; }
+  function chVar(c) { var i = CH.indexOf(c); return "--ch" + (((i < 0 ? 7 : i) % 8) + 1); }
+
+  function groupKey(g) {
+    var s = String(g || "").toLowerCase();
+    if (s === "nodeal" || s === "no_open_deal" || s.indexOf("no open") >= 0 || s.indexOf("no deal") >= 0) return "nodeal";
+    return "deal";
+  }
+  function prioRank(p) { var m = /^(\d)/.exec(String(p || "")); return m ? +m[1] : 9; }
+  function prioShort(p) { var r = prioRank(p); return r < 9 ? "P" + r : null; }
+
+  var accounts = (raw.accounts || []).map(function (a, idx) {
+    var monthly = a.monthly || {};
+    var c6 = {}, c12 = {}, c3 = {};
+    CH.forEach(function (c) {
+      var arr = monthly[c] || [];
+      c6[c] = sum(arr.slice(Math.max(0, NM - 6)));
+      c3[c] = sum(arr.slice(Math.max(0, NM - 3)));
+      c12[c] = (a.by_channel && !blank(a.by_channel[c])) ? +a.by_channel[c] : sum(arr);
+    });
+    // quarters for "heating up": last 3 months is the busiest 3-month block, and not zero
+    var q = [];
+    for (var end = NM; end > 0; end -= 3) {
+      var t = 0; CH.forEach(function (c) { t += sum((monthly[c] || []).slice(Math.max(0, end - 3), end)); }); q.push(t);
+    }
+    var heating = q.length > 0 && q[0] > 0 && q.every(function (v, i) { return i === 0 || q[0] > v; });
+    var latest = parseDate(a.latest);
+    var active90 = latest ? daysBetween(latest, asOf) <= 90 : false;
+    var g = groupKey(a.group);
+    var ch12n = !blank(a.channels_12m) ? +a.channels_12m : CH.filter(function (c) { return c12[c] > 0; }).length;
+    var ch6n = !blank(a.channels_6m) ? +a.channels_6m : CH.filter(function (c) { return c6[c] > 0; }).length;
+    var ranked = CH.filter(function (c) { return c12[c] > 0; }).sort(function (x, y) { return c12[y] - c12[x]; });
+    var ps = String(a.pipeline_status || "").toLowerCase();
+    var pipeNote = g === "deal" ? (a.stage ? "open deal at " + String(a.stage).split(">").pop().trim() : "open deal")
+      : ps.indexOf("lost") >= 0 ? "previous deal closed-lost"
+      : ps.indexOf("never") >= 0 ? "never had a deal" : "no open deal";
+    var pace = heating ? "Heating up" : active90 ? "Active" : "Quiet 90+ days";
+    var parts = [pace];
+    if (!blank(a.people)) parts.push(a.people + (a.people == 1 ? " person" : " people"));
+    parts.push(ch12n + (ch12n == 1 ? " channel" : " channels"));
+    if (ranked.length) parts.push("strongest: " + ranked.slice(0, 2).join(", "));
+    parts.push(pipeNote);
+    var people = a.people_list || [];
+    var searchText = [a.name].concat(people.map(function (p) { return p.name; })).join(" | ").toLowerCase();
+    var owners = [a.deal_owner, a.company_owner].filter(function (o) { return !blank(o); });
+    return {
+      i: idx, a: a, g: g, prio: prioRank(a.priority), c6: c6, c12: c12, c3: c3,
+      t6: sum(CH.map(function (c) { return c6[c]; })), t12: sum(CH.map(function (c) { return c12[c]; })),
+      ch12: ch12n, ch6: ch6n, heating: heating, active90: active90, latest: latest,
+      insight: a.insight || parts.join(" · "), search: searchText, owners: owners
+    };
+  });
+
+  // ---------- state ----------
+  var DEFAULT = { group: "both", range: 12, priority: "", segment: "", pipeline: "", owner: "", search: "", chans: [], minCh: 1, minPeople: 1, active90: false, heating: false, prioOne: false, sort: { key: "default", dir: 1 } };
+  var S = JSON.parse(JSON.stringify(DEFAULT));
+
+  // ---------- header ----------
+  var win = raw.window;
+  var winTxt = typeof win === "string" ? win.split(/\s+to\s+/).map(function (d) { return fmtDate(d.trim()) || d; }).join(" to ")
+    : win && win.start ? (fmtDate(win.start) + " to " + fmtDate(win.end)) : "";
+  document.getElementById("title").textContent = raw.title || ("Account Activity Surge " + DASH + " last " + (NM || 12) + " months");
+  document.title = raw.short_title || "Account Activity Surge";
+  document.getElementById("subtitle").textContent = [winTxt ? "Activity window " + winTxt : "", raw.generated ? "data pulled " + fmtDate(raw.generated) : "", raw.source ? raw.source : ""].filter(Boolean).join(" · ");
+  document.querySelector('#groupSeg [data-g="nodeal"]').textContent = GL.nodeal;
+  document.querySelector('#groupSeg [data-g="deal"]').textContent = GL.deal;
+
+  // ---------- KPIs ----------
+  function renderKpis() {
+    var n = accounts.length;
+    var nd = accounts.filter(function (x) { return x.g === "nodeal"; }).length;
+    var p1 = accounts.filter(function (x) { return x.prio === 1; }).length;
+    var heat = accounts.filter(function (x) { return x.heating; }).length;
+    var tiles = [
+      { k: "all", v: n, l: "Surge accounts" },
+      { k: "nodeal", v: nd, l: GL.nodeal, hero: true },
+      { k: "deal", v: n - nd, l: GL.deal },
+      { k: "p1", v: p1, l: "Priority 1 accounts" },
+      { k: "heat", v: heat, l: "Heating up (busiest in last 3 months)" }
+    ];
+    var on = function (k) {
+      if (k === "nodeal" || k === "deal") return S.group === k && !S.prioOne && !S.heating;
+      if (k === "p1") return S.prioOne; if (k === "heat") return S.heating;
+      return S.group === "both" && !S.prioOne && !S.heating;
+    };
+    var el = document.getElementById("kpis");
+    el.innerHTML = tiles.map(function (t) {
+      return '<button type="button" class="kpi' + (t.hero ? " hero" : "") + (on(t.k) ? " on" : "") + '" data-k="' + t.k + '" title="Show only these accounts"><div class="v">' + t.v + '</div><div class="l">' + esc(t.l) + '</div></button>';
+    }).join("");
+  }
+  document.getElementById("kpis").addEventListener("click", function (e) {
+    var b = e.target.closest(".kpi"); if (!b) return;
+    var k = b.getAttribute("data-k");
+    if (k === "all") { S.group = "both"; S.prioOne = false; S.heating = false; }
+    else if (k === "nodeal" || k === "deal") { S.group = k; S.prioOne = false; S.heating = false; }
+    else if (k === "p1") { S.prioOne = !S.prioOne; }
+    else if (k === "heat") { S.heating = !S.heating; }
+    syncControls(); render();
+  });
+
+  // ---------- filter controls ----------
+  function uniq(arr) { var o = {}; arr.forEach(function (v) { if (!blank(v)) o[v] = 1; }); return Object.keys(o).sort(); }
+  function fillSelect(id, vals) { var s = document.getElementById(id); vals.forEach(function (v) { var o = document.createElement("option"); o.value = v; o.textContent = v; s.appendChild(o); }); }
+  fillSelect("fPriority", uniq(accounts.map(function (x) { return x.a.priority; })));
+  fillSelect("fSegment", uniq(accounts.map(function (x) { return x.a.segment; })));
+  fillSelect("fPipeline", uniq(accounts.map(function (x) { return x.a.pipeline_status; })));
+  fillSelect("fOwner", uniq([].concat.apply([], accounts.map(function (x) { return x.owners; }))));
+  [["fSegment", "segment"], ["fPipeline", "pipeline"], ["fOwner", "owner"]].forEach(function (p) {
+    if (document.getElementById(p[0]).options.length <= 1) document.getElementById(p[0]).style.display = "none";
+  });
+  var maxPeople = Math.max.apply(null, [1].concat(accounts.map(function (x) { return +x.a.people || 0; })));
+  var fMinPeople = document.getElementById("fMinPeople"); fMinPeople.max = Math.max(2, Math.min(maxPeople, 30));
+  var fMinCh = document.getElementById("fMinCh"); fMinCh.max = Math.max(2, CH.length);
+  document.getElementById("fChannels").innerHTML = CH.map(function (c) {
+    return '<button type="button" class="chip" aria-pressed="false" data-c="' + esc(c) + '"><span class="dot" style="background:' + chColor(c) + '"></span>' + esc(c) + '</button>';
+  }).join("");
+
+  function syncControls() {
+    document.querySelectorAll("#groupSeg button").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-g") === S.group ? "true" : "false"); });
+    document.querySelectorAll("#rangeSeg button").forEach(function (b) { b.setAttribute("aria-pressed", +b.getAttribute("data-r") === S.range ? "true" : "false"); });
+    document.getElementById("fPriority").value = S.priority;
+    document.getElementById("fSegment").value = S.segment;
+    document.getElementById("fPipeline").value = S.pipeline;
+    document.getElementById("fOwner").value = S.owner;
+    document.getElementById("fSearch").value = S.search;
+    fMinCh.value = S.minCh; document.getElementById("vMinCh").textContent = S.minCh;
+    fMinPeople.value = S.minPeople; document.getElementById("vMinPeople").textContent = S.minPeople;
+    document.getElementById("fActive90").checked = S.active90;
+    document.querySelectorAll("#fChannels .chip").forEach(function (b) { b.setAttribute("aria-pressed", S.chans.indexOf(b.getAttribute("data-c")) >= 0 ? "true" : "false"); });
+  }
+  document.getElementById("groupSeg").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; S.group = b.getAttribute("data-g"); syncControls(); render(); });
+  document.getElementById("rangeSeg").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; S.range = +b.getAttribute("data-r"); syncControls(); render(); });
+  [["fPriority", "priority"], ["fSegment", "segment"], ["fPipeline", "pipeline"], ["fOwner", "owner"]].forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("change", function (e) { S[p[1]] = e.target.value; render(); });
+  });
+  document.getElementById("fSearch").addEventListener("input", function (e) { S.search = e.target.value; render(); });
+  fMinCh.addEventListener("input", function (e) { S.minCh = +e.target.value; document.getElementById("vMinCh").textContent = S.minCh; render(); });
+  fMinPeople.addEventListener("input", function (e) { S.minPeople = +e.target.value; document.getElementById("vMinPeople").textContent = S.minPeople; render(); });
+  document.getElementById("fActive90").addEventListener("change", function (e) { S.active90 = e.target.checked; render(); });
+  document.getElementById("fChannels").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return; var c = b.getAttribute("data-c");
+    var i = S.chans.indexOf(c); if (i >= 0) S.chans.splice(i, 1); else S.chans.push(c);
+    syncControls(); render();
+  });
+  document.getElementById("resetBtn").addEventListener("click", function () { var keepRange = S.range; S = JSON.parse(JSON.stringify(DEFAULT)); S.range = keepRange; syncControls(); render(); });
+
+  function filtered() {
+    var q = S.search.trim().toLowerCase();
+    return accounts.filter(function (x) {
+      var a = x.a;
+      if (S.group !== "both" && x.g !== S.group) return false;
+      if (S.prioOne && x.prio !== 1) return false;
+      if (S.heating && !x.heating) return false;
+      if (S.priority && a.priority !== S.priority) return false;
+      if (S.segment && a.segment !== S.segment) return false;
+      if (S.pipeline && a.pipeline_status !== S.pipeline) return false;
+      if (S.owner && x.owners.indexOf(S.owner) < 0) return false;
+      if (x.ch12 < S.minCh) return false;
+      if ((+a.people || 0) < S.minPeople) return false;
+      if (S.active90 && !x.active90) return false;
+      for (var i = 0; i < S.chans.length; i++) { if (!(x.c12[S.chans[i]] > 0)) return false; }
+      if (q && x.search.indexOf(q) < 0) return false;
+      return true;
+    });
+  }
+
+  // ---------- sorting ----------
+  function defaultCmp(x, y) {
+    return (x.prio - y.prio) || (y.ch12 - x.ch12) || ((+y.a.people || 0) - (+x.a.people || 0)) || ((+y.a.activities || 0) - (+x.a.activities || 0)) || String(x.a.name).localeCompare(String(y.a.name));
+  }
+  function sortRows(rows) {
+    var k = S.sort.key, d = S.sort.dir, cnt = S.range === 6 ? "c6" : "c12";
+    var val = function (x) {
+      if (k === "name") return String(x.a.name || "").toLowerCase();
+      if (k === "people") return +x.a.people || 0;
+      if (k === "latest") return x.latest ? x.latest.getTime() : 0;
+      if (k === "deal") return +x.a.amount || 0;
+      if (k.indexOf("ch:") === 0) return x[cnt][k.slice(3)] || 0;
+      return 0;
+    };
+    return rows.slice().sort(function (x, y) {
+      if (k === "default") return defaultCmp(x, y);
+      var vx = val(x), vy = val(y);
+      var r = vx < vy ? -1 : vx > vy ? 1 : 0;
+      return (r * d) || defaultCmp(x, y);
+    });
+  }
+
+  // ---------- matrix ----------
+  var tip = document.getElementById("tip");
+  function showTip(html, ev) { tip.innerHTML = html; tip.style.display = "block"; moveTip(ev); }
+  function moveTip(ev) {
+    var w = tip.offsetWidth, h = tip.offsetHeight, x = ev.clientX + 14, y = ev.clientY + 14;
+    if (x + w > window.innerWidth - 8) x = ev.clientX - w - 14;
+    if (y + h > window.innerHeight - 8) y = ev.clientY - h - 14;
+    tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+  }
+  function hideTip() { tip.style.display = "none"; }
+
+  function renderMatrix(rows) {
+    var cnt = S.range === 6 ? "c6" : "c12";
+    var colMax = {};
+    CH.forEach(function (c) { colMax[c] = Math.max.apply(null, [1].concat(accounts.map(function (x) { return x[cnt][c] || 0; }))); });
+    var arrow = function (k) { return S.sort.key === k ? '<span class="arrow">' + (S.sort.dir > 0 ? "▲" : "▼") + "</span>" : ""; };
+    var th = function (k, label, cls, extra) { return '<th scope="col" data-sort="' + esc(k) + '" class="' + (cls || "") + (S.sort.key === k ? " sorted" : "") + '" title="Sort by ' + esc(label) + '">' + esc(label) + arrow(k) + (extra || "") + "</th>"; };
+    var head = "<tr>" + th("default", "Account", "acct") +
+      CH.map(function (c) { return th("ch:" + c, c, "", '<span class="sw" style="background:' + chColor(c) + '"></span>'); }).join("") +
+      th("people", "People") + th("latest", "Latest") + th("deal", "Deal stage and amount") + "</tr>";
+    document.querySelector("#mx thead").innerHTML = head;
+    var body = rows.map(function (x) {
+      var a = x.a;
+      var cells = CH.map(function (c) {
+        var v = x[cnt][c] || 0;
+        if (!v) return '<td class="cell empty" data-c="' + esc(c) + '"><div class="box">0</div></td>';
+        var t = Math.log(1 + v) / Math.log(1 + colMax[c]);
+        var pct = Math.round(18 + 70 * t);
+        var dark = pct >= 55;
+        return '<td class="cell filled" data-c="' + esc(c) + '" data-v="' + v + '"><div class="box" style="background:color-mix(in srgb, var(' + chVar(c) + ') ' + pct + '%, transparent);' + (dark ? "color:#fff" : "") + '">' + v + "</div></td>";
+      }).join("");
+      var stage = a.stage ? String(a.stage).split(">").pop().trim() : null;
+      var money = fmtMoney(a.amount);
+      var dealCell = stage || money ? esc(stage || DASH) + (money ? ' <span class="amt">· ' + esc(money) + "</span>" : "") : '<span class="none">' + DASH + "</span>";
+      var pb = prioShort(a.priority);
+      return '<tr data-i="' + x.i + '" tabindex="0" aria-label="Open ' + esc(a.name) + '">' +
+        '<td class="acct"><div class="aname"><span class="nm" title="' + esc(a.name) + '">' + esc(a.name) + '</span><span class="gchip ' + x.g + '">' + esc(GL[x.g]) + "</span>" +
+        (pb ? '<span class="pbadge p' + x.prio + '" title="Priority ' + esc(a.priority) + '">' + pb + "</span>" : "") +
+        '</div><div class="insight" title="' + esc(x.insight) + '">' + esc(x.insight) + "</div></td>" +
+        cells + '<td class="num">' + show(a.people) + '</td><td class="num">' + show(fmtDate(a.latest)) + '</td><td class="deal">' + dealCell + "</td></tr>";
+    }).join("");
+    document.querySelector("#mx tbody").innerHTML = body || '<tr><td class="empty-state" colspan="' + (CH.length + 4) + '">No accounts match these filters. Try Reset filters.</td></tr>';
+    document.getElementById("mxLegend").innerHTML = "<span>Showing the " + (S.range === 6 ? "last 6 months (" + esc(fmtMonth(MONTHS[Math.max(0, NM - 6)])) + " to " + esc(fmtMonth(MONTHS[NM - 1])) + ")" : "full 12 months") + ".</span><span>Darker cell = more activity in that channel (shade is relative to the busiest account in the column).</span>";
+  }
+  document.querySelector("#mx thead").addEventListener("click", function (e) {
+    var t = e.target.closest("th"); if (!t) return; var k = t.getAttribute("data-sort");
+    if (S.sort.key === k && k !== "default") S.sort.dir = -S.sort.dir; else S.sort = { key: k, dir: k === "name" ? 1 : -1 };
+    if (k === "default") S.sort = { key: "default", dir: 1 };
+    render();
+  });
+  var tbody = document.querySelector("#mx tbody");
+  tbody.addEventListener("click", function (e) { var tr = e.target.closest("tr[data-i]"); if (tr) openDrawer(+tr.getAttribute("data-i")); });
+  tbody.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { var tr = e.target.closest("tr[data-i]"); if (tr) { e.preventDefault(); openDrawer(+tr.getAttribute("data-i")); } } });
+  tbody.addEventListener("mousemove", function (e) {
+    var td = e.target.closest("td.cell"); if (!td) { hideTip(); return; }
+    var x = accounts[+td.parentNode.getAttribute("data-i")]; var c = td.getAttribute("data-c");
+    showTip("<b>" + esc(x.a.name) + "</b>" + esc(c) + ": " + (x.c6[c] || 0) + " in last 6 months, " + (x.c12[c] || 0) + " in 12 months", e);
+  });
+  tbody.addEventListener("mouseleave", hideTip);
+
+  // ---------- scatter ----------
+  function renderScatter(rows) {
+    var svg = document.getElementById("scatter");
+    var W = Math.max(320, svg.parentNode.clientWidth - 4), H = Math.max(260, Math.min(420, Math.round(W * 0.42)));
+    var m = { l: 44, r: 16, t: 16, b: 38 };
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H); svg.setAttribute("width", W); svg.setAttribute("height", H);
+    var xMax = Math.max(CH.length, 1), yMax = Math.max(4, Math.max.apply(null, [0].concat(accounts.map(function (x) { return +x.a.people || 0; }))));
+    var aMax = Math.max.apply(null, [1].concat(accounts.map(function (x) { return +x.a.activities || 0; })));
+    var X = function (v) { return m.l + (v / (xMax + 0.5)) * (W - m.l - m.r); };
+    var Y = function (v) { return H - m.b - (v / (yMax * 1.08)) * (H - m.t - m.b); };
+    var out = [];
+    // hot region: top-right quadrant
+    var hx = X(Math.ceil(xMax * 0.6)), hy = Y(Math.ceil(yMax * 0.5));
+    out.push('<rect x="' + hx + '" y="' + m.t + '" width="' + (W - m.r - hx) + '" height="' + (hy - m.t) + '" fill="var(--nodeal)" fill-opacity=".06" stroke="var(--nodeal)" stroke-opacity=".3" stroke-dasharray="4 4" rx="8"/>');
+    out.push('<text x="' + (W - m.r - 8) + '" y="' + (m.t + 16) + '" text-anchor="end" style="font-weight:600;fill:var(--nodeal)">Hot, multi-threaded</text>');
+    for (var i = 0; i <= xMax; i++) { out.push('<line x1="' + X(i) + '" x2="' + X(i) + '" y1="' + m.t + '" y2="' + (H - m.b) + '" stroke="var(--border)"/><text x="' + X(i) + '" y="' + (H - m.b + 15) + '" text-anchor="middle">' + i + "</text>"); }
+    var step = yMax > 20 ? 5 : yMax > 10 ? 2 : 1;
+    for (var j = 0; j <= yMax; j += step) { out.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + Y(j) + '" y2="' + Y(j) + '" stroke="var(--border)"/><text x="' + (m.l - 8) + '" y="' + (Y(j) + 4) + '" text-anchor="end">' + j + "</text>"); }
+    out.push('<text x="' + ((W + m.l) / 2) + '" y="' + (H - 4) + '" text-anchor="middle">Channels used in 12 months</text>');
+    out.push('<text transform="translate(12,' + ((H - m.b + m.t) / 2) + ') rotate(-90)" text-anchor="middle">People engaged</text>');
+    var shown = {}; rows.forEach(function (x) { shown[x.i] = 1; });
+    var ordered = accounts.slice().sort(function (p, q) { return (+q.a.activities || 0) - (+p.a.activities || 0); });
+    ordered.forEach(function (x) {
+      var jx = (hash(x.a.name + "x") - 0.5) * 0.5, jy = (hash(x.a.name + "y") - 0.5) * 0.6;
+      var r = 4 + 16 * Math.sqrt((+x.a.activities || 0) / aMax);
+      var vis = shown[x.i];
+      out.push('<circle class="sc-dot" tabindex="' + (vis ? 0 : -1) + '" data-i="' + x.i + '" cx="' + X(x.ch12 + jx).toFixed(1) + '" cy="' + Y((+x.a.people || 0) + jy).toFixed(1) + '" r="' + r.toFixed(1) + '" fill="var(--' + (x.g === "nodeal" ? "nodeal" : "deal") + ')"' + (vis ? "" : ' style="opacity:.08;pointer-events:none"') + '><title>' + esc(x.a.name) + "</title></circle>");
+    });
+    svg.innerHTML = out.join("");
+  }
+  var scatter = document.getElementById("scatter");
+  scatter.addEventListener("mousemove", function (e) {
+    var c = e.target.closest(".sc-dot"); if (!c) { hideTip(); return; }
+    var x = accounts[+c.getAttribute("data-i")]; var a = x.a;
+    showTip("<b>" + esc(a.name) + "</b>" + esc(GL[x.g]) + (a.stage ? " · " + esc(String(a.stage).split(">").pop().trim()) : "") + "<br>" + x.ch12 + " channels · " + show(a.people) + " people · " + show(a.activities) + " activities<br>Latest: " + show(fmtDate(a.latest)), e);
+  });
+  scatter.addEventListener("mouseleave", hideTip);
+  scatter.addEventListener("click", function (e) { var c = e.target.closest(".sc-dot"); if (c) openDrawer(+c.getAttribute("data-i")); });
+  scatter.addEventListener("keydown", function (e) { if (e.key === "Enter") { var c = e.target.closest(".sc-dot"); if (c) openDrawer(+c.getAttribute("data-i")); } });
+
+  // ---------- drawer ----------
+  var drawer = document.getElementById("drawer"), scrim = document.getElementById("scrim"), lastFocus = null;
+  function chipsFor(counts) {
+    var list = CH.filter(function (c) { return counts[c] > 0; });
+    if (!list.length) return '<span class="none">No activity in this period</span>';
+    return '<div class="chips">' + list.map(function (c) { return '<span class="chip static"><span class="dot" style="background:' + chColor(c) + '"></span>' + esc(c) + " <b>" + counts[c] + "</b></span>"; }).join("") + "</div>";
+  }
+  function swimlanes(a) {
+    var monthly = a.monthly || {};
+    var lanes = CH.length, W = 520, lh = 26, top = 8, left = 124, right = 8, bottom = 22;
+    var H = top + lanes * lh + bottom, cw = (W - left - right) / Math.max(NM, 1);
+    var mx = 1; CH.forEach(function (c) { (monthly[c] || []).forEach(function (v) { if (+v > mx) mx = +v; }); });
+    var o = ['<svg class="lane-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Monthly activity by channel">'];
+    CH.forEach(function (c, li) {
+      var y = top + li * lh + lh / 2;
+      o.push('<text x="0" y="' + (y + 4) + '">' + esc(c) + '</text><line x1="' + left + '" x2="' + (W - right) + '" y1="' + y + '" y2="' + y + '" stroke="var(--border)"/>');
+      (monthly[c] || []).forEach(function (v, mi) {
+        v = +v || 0; if (!v) return;
+        var r = 2.5 + 8 * Math.sqrt(v / mx);
+        o.push('<circle cx="' + (left + cw * (mi + 0.5)).toFixed(1) + '" cy="' + y + '" r="' + r.toFixed(1) + '" fill="' + chColor(c) + '"><title>' + esc(c) + ", " + esc(fmtMonth(MONTHS[mi])) + ": " + v + "</title></circle>");
+      });
+    });
+    MONTHS.forEach(function (mo, mi) { if (NM <= 12 || mi % 2 === 0) o.push('<text x="' + (left + cw * (mi + 0.5)).toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle" style="font-size:10px">' + esc(fmtMonth(mo).split(" ")[0]) + "</text>"); });
+    o.push("</svg>");
+    return o.join("");
+  }
+  function openDrawer(i) {
+    var x = accounts[i]; if (!x) return; var a = x.a;
+    lastFocus = document.activeElement; hideTip();
+    document.getElementById("dTitle").textContent = a.name || DASH;
+    var pb = prioShort(a.priority);
+    document.getElementById("dBadges").innerHTML = '<span class="gchip ' + x.g + '">' + esc(GL[x.g]) + "</span>" + (pb ? '<span class="pbadge p' + x.prio + '">' + esc(a.priority) + "</span>" : "") + (a.segment ? '<span class="chip static mini">' + esc(a.segment) + "</span>" : "");
+    var dealMoney = fmtMoney(a.amount);
+    var people = a.people_list || [];
+    var events = (a.events || []).slice().sort(function (p, q) { return String(q.date).localeCompare(String(p.date)); });
+    var html = "";
+    html += '<section class="dsec"><h4>Insight</h4><div>' + esc(x.insight) + '</div><dl class="kv" style="margin-top:10px">' +
+      "<dt>Pipeline status</dt><dd>" + show(a.pipeline_status) + "</dd>" +
+      "<dt>Deal</dt><dd>" + show(a.deal) + "</dd>" +
+      "<dt>Stage</dt><dd>" + show(a.stage) + "</dd>" +
+      "<dt>Amount</dt><dd>" + show(dealMoney) + "</dd>" +
+      "<dt>Deal owner</dt><dd>" + show(a.deal_owner) + "</dd>" +
+      "<dt>Company owner</dt><dd>" + show(a.company_owner) + "</dd>" +
+      "<dt>Priority</dt><dd>" + show(a.priority) + "</dd>" +
+      "<dt>First / latest</dt><dd>" + show(fmtDate(a.first)) + " / " + show(fmtDate(a.latest)) + "</dd></dl>" +
+      (a.suggested_action ? '<div class="action"><b>Suggested action:</b> ' + esc(a.suggested_action) + "</div>" : "") +
+      (a.crm_url && /^https?:\/\//.test(a.crm_url) ? '<div class="crm" style="margin-top:8px"><a href="' + esc(a.crm_url) + '" target="_blank" rel="noopener">Open in CRM</a></div>' : "") + "</section>";
+    html += '<section class="dsec"><h4>Activity ' + DASH + " last 6 months (" + x.t6 + ")</h4>" + chipsFor(x.c6) + "</section>";
+    html += '<section class="dsec"><h4>Activity ' + DASH + " last 12 months (" + x.t12 + ")</h4>" + chipsFor(x.c12) + '<div style="margin-top:12px">' + swimlanes(a) + "</div></section>";
+    html += '<section class="dsec"><h4>People engaged (' + show(a.people) + ")</h4>" + (people.length ? '<ul class="people">' + people.map(function (p) {
+      return "<li><div><b>" + show(p.name) + '</b></div><div class="t">' + show(p.title) + '</div><div class="chips">' + (p.channels || []).map(function (c) { return '<span class="chip static mini"><span class="dot" style="background:' + chColor(c) + '"></span>' + esc(c) + "</span>"; }).join("") + "</div></li>";
+    }).join("") + "</ul>" + (+a.people > people.length ? '<div class="sub" style="margin-top:6px">Showing ' + people.length + " of " + esc(a.people) + ".</div>" : "") : '<span class="none">' + DASH + "</span>") + "</section>";
+    html += '<section class="dsec"><h4>Recent activity</h4>' + (events.length ? '<ul class="feed">' + events.map(function (ev) {
+      return '<li><span class="dot" style="background:' + chColor(ev.channel) + '" title="' + esc(ev.channel) + '"></span><span class="d">' + show(fmtDate(ev.date)) + "</span><span><b>" + show(ev.person) + "</b> · " + esc(ev.type || ev.channel) + (ev.detail ? '<div class="det">' + esc(ev.detail) + "</div>" : "") + "</span></li>";
+    }).join("") + "</ul>" : '<span class="none">' + DASH + "</span>") + "</section>";
+    document.getElementById("dBody").innerHTML = html;
+    drawer.classList.add("open"); drawer.setAttribute("aria-hidden", "false"); scrim.classList.add("open");
+    drawer.scrollTop = 0; document.getElementById("dClose").focus();
+  }
+  function closeDrawer() { drawer.classList.remove("open"); drawer.setAttribute("aria-hidden", "true"); scrim.classList.remove("open"); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  document.getElementById("dClose").addEventListener("click", closeDrawer);
+  scrim.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && drawer.classList.contains("open")) closeDrawer(); });
+
+  // ---------- about ----------
+  var defs = raw.definitions || [
+    { term: "Surge", text: "3 or more different channels in the window, or 2 or more channels with 3 or more people at the company." },
+    { term: "Priority 1, no open deal", text: "4 or more channels or 4 or more people, with activity in the last 90 days." },
+    { term: "Priority 1, open deal", text: "5 or more channels, or an early-stage deal with 4 or more people engaged." },
+    { term: "Heating up", text: "The last 3 months are the busiest 3-month block in the window." }
+  ];
+  var chDefs = raw.channel_definitions || {};
+  document.getElementById("defs").innerHTML = defs.map(function (d) { return "<dt>" + esc(d.term) + "</dt><dd>" + esc(d.text) + "</dd>"; }).join("") +
+    (CH.length ? "<dt>Channels</dt><dd><ul style=\"margin:4px 0 0;padding-left:18px\">" + CH.map(function (c) { return '<li><span style="color:' + chColor(c) + ';font-weight:700">●</span> <b>' + esc(c) + "</b>" + (chDefs[c] ? ": " + esc(chDefs[c]) : "") + "</li>"; }).join("") + "</ul></dd>" : "");
+  var cav = raw.caveats || [];
+  document.getElementById("caveats").innerHTML = cav.length ? "<b>Caveats</b><ul>" + cav.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>" : "";
+
+  // ---------- theme ----------
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem("surge-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var next = cur === "dark" ? "light" : "dark"; root.setAttribute("data-theme", next);
+    try { localStorage.setItem("surge-theme", next); } catch (e) {}
+  });
+
+  // ---------- render ----------
+  function render() {
+    var rows = sortRows(filtered());
+    renderKpis(); renderMatrix(rows); renderScatter(rows);
+    document.getElementById("countLbl").textContent = "Showing " + rows.length + " of " + accounts.length + " accounts";
+  }
+  var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { renderScatter(sortRows(filtered())); }, 120); });
+  syncControls(); render();
+})();
+</script>
+</body>
+</html>

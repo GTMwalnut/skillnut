@@ -5,15 +5,15 @@
     "url": "https://gtmwalnut.com"
   },
   "metadata": {
-    "description": "Skillnut by GTM Walnut",
-    "version": "0.1.0"
+    "description": "Skillnut: GTM and Marketing Skills by GTM Walnut",
+    "version": "0.2.0"
   },
   "plugins": [
     {
-      "name": "skillnut-free",
-      "source": "./plugins/skillnut-free",
-      "description": "A guide plus 7 GTM skills by GTM Walnut: ICP, cold call openers, events, CRM data, a GTM dashboard, training docs and LinkedIn posts.",
-      "version": "0.1.0",
+      "name": "skillnut",
+      "source": "./plugins/skillnut",
+      "description": "41 free GTM and marketing skills by GTM Walnut: ICP and target lists, buying signals, cold email and LinkedIn outreach, CRM and RevOps, automation, dashboards, content and ads.",
+      "version": "0.2.0",
       "author": {
         "name": "Prashant Mantri"
       }
