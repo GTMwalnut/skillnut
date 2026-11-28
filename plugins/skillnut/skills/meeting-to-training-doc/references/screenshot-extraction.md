@@ -9,10 +9,10 @@ Requirements: `ffmpeg` and `ffprobe` on PATH, Python with `Pillow`. Check both b
 Meeting tools serve media over signed URLs with a short life. Two things to do before anything else:
 
 1. **Read the expiry** out of the URL (an `Expires=` epoch, commonly) and convert it. Tell the user the date.
-2. **HEAD the URL** to confirm the video actually exists and note its size, then download it to local disk. Never work off the remote URL: every seek re-downloads.
+2. **HEAD the URL** to confirm the video actually exists and note its size (read the status line, `content-type` and `content-length` in the output), then download it to local disk. Never work off the remote URL: every seek re-downloads.
 
 ```bash
-curl -sI "<signed url>" | grep -iE "^HTTP|content-type|content-length"
+curl -sI "<signed url>"
 curl -sL -o call.mp4 "<signed url>"
 ffprobe -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate,duration -of default=nw=1 call.mp4
 ```

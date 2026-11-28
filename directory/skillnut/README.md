@@ -1,4 +1,4 @@
-# Skillnut: GTM and Marketing Skills
+# GTM Engineering Skills
 
 38 free GTM and marketing skills by GTM Walnut: ICP and target lists, buying signals, cold email and LinkedIn outreach, CRM and RevOps, automation, dashboards, content and ads.
 
