@@ -92,4 +92,6 @@ A few skills include small scripts. Each runs on your computer only when its ski
 | `long-video-to-youtube-shorts/scripts/transcript_words.py` | Read a YouTube auto-caption file (json3) and print word timings. | None (runs on your computer only) |
 | `long-video-to-youtube-shorts/scripts/verify_sync.py` | Verify a rendered Short against its spec: is each cut the right moment, and are the lips in sync? | None (runs on your computer only) |
 
+Depending on the skill, and only with accounts and keys you connect yourself, skills may read from or send to these services: Apify, Apollo, Attio, Avoma, Beehiiv, Calendly, Chorus, Clay, Clearbit, Common Room, Crunchbase, Deepline, Descript, Email Bison, Exa, Expandi, Fathom, Findymail, Firecrawl, Fireflies, Gmail, GoHighLevel, Gong, Google Maps, Google Sheets, Grain, HeyReach, HubSpot, Icypeas, Instantly, Kwanzoo, Lemlist, Loom, Microsoft 365, MillionVerifier, n8n, NeverBounce, Notion, Otter, Outlook, Oxygen, Pipedrive, Prospeo, RB2B, Reo.dev, Riverside, Salesforce, Slack, Smartlead, Supabase, Tella, Unify, Warmly, YouTube, ZeroBounce, Zoom, ZoomInfo.
+
 Privacy policy: https://gtmwalnut.com/privacy-policy

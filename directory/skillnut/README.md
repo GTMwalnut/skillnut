@@ -75,4 +75,6 @@ The systems behind the selling: CRM setup in HubSpot or Attio, scoring and attri
 
 Skills are plain-text instructions. They run inside your own Claude session and use only the tools and connections you set up yourself (your CRM, email and LinkedIn tools, data providers, n8n). Anything that sends email, uploads leads or writes to a CRM shows you a plan first and waits for your yes. Nothing is sent to GTM Walnut.
 
+Depending on the skill, and only with accounts and keys you connect yourself, skills may read from or send to these services: Apify, Apollo, Attio, Avoma, Beehiiv, Calendly, Chorus, Clay, Clearbit, Common Room, Crunchbase, Deepline, Email Bison, Exa, Expandi, Fathom, Findymail, Firecrawl, Fireflies, Gmail, GoHighLevel, Gong, Google Maps, Google Sheets, Grain, HeyReach, HubSpot, Icypeas, Instantly, Kwanzoo, Lemlist, Microsoft 365, MillionVerifier, n8n, NeverBounce, Notion, Otter, Outlook, Pipedrive, Prospeo, RB2B, Reo.dev, Salesforce, Slack, Smartlead, Supabase, Unify, Warmly, YouTube, ZeroBounce, Zoom, ZoomInfo.
+
 Privacy policy: https://gtmwalnut.com/privacy-policy

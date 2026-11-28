@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Skillnut: GTM and Marketing Skills by GTM Walnut",
-    "version": "0.2.0"
+    "version": "0.2.1"
   },
   "plugins": [
     {
       "name": "skillnut",
       "source": "./plugins/skillnut",
       "description": "41 free GTM and marketing skills by GTM Walnut: ICP and target lists, buying signals, cold email and LinkedIn outreach, CRM and RevOps, automation, dashboards, content and ads.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "Prashant Mantri"
       }
