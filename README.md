@@ -8,6 +8,7 @@ Website: https://skills.gtmwalnut.com · Free to use. If they help you, you can 
 
 ## Install
 
+- **Claude Code, as a plugin:** `/plugin install skillnut --marketplace gtmwalnut/skillnut`
 - **Claude Code, Cursor, Codex or any agent that reads SKILL.md:** `npx skills add gtmwalnut/skillnut`
 - **Claude.ai or Claude Desktop (Pro, Max, Team or Enterprise):** download `skillnut.zip` from https://skills.gtmwalnut.com, then Customize > Plugins > Add > Upload plugin. One file, every skill.
 - **Free Claude plan:** download `skillnut-one-by-one.zip` from https://skills.gtmwalnut.com, unzip it, and upload each skill under Customize > Skills.
@@ -18,7 +19,7 @@ If these skills help you, star this repo so other GTM teams can find it.
 
 ## The skills
 
-### GTM Essentials (8)
+### Core GTM skills (8)
 
 The core GTM skills, plus a guide that points you to the right one: ICP, cold call openers, events, CRM data, a GTM dashboard, training docs and LinkedIn posts.
 
@@ -85,6 +86,23 @@ The systems behind the selling: CRM setup in HubSpot or Attio, scoring and attri
 Every skill here is free to use, for you or your company. If they are valuable to you and you would like to pay us for them, you can buy them once on our partner site, agensi.io: [All Access, $299](https://www.agensi.io/bundles/skillnut-all-access), or one pack: [Outbound Pipeline, $199](https://www.agensi.io/bundles/gtm-engineering-outbound-pipeline), [RevOps, $199](https://www.agensi.io/bundles/gtm-engineering-revops).
 
 It is optional. The skills stay free either way.
+
+## What this plugin runs, sends or fetches
+
+Skills are plain-text instructions. They run inside your own Claude session and use only the tools and connections you set up yourself (your CRM, email and LinkedIn tools, data providers, n8n). Anything that sends email, uploads leads or writes to a CRM shows you a plan first and waits for your yes. Nothing is sent to GTM Walnut.
+
+A few skills include small scripts. Each runs on your computer only when its skill uses it:
+
+| Script | What it does | Contacts |
+|---|---|---|
+| `account-activity-surge/scripts/build_surge_data.py` | Turn a cleaned activity log plus an account sheet into the surge dashboard JSON. | None (runs on your computer only) |
+| `account-activity-surge/scripts/post_surge_alert.py` | Post the weekly surge message to Slack through the bot's incoming webhook, or test the webhook. | hooks.slack.com |
+| `account-activity-surge/scripts/render_surge_dashboard.py` | Check a surge data file and put it into the dashboard template. | None (runs on your computer only) |
+| `long-video-to-youtube-shorts/scripts/build_short.py` | Build a 1080x1920 Short: titles on top, content in the middle (top 70% together), camera strip in the bottom 30%. | None (runs on your computer only) |
+| `long-video-to-youtube-shorts/scripts/transcript_words.py` | Read a YouTube auto-caption file (json3) and print word timings. | None (runs on your computer only) |
+| `long-video-to-youtube-shorts/scripts/verify_sync.py` | Verify a rendered Short against its spec: is each cut the right moment, and are the lips in sync? | None (runs on your computer only) |
+
+Privacy policy: https://gtmwalnut.com/privacy-policy
 
 ## Updates
 

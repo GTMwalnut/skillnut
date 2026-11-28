@@ -2,15 +2,20 @@
 
 41 free GTM and marketing skills by GTM Walnut: ICP and target lists, buying signals, cold email and LinkedIn outreach, CRM and RevOps, automation, dashboards, content and ads.
 
+Each skill is a guided run, built from real client work: it asks a few questions, shows a plan, and does the work with you. Read-only by default; nothing is sent or written without your yes.
+
+Not sure where to start? Ask "Which Skillnut skill should I use?" and the guide (`skillnut-start`) points you to the right one.
+
 ## Install
 
+- **Claude Code, as a plugin:** `/plugin install skillnut --marketplace gtmwalnut/skillnut`
 - **Claude Code, Cursor, Codex or any agent that reads SKILL.md:** `npx skills add gtmwalnut/skillnut`
 - **Claude.ai or Claude Desktop (Pro, Max, Team or Enterprise):** download `skillnut.zip` from https://skills.gtmwalnut.com, then Customize > Plugins > Add > Upload plugin. One file, every skill.
 - **Free Claude plan:** download `skillnut-one-by-one.zip` from https://skills.gtmwalnut.com, unzip it, and upload each skill under Customize > Skills.
 
 ## The skills
 
-### GTM Essentials (8)
+### Core GTM skills (8)
 
 The core GTM skills, plus a guide that points you to the right one: ICP, cold call openers, events, CRM data, a GTM dashboard, training docs and LinkedIn posts.
 
@@ -71,3 +76,20 @@ The systems behind the selling: CRM setup in HubSpot or Attio, scoring and attri
 | `partner-and-creator-programs` | Build and run a partner and affiliate program and a creator program for a B2B SaaS company, or the agency running its growth, in seven modules. |
 | `agency-back-office` | Run the contracts and the money admin of a small GTM, outbound or RevOps agency or consultancy, in eight modules. |
 | `long-video-to-youtube-shorts` | Turns long-form videos (YouTube, Tella, Loom, Riverside, Descript, Zoom, or a local file) into 15 to 20 second vertical YouTube Shorts and publishes them. |
+
+## What this plugin runs, sends or fetches
+
+Skills are plain-text instructions. They run inside your own Claude session and use only the tools and connections you set up yourself (your CRM, email and LinkedIn tools, data providers, n8n). Anything that sends email, uploads leads or writes to a CRM shows you a plan first and waits for your yes. Nothing is sent to GTM Walnut.
+
+A few skills include small scripts. Each runs on your computer only when its skill uses it:
+
+| Script | What it does | Contacts |
+|---|---|---|
+| `account-activity-surge/scripts/build_surge_data.py` | Turn a cleaned activity log plus an account sheet into the surge dashboard JSON. | None (runs on your computer only) |
+| `account-activity-surge/scripts/post_surge_alert.py` | Post the weekly surge message to Slack through the bot's incoming webhook, or test the webhook. | hooks.slack.com |
+| `account-activity-surge/scripts/render_surge_dashboard.py` | Check a surge data file and put it into the dashboard template. | None (runs on your computer only) |
+| `long-video-to-youtube-shorts/scripts/build_short.py` | Build a 1080x1920 Short: titles on top, content in the middle (top 70% together), camera strip in the bottom 30%. | None (runs on your computer only) |
+| `long-video-to-youtube-shorts/scripts/transcript_words.py` | Read a YouTube auto-caption file (json3) and print word timings. | None (runs on your computer only) |
+| `long-video-to-youtube-shorts/scripts/verify_sync.py` | Verify a rendered Short against its spec: is each cut the right moment, and are the lips in sync? | None (runs on your computer only) |
+
+Privacy policy: https://gtmwalnut.com/privacy-policy
